@@ -101,23 +101,23 @@ Agradecemos às seguintes pessoas que contribuíram para este projeto:
       <a href="#">
         <img src="https://avatars.githubusercontent.com/u/117746778?v=4" width="100px;" alt="Foto Matheus Gomes"/><br>
         <sub>
-          <b>Mark Zuckerberg</b>
+          <b>Matheus Gomes</b>
         </sub>
       </a>
     </td>
     <td align="center">
       <a href="#">
-        <img src="https://s2.glbimg.com/FUcw2usZfSTL6yCCGj3L3v3SpJ8=/smart/e.glbimg.com/og/ed/f/original/2019/04/25/zuckerberg_podcast.jpg" width="100px;" alt="Foto do Mark Zuckerberg"/><br>
+        <img src="https://avatars.githubusercontent.com/u/119381419?v=4" width="100px;" alt="Foto Mell Brayner"/><br>
         <sub>
-          <b>Mark Zuckerberg</b>
+          <b>Mell Brayner</b>
         </sub>
       </a>
     </td>
     <td align="center">
       <a href="#">
-        <img src="https://s2.glbimg.com/FUcw2usZfSTL6yCCGj3L3v3SpJ8=/smart/e.glbimg.com/og/ed/f/original/2019/04/25/zuckerberg_podcast.jpg" width="100px;" alt="Foto do Mark Zuckerberg"/><br>
+        <img src="https://avatars.githubusercontent.com/u/113111708?v=4" width="100px;" alt="Foto Sofia Valadares"/><br>
         <sub>
-          <b>Mark Zuckerberg</b>
+          <b>Sofia Valadares</b>
         </sub>
       </a>
     </td>
