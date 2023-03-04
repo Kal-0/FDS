@@ -75,7 +75,7 @@ Agradecemos às seguintes pessoas que contribuíram para este projeto:
   <tr>
     <td align="center">
       <a href="#">
-        <img src="https://super.abril.com.br/wp-content/uploads/2020/09/04-09_gato_SITE.jpg?quality=90&strip=info&w=1024&h=682&crop=1" width="100px;" alt="Foto do Iuri Silva no GitHub"/><br>
+        <img src="[https://super.abril.com.br/wp-content/uploads/2020/09/04-09_gato_SITE.jpg?quality=90&strip=info&w=1024&h=682&crop=1 (https://avatars.githubusercontent.com/u/106926790?s=96&v=4)" width="100px;" alt="Foto do Iuri Silva no GitHub"/><br>
         <sub>
           <b>Caio Cesar</b>
         </sub>
