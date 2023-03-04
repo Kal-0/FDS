@@ -75,7 +75,7 @@ Agradecemos às seguintes pessoas que contribuíram para este projeto:
   <tr>
     <td align="center">
       <a href="#">
-        <img src="[[https://super.abril.com.br/wp-content/uploads/2020/09/04-09_gato_SITE.jpg?quality=90&strip=info&w=1024&h=682&crop=1 (https://avatars.githubusercontent.com/u/106926790?s=96&v=4)](https://avatars.githubusercontent.com/u/106926790?s=400&u=d51d91a8d447afbb4a9d0be21d664b82d7091fc5&v=4)" width="100px;" alt="Foto Kal"/><br>
+        <img src="[[[https://super.abril.com.br/wp-content/uploads/2020/09/04-09_gato_SITE.jpg?quality=90&strip=info&w=1024&h=682&crop=1 (https://avatars.githubusercontent.com/u/106926790?s=96&v=4)](https://avatars.githubusercontent.com/u/106926790?s=400&u=d51d91a8d447afbb4a9d0be21d664b82d7091fc5&v=4)](https://avatars.githubusercontent.com/u/106926790?s=400&u=d51d91a8d447afbb4a9d0be21d664b82d7091fc5&v=4)" width="100px;" alt="Foto Kal"/><br>
         <sub>
           <b>Caio Cesar</b>
         </sub>
