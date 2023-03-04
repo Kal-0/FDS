@@ -11,7 +11,7 @@
 
 <img src="exemplo-image.png" alt="exemplo imagem">
 
-> Esse projeto foi feito para a comunidade da nossa universidade, com o objetivo d facilitar o comércio entre os membros das faculdades, por meio de uma plataforma de comunicação, onde seus usuários poderam publicar produtos que desejam vender, e mostrar interesse sobre os itens de outros usuários.
+> Esse projeto foi feito para a comunidade da nossa universidade, com o objetivo de facilitar o comércio entre os membros das faculdades, por meio de uma plataforma de comunicação, onde seus usuários poderam publicar produtos que desejam vender, e mostrar interesse sobre os itens de outros usuários, para então, negociarem de forma mais rápida e concreta.
 
 ### Ajustes e melhorias
 
