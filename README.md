@@ -71,6 +71,7 @@ Como alternativa, consulte a documentação do GitHub em [como criar uma solicit
 
 Agradecemos às seguintes pessoas que contribuíram para este projeto:
 
+Desenvolvedores:
 <table>
   <tr>
     <td align="center">
@@ -118,6 +119,20 @@ Agradecemos às seguintes pessoas que contribuíram para este projeto:
         <img src="https://avatars.githubusercontent.com/u/113111708?v=4" width="100px;" alt="Foto Sofia Valadares"/><br>
         <sub>
           <b>Sofia Valadares</b>
+        </sub>
+      </a>
+    </td>
+  </tr>
+</table>
+
+Orientadores:
+<table>
+  <tr>
+    <td align="center">
+      <a href="#">
+        <img src="https://avatars.githubusercontent.com/u/106926790?s=400&u=d51d91a8d447afbb4a9d0be21d664b82d7091fc5&v=4" width="100px;" alt="Foto Kal"/><br>
+        <sub>
+          <b>Caio Cesar</b>
         </sub>
       </a>
     </td>
