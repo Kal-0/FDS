@@ -11,7 +11,7 @@
 
 <img src="exemplo-image.png" alt="exemplo imagem">
 
-> Linha adicional de texto informativo sobre o que o projeto faz. Sua introdução deve ter cerca de 2 ou 3 linhas. Não exagere, as pessoas não vão ler.
+> Esse projeto foi feito por estudantes universitários para outros estudantes universitários, nosso objetivo é facilitar o comércio entre os membros das faculdades, por meio de uma plataforma de comunicação, onde seus usuários poderam publicar produtos e mostrar interesse sobre os mesmos.
 
 ### Ajustes e melhorias
 
