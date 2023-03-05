@@ -131,4 +131,4 @@ Orientadores:
 
 Esse projeto está sob licença. Veja o arquivo [LICENÇA](LICENSE) para mais detalhes.
 
-[⬆ Voltar ao topo](#Schoolyard-Find)<br>
+[⬆ Voltar ao topo](#)<br>
