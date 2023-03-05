@@ -3,9 +3,9 @@
 
 <!---Esses são exemplos. Veja https://shields.io para outras pessoas ou para personalizar este conjunto de escudos. Você pode querer incluir dependências, status do projeto e informações de licença aqui--->
 
-![GitHub repo size](https://img.badgesize.io/Kal-0/FDS/main/README.md?label=Repo_Size)
+![GitHub Files](https://img.shields.io/github/directory-file-count/Kal-0/FDS)
+![GitHub repo size](https://img.shields.io/github/repo-size/Kal-0/FDS)
 ![GitHub language count](https://img.shields.io/github/languages/count/iuricode/README-template?style=for-the-badge)
-![GitHub forks](https://img.shields.io/github/forks/Kal-0/README.md-template?style=for-the-badge)
 ![Bitbucket open issues](https://img.shields.io/bitbucket/issues/iuricode/README-template?style=for-the-badge)
 ![Bitbucket open pull requests](https://img.shields.io/bitbucket/pr-raw/iuricode/README-template?style=for-the-badge)
 
