@@ -9,7 +9,7 @@
 ![Bitbucket open issues](https://img.shields.io/bitbucket/issues/Kal-0/FDS)
 ![Bitbucket open pull requests](https://img.shields.io/bitbucket/pr-raw/Kal-0/FDS)
 
-<img src="exemplo-image.png" alt="exemplo imagem">
+<img src="exemplo-image.png" alt="Logo do Projeto">
 
 > Esse projeto foi feito para a comunidade da nossa universidade, com o objetivo de facilitar o comércio entre os membros das faculdades, por meio de uma plataforma de comunicação, onde seus usuários poderam publicar produtos que desejam vender, e mostrar interesse sobre os itens de outros usuários, para então, negociarem de forma mais rápida e concreta.
 
@@ -53,7 +53,7 @@ Para usar Schoolyard Find, siga estas etapas:
 <exemplo_de_uso>
 ```
 
-Adicione comandos de execução e exemplos que você acha que os usuários acharão úteis. Fornece uma referência de opções para pontos de bônus!
+Adicionar comandos de execução e exemplos que você acha que os usuários acharão úteis. Fornecer uma referência de opções para pontos de bônus!
 
 ## 🤝 Colaboradores
 
