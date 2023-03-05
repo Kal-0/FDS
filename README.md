@@ -5,9 +5,9 @@
 
 ![GitHub Files](https://img.shields.io/github/directory-file-count/Kal-0/FDS)
 ![GitHub repo size](https://img.shields.io/github/repo-size/Kal-0/FDS)
-![GitHub language count](https://img.shields.io/github/languages/count/iuricode/README-template?style=for-the-badge)
-![Bitbucket open issues](https://img.shields.io/bitbucket/issues/iuricode/README-template?style=for-the-badge)
-![Bitbucket open pull requests](https://img.shields.io/bitbucket/pr-raw/iuricode/README-template?style=for-the-badge)
+![GitHub language count](https://img.shields.io/github/languages/count/Kal-0/FDS)
+![Bitbucket open issues](https://img.shields.io/bitbucket/issues/Kal-0/FDS)
+![Bitbucket open pull requests](https://img.shields.io/bitbucket/pr-raw/Kal-0/FDS)
 
 <img src="exemplo-image.png" alt="exemplo imagem">
 
