@@ -6,6 +6,35 @@ def clear_console():
     except:
         print("chora\n")
 
+def cat(escolha):
+    clear_console()
+
+    if escolha < 4 and escolha >= 0:
+        print("\n\n")
+        print("Schoolyard Finds\t [        Pesquisar       ]\t Lista de desejos | Configurações | Perfil")
+        print("\n\n", categorias[escolha])
+
+        print("|                |       |                |      |                |      |                |")
+        print("|                |       |                |      |                |      |                |")
+        print("|    Produto 1   |       |    Produto 2   |      |    Produto 3   |      |    Produto 4   |")
+        print("|                |       |                |      |                |      |                |")
+        print("|                |       |                |      |                |      |                |")
+
+    else:
+        print("\n\nValor Inválido")
+
+
+def pes(pesquisa):
+    clear_console()
+
+    print("\n\n")
+    print("Schoolyard Finds\t", "[        ", pesquisa, "        ]", "\t Lista de desejos | Configurações | Perfil")
+
+    print("|                |       |                |      |                |      |                |")
+    print("|                |       |                |      |                |      |                |")
+    print("|    Produto 1   |       |    Produto 2   |      |    Produto 3   |      |    Produto 4   |")
+    print("|                |       |                |      |                |      |                |")
+    print("|                |       |                |      |                |      |                |")
 
 clear_console()
 
@@ -24,17 +53,19 @@ for i in range(4):
 
     i +=1
 
-escolha = int(input("Selecione uma categoria por número: "))
+print("0 - Escolher uma Categoria")
+print("1 - Pesquisar")
+print("2 - Clicar em Produto")
 
-clear_console()
+a = int(input("O que desejas fazer?"))
 
-print("\n\n")
-print("Schoolyard Finds\t [        Pesquisar       ]\t Lista de desejos | Configurações | Perfil")
+if a == 0:
+    escolha = int(input("Selecione uma categoria por número: "))
+    cat(escolha)
 
-print("\n\n", categorias[escolha])
+elif a == 1:
+    pesquisa = str(input("O que você deseja pesquisar: "))
+    pes(pesquisa)
 
-print("|                |       |                |      |                |      |                |")
-print("|                |       |                |      |                |      |                |")
-print("|    Produto 1   |       |    Produto 2   |      |    Produto 3   |      |    Produto 4   |")
-print("|                |       |                |      |                |      |                |")
-print("|                |       |                |      |                |      |                |")
+elif a == 2:
+    prod = int(input("Qual produto você deseja clicar: "))
