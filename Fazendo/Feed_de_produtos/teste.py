@@ -23,12 +23,12 @@ for i in range(4):
     print("|                |       |                |      |                |      |                |")
 
     i +=1
-    
 
 escolha = int(input("Selecione uma categoria por número: "))
 
 clear_console()
 
+print("\n\n")
 print("Schoolyard Finds\t [        Pesquisar       ]\t Lista de desejos | Configurações | Perfil")
 
 print("\n\n", categorias[escolha])
