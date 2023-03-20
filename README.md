@@ -32,13 +32,13 @@ Antes de começar, verifique se você atendeu aos seguintes requisitos:
 * Você leu `<guia / link / documentação_relacionada_ao_projeto>`.
 
 
-## 🚀 Instalando Schoolyard Find
+## 🚀 Schoolyard Find
 
 Para instalar o Schoolyard Find, siga estas etapas:
 
-Linux e macOS:
+JIRA:
 ```
-<comando_de_instalação>
+<[comando_de_instalação](https://decoy0.atlassian.net/jira/software/projects/SF/boards/3)>
 ```
 
 Windows:
