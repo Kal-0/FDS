@@ -37,9 +37,9 @@ Antes de começar, verifique se você atendeu aos seguintes requisitos:
 Para instalar o Schoolyard Find, siga estas etapas:
 
 JIRA:
-```
+
 <[comando_de_instalação](https://decoy0.atlassian.net/jira/software/projects/SF/boards/3)>
-```
+
 
 Windows:
 ```
