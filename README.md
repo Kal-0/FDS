@@ -17,9 +17,9 @@
 
 O projeto ainda está em desenvolvimento e as próximas atualizações serão voltadas nas seguintes tarefas:
 
-- [ ] Implementar Bancos de Dados
+- [ ] Pesquisa
 - [ ] Feed de Produtos
-- [ ] Login
+- [ ] Publicação
 - [ ] Perfil
 - [ ] Chat
 
@@ -40,6 +40,9 @@ JIRA:
 
 <[Quadro Jira](https://decoy0.atlassian.net/jira/software/projects/SF/boards/3)>
 
+FIGMA:
+
+<[Quadro Figma](https://www.figma.com/file/2ip4H8uwjQ2fh1LfifG0ys/Prot%C3%B3tipo-Lo-Fi?node-id=0-1&t=4z1jTTTTcBTCKFU9-0)>
 
 Google Drive:
 ```
