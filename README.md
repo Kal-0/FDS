@@ -41,7 +41,7 @@ JIRA:
 <[Quadro Jira](https://decoy0.atlassian.net/jira/software/projects/SF/boards/3)>
 
 
-Windows:
+Google Drive:
 ```
 <comando_de_instalação>
 ```
