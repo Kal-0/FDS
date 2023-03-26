@@ -44,9 +44,9 @@ FIGMA:
 
 <[Quadro Figma](https://www.figma.com/file/2ip4H8uwjQ2fh1LfifG0ys/Prot%C3%B3tipo-Lo-Fi?node-id=0-1&t=4z1jTTTTcBTCKFU9-0)>
 
-Google Drive:
+GOOGLE DRIVE:
 ```
-<comando_de_instalação>
+<[Sketchs e Storyboards]https://drive.google.com/drive/folders/1fE_FwNUclmHxMSdsRN0t-QUT1UX3w3iC>
 ```
 
 ## ☕ Usando Schoolyard Find
