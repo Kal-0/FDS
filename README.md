@@ -48,7 +48,7 @@ FIGMA:
 
 GOOGLE DRIVE:
 
-<[Sketchs e Storyboards]https://drive.google.com/drive/folders/1fE_FwNUclmHxMSdsRN0t-QUT1UX3w3iC>
+<[Sketchs e Storyboards](https://drive.google.com/drive/folders/1fE_FwNUclmHxMSdsRN0t-QUT1UX3w3iC)>
 
 
 ## ☕ Usando Schoolyard Find
