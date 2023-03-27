@@ -13,7 +13,7 @@
 
 > Esse projeto foi feito para a comunidade da nossa universidade, com o objetivo de facilitar o comércio entre os membros das faculdades, por meio de uma plataforma de comunicação, onde seus usuários poderam publicar produtos que desejam vender, e mostrar interesse sobre os itens de outros usuários, para então, negociarem de forma mais rápida e concreta.
 
-### Backlog e Painel
+## 📁 Backlog e Painel
 
 <img src="https://cdn.discordapp.com/attachments/1081640134371446956/1089871336920317982/Captura_de_tela_2023-03-27_081641.png" width="1000px;" alt="Backlog"/><br>
 
