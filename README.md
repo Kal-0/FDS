@@ -13,15 +13,11 @@
 
 > Esse projeto foi feito para a comunidade da nossa universidade, com o objetivo de facilitar o comércio entre os membros das faculdades, por meio de uma plataforma de comunicação, onde seus usuários poderam publicar produtos que desejam vender, e mostrar interesse sobre os itens de outros usuários, para então, negociarem de forma mais rápida e concreta.
 
-### Ajustes e melhorias
+### Backlog e Painel
 
-O projeto ainda está em desenvolvimento e as próximas atualizações serão voltadas nas seguintes tarefas:
+<img src="https://cdn.discordapp.com/attachments/1081640134371446956/1089871336920317982/Captura_de_tela_2023-03-27_081641.png" width="100px;" alt="Backlog"/><br>
 
-- [ ] Pesquisa
-- [ ] Feed de Produtos
-- [ ] Publicação
-- [ ] Perfil
-- [ ] Chat
+<img src="https://cdn.discordapp.com/attachments/1081640134371446956/1089871336920317982/Captura_de_tela_2023-03-27_081641.png" width="100px;" alt="Painel"/><br>
 
 ## 💻 Pré-requisitos
 
