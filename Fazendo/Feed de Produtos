@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <!-- Meta tags Obrigatórias -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <title>Schoolyard Finds</title>
+
+  </head>
+
+  <body>
+    <bs-body-color>
+    
+    <!-- Barra de Navegação (Logo, Pesquisa, Home, Carrinho e Perfil) -->
+    <nav class="navbar navbar-expand-lg" style="background-color: #e6c9ac">
+      <div class="container-fluid">
+
+        <a class="navbar-brand" href="http://127.0.0.1:5500/index.html">
+          <img src="imagens/IMG_1197-removebg-preview.png" class="img" width="140" height="60" alt="">
+        </a>
+
+          <div class="container">
+            <form>
+              <div class="form">
+                <div class="col-xs-3">
+                  <input class="form-control" id="ex3" placeholder="Pesquisar" type="text">
+                </div>
+              </div>
+            </form>
+          </div>
+
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <!-- Botão de Home -->
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="http://127.0.0.1:5500/index.html">
+                <img src="imagens/Botão de Home.png" alt="Bootstrap" width="30" height="30">
+              </a>
+            </li>
+
+            <!-- Botão de Chat -->
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">
+                <img src="imagens/Botão Chat.png" alt="Bootstrap" width="30" height="30">
+              </a>
+            </li>
+
+            <!-- Botão de Perfil -->
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">
+                <img src="imagens/Botão de perfil.png" alt="Bootstrap" width="30" height="30">
+              </a>            
+            </li>
+          </ul>
+
+      </div>
+    </nav>
+
+    <div class="p-3 mb-2">
+      <br></br>
+
+      <!-- Botão de Categorias 1 -->
+      <a href="#" target="_blank" class="btn btn-lg" style="color: #414141;">Produtos para Você!</a>
+
+      <!-- Cards de Itens para Comprar 1 (Título, Imagem, Texto e Botão para Página do Produto) -->
+      <div class="card-group">
+        <div class="card">
+          <img src="imagens/Receita_cake_pop_Silvia_Oliveira_Eventos_Criativos_07.webp" class="card-img-top" alt="Bolas Doces">
+          <div class="card-body">
+            <h5 class="card-title">Bolas Doces 15 R$</h5>
+            <p class="card-text">Bolas doces no palito, feito de chocolate e sem glutén.</p>
+            <a href="#" target="_blank" class="btn btn-primary">Mais Informações</a>
+          </div>
+        </div>
+
+      <!-- Cards de Itens para Comprar 1 (Título, Imagem, Texto e Botão para Página do Produto) -->
+        <div class="card">
+          <img src="imagens/fudge-palito.webp" class="card-img-top" style="width: 100.5%" alt="Fudge no Palito">
+          <div class="card-body">
+            <h5 class="card-title">Fudge no Palito 20 R$</h5>
+            <p class="card-text">Fudge de morango delicioso com chocolate.</p>
+            <a href="#" target="_blank" class="btn btn-primary">Mais Informações</a>
+          </div>
+        </div>
+
+      <!-- Cards de Itens para Comprar 1 (Título, Imagem, Texto e Botão para Página do Produto) -->
+        <div class="card">
+          <img src="imagens/72b82a30e5ffd0c91bbb837abdc402d4.webp" class="card-img-top" style="width: 85%" alt="Bottons">
+          <div class="card-body">
+            <h5 class="card-title">Bottons 4,5cm 30 R$</h5>
+            <p class="card-text">Bottons lindos e divertidos.</p>
+            <a href="https://www.magazineluiza.com.br/" target="_blank" class="btn btn-primary">Mais Informações</a>
+          </div>
+        </div>
+      </div>
+
+      <br></br>
+
+      <!-- Botão de Categorias 2 -->
+      <a href="https://pt.wikipedia.org/wiki/Camelo" target="_blank" class="btn btn-lg" style="color: #ecd048;">Em Promoção!</a>
+
+      <!-- Cards de Itens para Comprar 2 (Título, Imagem, Texto e Botão para Página do Produto) -->
+      <div class="card-group">
+        <div class="card">
+          <img src="imagens/pexels-cats-coming-1359307.jpg" class="card-img-top" alt="Gato">
+          <div class="card-body">
+            <h5 class="card-title">Gato Feliz 100 R$</h5>
+            <p class="card-text">Gatinho muito feliz, ele faz pilates.</p>
+            <a href="https://www.magazineluiza.com.br/" target="_blank" class="btn btn-primary">Mais Informações</a>
+          </div>
+        </div>
+
+      <!-- Cards de Itens para Comprar 2 (Título, Imagem, Texto e Botão para Página do Produto) -->
+        <div class="card">
+          <img src="imagens/pexels-tranmautritam-380809.jpg" class="card-img-top" alt="Gato 2">
+          <div class="card-body">
+            <h5 class="card-title">Gato Cadeira 100 R$</h5>
+            <p class="card-text">Gatinho e cadeira, compra dois leva dois.</p>
+            <a href="https://www.magazineluiza.com.br/" target="_blank" class="btn btn-primary">Mais Informações</a>
+          </div>
+        </div>
+
+      <!-- Cards de Itens para Comprar 2 (Título, Imagem, Texto e Botão para Página do Produto) -->
+        <div class="card">
+          <img src="imagens/pexels-tranmautritam-384555.jpg" class="card-img-top" alt="Gato 3">
+          <div class="card-body">
+            <h5 class="card-title">Gato Lingua pra fora 300 R$</h5>
+            <p class="card-text">Gatinho amigável e sempre dando a língua. :P</p>
+            <a href="https://www.magazineluiza.com.br/" target="_blank" class="btn btn-primary">Mais Informações</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- JavaScript (Opcional) -->
+      <!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    </div>
+  </body>
+</html>
