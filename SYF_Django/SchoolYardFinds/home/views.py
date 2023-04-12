@@ -7,3 +7,6 @@ def home(request):
 
 def feed(request):
     return render(request,"Feed_de_Produtos.html")
+
+def perfil(request):
+    return render(request, "perfil.html")
