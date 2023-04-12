@@ -3,7 +3,7 @@ from django.http import HttpResponse
 # Create your views here.
 
 def home(request):
-    return HttpResponse('''home!<br> <img src="https://cdn.discordapp.com/attachments/1081640134371446956/1094364787992973462/Botao_de_Home.png">''')
+    return HttpResponse('''home!!<br> <img src="https://cdn.discordapp.com/attachments/1081640134371446956/1094364787992973462/Botao_de_Home.png">''')
 
 def feed(request):
     return HttpResponse('''feed!<br> 
