@@ -126,6 +126,7 @@ Pipfile.lock
 .mypy_cache/
 .dmypy.json
 dmypy.json
+.vscode
 
 # Pyre type checker
 .pyre/
