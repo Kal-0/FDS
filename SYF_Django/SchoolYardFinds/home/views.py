@@ -10,3 +10,8 @@ def feed(request):
 
 def perfil(request):
     return render(request, "perfil.html")
+
+def test(request):
+    number = 0
+    namels=["bebel","caio","diogo"]
+    return render(request, "test.html", {"namels":namels, "number": number})
