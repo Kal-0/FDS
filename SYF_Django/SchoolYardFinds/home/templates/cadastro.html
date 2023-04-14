@@ -12,74 +12,85 @@
 
   </head>
 
-<body style="background-color: #e6c9ac">
+  <body style="background-color: #e6c9ac">
     <bs-body-color>
         <!-- Logo -->
         <nav class="navbar navbar-expand-lg">
             <div class="container-fluid">
-              {% if messages %}
-                {%for message in massages%}
-                  {{messages}}
-                {% endfor %}
-              {% endif%}
-
-                &nbsp;          
-
+                &nbsp;
                 <div style="text-align:center;">
                     <img src="https://cdn.discordapp.com/attachments/1081640134371446956/1094329263110504580/IMG_1197-removebg-preview.png" alt="Logo" />
                 </div>
-
                 &nbsp;
-
             </div>
-        </nav>        
+        </nav> 
 
         &nbsp;
         <form action="" method="POST">
           {% csrf_token %}
-        
+
 
           <!-- Caixa de Login -->
           <div class="d-flex justify-content-center align-items-center text-center" style="height: 40vh;">
-            <div class="p-3 mb-2" style="background-color: #414141; width: 600px; height: 300px; display: inline-block;">
-
+            <div class="p-3 mb-2" style="background-color: #414141; width: 600px; height: 320px; display: inline-block;">
               &nbsp;
+
+              <!-- Input do Nome -->
+              <div class="row justify-content-center">
+                <div class="col-sm-2">
+                  <label for="inputEmail" class="col-form-label" style="color: #2da8dd"><b>Nome</b></label>
+                </div>
+                <div class="col-sm-8">
+                  {{models.usarname}}
+                </div>
+              </div>
+
+              <!-- Input do Sobrenome -->
+              <div class="row justify-content-center">
+                <div class="col-sm-2">
+                  <label for="inputEmail" class="col-form-label" style="color: #2da8dd"><b>Sobrenome</b></label>
+                </div>
+                <div class="col-sm-8">
+                  {{models.usersurname}}
+                </div>
+              </div>
 
               <!-- Input do Email -->
               <div class="row justify-content-center">
                 <div class="col-sm-2">
-                  <label for="text" class="col-form-label" style="color: #2da8dd"><b>Username</b></label>
+                  <label for="inputEmail" class="col-form-label" style="color: #2da8dd"><b>Email</b></label>
                 </div>
                 <div class="col-sm-8">
-                  <input type="text" class="form-control mb-3" name="username" placeholder="Username">
+                  {{models.email}}
                 </div>
               </div>
 
-              <!-- Input da Senha -->
+              <!-- Input da Senha1 -->
               <div class="row justify-content-center">
                 <div class="col-sm-2">
                   <label for="inputPassword" class="col-form-label" style="color: #2da8dd"><b>Password</b></label>
                 </div>
                 <div class="col-sm-8">
-                  <input type="password" class="form-control mb-3" name="password" placeholder="********">
+                  {{models.password1}}
                 </div>
               </div>
 
-              &nbsp;
-
-              <!-- Botão de Login -->
+              <!-- Input da Senha2 -->
               <div class="row justify-content-center">
-                <div class="col-auto">
-                  <button type="submit" class="btn mb-3" style="background-color: #2da8dd; color: #000000; width: 200px; height: 40px">Login</button>
+                <div class="col-sm-2">
+                  <label for="inputPassword" class="col-form-label" style="color: #2da8dd"><b>Password</b></label>
+                </div>
+                <div class="col-sm-8">
+                  {{models.password2}}
                 </div>
               </div>
 
               <!-- Botão de Cadastro -->
               <div class="row justify-content-center">
                 <div class="col-auto">
-                  <a href="BOTÃOTELADECADASTRO" class="btn mb-3" style="background-color: #ecd048; color: #000000; width: 200px; height: 40px">Cadastro</a>
+                  <button type="submit" class="btn mb-3" style="background-color: #ecd048; color: #000000; width: 200px; height: 40px">Cadastro</button>
                 </div>
-              </div>            
+              </div>           
 
             </div>
           </div>        
