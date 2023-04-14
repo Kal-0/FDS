@@ -9,7 +9,7 @@
 ![Bitbucket open issues](https://img.shields.io/bitbucket/issues/Kal-0/FDS)
 ![Bitbucket open pull requests](https://img.shields.io/bitbucket/pr-raw/Kal-0/FDS)
 
-<img src="https://cdn.discordapp.com/attachments/1081640134371446956/1087393480306864138/Captura_de_Tela_2023-03-20_as_12.12.59.png" alt="Logo do Projeto">
+<img src="https://media.discordapp.net/attachments/1081640134371446956/1094329263110504580/IMG_1197-removebg-preview.png?width=1548&height=644" alt="Logo do Projeto">
 
 > Esse projeto foi feito para a comunidade da nossa universidade, com o objetivo de facilitar o comércio entre os membros das faculdades, por meio de uma plataforma de comunicação, onde seus usuários poderam publicar produtos que desejam vender, e mostrar interesse sobre os itens de outros usuários, para então, negociarem de forma mais rápida e concreta.
 
