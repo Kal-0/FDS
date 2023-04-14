@@ -15,3 +15,6 @@ def test(request):
     number = 0
     namels=["bebel","caio","diogo"]
     return render(request, "test.html", {"namels":namels, "number": number})
+
+def login(request):
+    return render(request, "login.html")

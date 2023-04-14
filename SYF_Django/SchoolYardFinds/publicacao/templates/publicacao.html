@@ -7,9 +7,19 @@
     <title>Publicacao</title>
 </head>
 <body>
-    <a href="">
-    <img src="https://i.ytimg.com/vi/E1qlboErL34/maxresdefault.jpg
-    " alt="publi">
-    </a>
+    <form action="https://avaazdo.s3.amazonaws.com/0c8d4c6f49f7faf7410ed76186a4eeef.png" method="GET">
+        <div>
+            <label for="name">Name</label>
+            <input type="text" name="name " value="{{current_name}}">
+        </div>
+        <div>
+            <label for="password">Password</label>
+            <input type="password" name="password" value="{{current_password}}">
+        </div>
+        <div>
+        <input type="submit" value="Submit" class="btn btn-secondary">
+        </div>
+    </form>
+    
 </body>
 </html>
