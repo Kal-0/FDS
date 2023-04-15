@@ -39,8 +39,8 @@
               <!-- Input do Nome -->
               <div class="row justify-content-center">
                 <div class="col-sm-2">
-                  <label for="inputText" class="col-form-label" style="color: #2da8dd"><b>Username</b></label>
-                  {{form.usarname}}
+                  <label  class="inline-block mb-2" style="color: #2da8dd"><b>Username</b></label>
+                  {{form.username}}
                 </div>
               </div>
 
@@ -48,7 +48,7 @@
               <!-- Input do Email -->
               <div class="row justify-content-center">
                 <div class="col-sm-2">
-                  <label for="inputEmail" class="col-form-label" style="color: #2da8dd"><b>Email</b></label>
+                  <label class="inline-block mb-2" style="color: #2da8dd"><b>Email</b></label>
                   {{form.email}}
                 </div>
               </div>
@@ -56,7 +56,7 @@
               <!-- Input da Senha1 -->
               <div class="row justify-content-center">
                 <div class="col-sm-2">
-                  <label for="inputPassword" class="col-form-label" style="color: #2da8dd"><b>Password</b></label>
+                  <label class="inline-block mb-2" style="color: #2da8dd"><b>Password</b></label>
                   {{form.password1}}
                 </div>
               </div>
@@ -64,7 +64,7 @@
               <!-- Input da Senha2 -->
               <div class="row justify-content-center">
                 <div class="col-sm-2">
-                  <label for="inputPassword" class="col-form-label" style="color: #2da8dd"><b>Repeat Password</b></label>
+                  <label class="inline-block mb-2" style="color: #2da8dd"><b>Repeat Password</b></label>
                   {{form.password2}}
                 </div>
               </div>
@@ -76,6 +76,8 @@
                     {% endfor %}
               {% endif%}
 
+              &nbsp;
+              
               <!-- Botão de Cadastro -->
               <div class="row justify-content-center">
                 <div class="col-auto">
