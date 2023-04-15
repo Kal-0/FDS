@@ -1,7 +1,11 @@
 from django.contrib import admin
 from .models import Category, Item
 
-admin.site.register(Category)
+class ListandoCategory(admin.ModelAdmin):
+    list_display = ("id", "name")
+    list_display_links =("id", "name")
+
+admin.site.register(Category, ListandoCategory)
 
 class ListandoItem(admin.ModelAdmin):
     list_display =("id", "name", "Category", "check_sold")
