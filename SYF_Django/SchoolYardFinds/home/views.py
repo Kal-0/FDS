@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth import authenticate, login
 from django.contrib import messages
 from django.contrib.auth.forms import UserCreationForm
@@ -17,6 +17,14 @@ def feed(request):
     return render(request, 'feed_db.html', {
         'cats' : categories,
         'cards': items,
+    })
+
+def imagem(request, foto_id):
+    categories = get_object_or_404(Category, pk=foto_id)
+    items = Item.objects.filter(check_sold=False)
+    return render(request, 'galeria/imagem.html', {
+        'cats' : categories,
+        'cards': items,       
     })
 
 def perfil(request):
