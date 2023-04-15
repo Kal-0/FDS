@@ -10,7 +10,13 @@ def home(request):
     return render(request,"home.html")
 
 def feed(request):
-    return render(request,"Feed_de_Produtos.html")
+    items = Item.objects.filter(check_sold=False)
+    categories = Category.objects.all()
+
+    return render(request, 'feed_db.html', {
+        'cats' : categories,
+        'cards': items,
+    })
 
 def perfil(request):
     return render(request, "perfil.html")
@@ -34,11 +40,3 @@ def login_user(request):
     else:
         return render(request, "login.html")
 
-def index(request):
-    items = home.objects.filter(check_sold=False)[0:6]
-    categories = Category.objects.all()
-
-    return render(request, 'index.html', {
-        'categories' : categories,
-        'items': items,
-    })
