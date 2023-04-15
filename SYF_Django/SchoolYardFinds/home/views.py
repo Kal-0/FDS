@@ -11,7 +11,13 @@ def home(request):
     return render(request,"home.html")
 
 def feed(request):
-    return render(request,"Feed_de_Produtos.html")
+    items = Item.objects.filter(check_sold=False)
+    categories = Category.objects.all()
+
+    return render(request, 'feed_db.html', {
+        'cats' : categories,
+        'cards': items,
+    })
 
 def perfil(request):
     return render(request, "perfil.html")
