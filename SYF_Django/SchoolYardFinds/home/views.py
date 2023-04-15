@@ -3,6 +3,8 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from django.contrib.auth.forms import UserCreationForm
 from .models import CreateUserForm
+from django.shortcuts import render
+from item.models import Category, Item
 # Create your views here.
 
 def home(request):
@@ -40,4 +42,14 @@ def register_user(request):
         form = CreateUserForm(request.POST)
         if form.is_valid():
             form.save()
-    return render(request, "cadastro.html", context)
+    return render(request, "cadastro.html", context)#BUGADO
+
+
+def index(request):
+    items = Item.objects.filter(check_sold=False)[0:6]
+    categories = Category.objects.all()
+
+    return render(request, 'index.html', {
+        'categories' : categories,
+        'items': items,
+    })
