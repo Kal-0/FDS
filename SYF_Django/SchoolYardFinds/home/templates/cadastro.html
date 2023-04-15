@@ -29,39 +29,27 @@
         <form action="" method="POST">
           {% csrf_token %}
 
+          {{ form.non_field_errors }}
 
           <!-- Caixa de Login -->
-          <div class="d-flex justify-content-center align-items-center text-center" style="height: 40vh;">
-            <div class="p-3 mb-2" style="background-color: #414141; width: 600px; height: 320px; display: inline-block;">
+          <div class="d-flex justify-content-center align-items-center text-center" style="height: 50vh;">
+            <div class="p-3 mb-2" style="background-color: #414141; width: 600px; height: 360px; display: inline-block;">
               &nbsp;
 
               <!-- Input do Nome -->
               <div class="row justify-content-center">
                 <div class="col-sm-2">
-                  <label for="inputEmail" class="col-form-label" style="color: #2da8dd"><b>Nome</b></label>
-                </div>
-                <div class="col-sm-8">
-                  {{models.usarname}}
+                  <label for="inputText" class="col-form-label" style="color: #2da8dd"><b>Username</b></label>
+                  {{form.usarname}}
                 </div>
               </div>
 
-              <!-- Input do Sobrenome -->
-              <div class="row justify-content-center">
-                <div class="col-sm-2">
-                  <label for="inputEmail" class="col-form-label" style="color: #2da8dd"><b>Sobrenome</b></label>
-                </div>
-                <div class="col-sm-8">
-                  {{models.usersurname}}
-                </div>
-              </div>
 
               <!-- Input do Email -->
               <div class="row justify-content-center">
                 <div class="col-sm-2">
                   <label for="inputEmail" class="col-form-label" style="color: #2da8dd"><b>Email</b></label>
-                </div>
-                <div class="col-sm-8">
-                  {{models.email}}
+                  {{form.email}}
                 </div>
               </div>
 
@@ -69,21 +57,24 @@
               <div class="row justify-content-center">
                 <div class="col-sm-2">
                   <label for="inputPassword" class="col-form-label" style="color: #2da8dd"><b>Password</b></label>
-                </div>
-                <div class="col-sm-8">
-                  {{models.password1}}
+                  {{form.password1}}
                 </div>
               </div>
 
               <!-- Input da Senha2 -->
               <div class="row justify-content-center">
                 <div class="col-sm-2">
-                  <label for="inputPassword" class="col-form-label" style="color: #2da8dd"><b>Password</b></label>
-                </div>
-                <div class="col-sm-8">
-                  {{models.password2}}
+                  <label for="inputPassword" class="col-form-label" style="color: #2da8dd"><b>Repeat Password</b></label>
+                  {{form.password2}}
                 </div>
               </div>
+
+              {% if form.errors or form.non_field_erros %}
+                <div class="col-sm-2"> 
+                  {% for field in form%}
+                    {{ field.errors }}
+                    {% endfor %}
+              {% endif%}
 
               <!-- Botão de Cadastro -->
               <div class="row justify-content-center">
