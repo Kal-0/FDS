@@ -7,5 +7,5 @@ urlpatterns = [
     path('feed/', feed, name='feed'),
     path('perfil/', perfil, name='perfil'),
     path('login/', login_user, name='login'),
-    path('register/', register_user, name='register')
+    path('register/', register_user, name='register'), #BUGADO
 ]
