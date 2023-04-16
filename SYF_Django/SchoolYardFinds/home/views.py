@@ -63,3 +63,6 @@ def signup(request):
     return render(request, 'cadastro.html', {
         'form': form
     })
+
+def buscar(request):
+    return render(request, "buscar.html")
