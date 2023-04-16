@@ -57,7 +57,6 @@ def signup(request):
             form.save()
 
             return redirect('login')
-
     else:
         form = SignupForm()
         
