@@ -97,9 +97,9 @@
         {% if items.Category_id == categories.id %}
         <div class="card" style=" border: 5px solid #000000">
           {% if items.image == "" or items.image == null %}
-          <img src="https://cdn.discordapp.com/attachments/1096519466914947204/1096930839935340605/0fffcf4a571bc35e42b713f406363b71.jpg" class="card-img-top" max-width="150px" height="300px" alt="Produto">
+          <img src="https://cdn.discordapp.com/attachments/1096519466914947204/1096930839935340605/0fffcf4a571bc35e42b713f406363b71.jpg" class="card-img-top" max-width="150px" max-height="300px" alt="Produto">
           {% else %}
-          <img src="{{ items.image.url }}" class="card-img-top" max-width="150px" height="300px" alt="Produto">
+          <img src="{{ items.image.url }}" class="card-img-top" max-width="150px" max-height="300px" alt="Produto">
           {% endif %}
           <div class="card-body">
             <h5 class="card-title">{{ items.name }} R${{ items.price }}</h5>
