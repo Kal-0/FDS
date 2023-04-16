@@ -77,7 +77,7 @@ def publicacao_view(request):
         
     return render(request, 'cadastro.html', {
         'form': form
-    
+    })
     return render(request, 'publicacao.html')
 
 def buscar(request):
