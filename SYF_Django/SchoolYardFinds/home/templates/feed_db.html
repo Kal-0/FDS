@@ -85,50 +85,32 @@
 
       <!-- Cards de Itens para Comprar 1 (Título, Imagem, Texto e Botão para Página do Produto) -->
       <p>&nbsp;</p>
-      
-      <a href="#" class="btn" style="background-color: #ecd048; color: #000000">{{ categories.name }}</a>
-      
-      {% if categories.items %}
-      {% if categories.items|length == 1 %}
-          <div class="row justify-content-center">
+        <a href="#" class="btn" style="background-color: #ecd048; color: #000000">{{ categories.name }}</a>
+        {% if categories.items %}
+          {% if categories.items|length == 1 %}
+            <div class="row justify-content-center">
               <div class="col-md-6">
-                <div class="card-body" width="150px" height="150px">
-                  <h5 class="card-title">{{ items.name }} R${{ items.price }}</h5>
-                  <p class="card-text">{{ items.descricao }}</p>
-                  <a href="#" class="btn" style="background-color: #ecd048; color: #000000">Visualizar</a>
-                </div>              
+                <!-- Card code here -->
               </div>
-          </div>
-      {% elif categories.items|length == 2 %}
-          <div class="row justify-content-center">
+            </div>
+          {% elif categories.items|length == 2 %}
+            <div class="row justify-content-center">
               <div class="col-md-6">
-                <div class="card-body" width="150px" height="150px">
-                  <h5 class="card-title">{{ items.name }} R${{ items.price }}</h5>
-                  <p class="card-text">{{ items.descricao }}</p>
-                  <a href="#" class="btn" style="background-color: #ecd048; color: #000000">Visualizar</a>
-                </div>              
+                <!-- Card code here -->
               </div>
               <div class="col-md-6">
-                <div class="card-body" width="150px" height="150px">
-                  <h5 class="card-title">{{ items.name }} R${{ items.price }}</h5>
-                  <p class="card-text">{{ items.descricao }}</p>
-                  <a href="#" class="btn" style="background-color: #ecd048; color: #000000">Visualizar</a>
-                </div>
+                <!-- Card code here -->
               </div>
-          </div>
-      {% else %}
-          <div class="card-group">
-            <div class="card-body" width="150px" height="150px">
-              <h5 class="card-title">{{ items.name }} R${{ items.price }}</h5>
-              <p class="card-text">{{ items.descricao }}</p>
-              <a href="#" class="btn" style="background-color: #ecd048; color: #000000">Visualizar</a>
-            </div>          
-          </div>
-      {% endif %}
-      {% endif %}
-      
+            </div>
+          {% else %}
+            <div class="card-group">
+              <!-- Card code here -->
+            </div>
+          {% endif %}
+        {% endif %}
       {% endfor %}
-      {% endif %}      
+    {% endif %}
+            
       <!-- JavaScript (Opcional) -->
       <!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->
       <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
