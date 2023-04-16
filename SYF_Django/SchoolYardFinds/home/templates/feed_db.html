@@ -100,7 +100,7 @@
           {% if items.image == "" or items.image == null %}
           <img src="https://cdn.discordapp.com/attachments/1096519466914947204/1096930839935340605/0fffcf4a571bc35e42b713f406363b71.jpg" class="card-img-top" width="300" height="300" alt="Bottons">
           {% else %}
-          <img src="{{ items.image.url }}" class="card-img-top" width="300" height="300" alt="Bottons">
+          <img src="{{ items.image.url }}" class="card-img-top" max-width="300px" max-height="300px" alt="Bottons">
           {% endif %}
           <div class="card-body">
             <h5 class="card-title">{{ items.name }} R${{ items.price }}</h5>

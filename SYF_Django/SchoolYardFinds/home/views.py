@@ -65,6 +65,19 @@ def signup(request):
     })
 
 def publicacao_view(request):
+    if request.method == 'POST':
+        form = SignupForm(request.POST)
+
+        if form.is_valid():
+            form.save()
+
+            return redirect('login')
+    else:
+        form = SignupForm()
+        
+    return render(request, 'cadastro.html', {
+        'form': form
+    
     return render(request, 'publicacao.html')
 
 def buscar(request):
