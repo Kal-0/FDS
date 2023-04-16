@@ -79,27 +79,18 @@
       
       <br></br>
 
-      <table>
-          <thead>
-              <tr>
-                  <th>Product Name</th>
-                  <th>Description</th>
-                  <th>Price</th>
-                  <th>Image</th>
-              </tr>
-          </thead>
-        
-          <tbody>
-              {% for product in products %}
-              <tr>
-                  <td>{{ items.name }}</td>
-                  <td>{{ items.descricao }}</td>
-                  <td>{{ items.price }}</td>
-                  <td><img src="{{ items.image.url }}" alt="{{ items.name }}" /></td>
-              </tr>
-              {% endfor %}
-          </tbody>
-      </table>
+      <div class="card" style=" border: 5px solid #000000">
+        {% if items.image == "" or items.image == null %}
+        <img src="https://cdn.discordapp.com/attachments/1096519466914947204/1096930839935340605/0fffcf4a571bc35e42b713f406363b71.jpg" class="card-img-top" alt="Produto">
+        {% else %}
+        <img src="{{ items.image.url }}" class="card-img-top" alt="Produto">
+        {% endif %}
+        <div class="card-body">
+          <h5 class="card-title">{{ items.name }}</h5>
+          <p class="card-text">{{ items.description }}</p>
+          <a href="{% url 'product_detail' items.id %}" class="btn btn-primary">Ver Produto</a>
+        </div>
+      </div>
 
       <!-- JavaScript (Opcional) -->
       <!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->
