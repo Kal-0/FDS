@@ -136,7 +136,7 @@
             </div>
           {% endif %}
                 
-          {% else %}
+          {% elif categories.items|length == 3 %}
             <div class="row justify-content-center">
               <div class="col-md-6">
                 <div class="card-body" width="150px" height="150px">
@@ -159,7 +159,9 @@
                 </div>
               </div>
             </div>
-          {% endif %} 
+          {% endif %}
+        {% endfor %} 
+      {% endif %} 
             
       <!-- JavaScript (Opcional) -->
       <!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->
