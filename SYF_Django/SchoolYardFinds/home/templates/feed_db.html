@@ -79,70 +79,87 @@
       
       <br></br>
 
-      <!-- Botão de Categorias 1 -->
       {% if cats %}
       {% for categories in cats %}
 
-      <!-- Cards de Itens para Comprar 1 (Título, Imagem, Texto e Botão para Página do Produto) -->
-      <p>&nbsp;</p>
-        <a href="#" class="btn" style="background-color: #ecd048; color: #000000">{{ categories.name }}</a>
-        {% if categories.items %}
-          {% if categories.items|length == 1 %}
-            <div class="row justify-content-center">
+      <!-- Botão de Categorias 1 -->
+      <a href="#" class="btn" style="background-color: #ecd048; color: #000000">{{ categories.name }}</a>
+      
+      {% if categories.items %}
+      {% if categories.items|length == 1 %}
+          <div class="row justify-content-center">
               <div class="col-md-6">
-                <div class="card" style=" border: 5px solid #000000">
-                  {% if items.image == "" or items.image == null %}
-                  <img src="https://cdn.discordapp.com/attachments/1096519466914947204/1096930839935340605/0fffcf4a571bc35e42b713f406363b71.jpg" class="card-img-top" max-width="150px" height="300px" alt="Produto">
+                <div class="card-body" width="150px" height="150px">
+                  {% for items in categories.items %}
+                  {% if items.Category_id == categories.id %}
+                  <div class="card" style=" border: 5px solid #000000">
+                    {% if items.image == "" or items.image == null %}
+                    <img src="https://cdn.discordapp.com/attachments/1096519466914947204/1096930839935340605/0fffcf4a571bc35e42b713f406363b71.jpg" class="card-img-top" max-width="150px" height="300px" alt="Produto">
+                    {% else %}
+                    <img src="{{ items.image.url }}" class="card-img-top" max-width="150px" height="300px" alt="Produto">
+                    {% endif %}
+                    <div class="card-body">
+                      <h5 class="card-title">{{ items.name }} R${{ items.price }}</h5>
+                      <p class="card-text">{{ items.descricao }}</p>
+                      <a href="#" class="btn" style="background-color: #ecd048; color: #000000">Visualizar</a>
+                    </div>
+                  </div>
                   {% else %}
-                  <img src="{{ items.image.url }}" class="card-img-top" max-width="150px" height="300px" alt="Produto">
                   {% endif %}
-                  <div class="card-body">
-                    <h5 class="card-title">{{ items.name }} R${{ items.price }}</h5>
-                    <p class="card-text">{{ items.descricao }}</p>
-                    <a href="#" class="btn" style="background-color: #ecd048; color: #000000">Visualizar</a>
+                  {% endfor %}
+                </div>              
               </div>
-            </div>
-          {% elif categories.items|length == 2 %}
-            <div class="row justify-content-center">
+          </div>
+
+          {% if categories.items|length == 2 %}
+          <div class="row justify-content-center">
               <div class="col-md-6">
-                {% if items.image == "" or items.image == null %}
-                <img src="https://cdn.discordapp.com/attachments/1096519466914947204/1096930839935340605/0fffcf4a571bc35e42b713f406363b71.jpg" class="card-img-top" max-width="150px" height="300px" alt="Produto">
-                {% else %}
-                <img src="{{ items.image.url }}" class="card-img-top" max-width="150px" height="300px" alt="Produto">
-                {% endif %}
-                <div class="card-body">
-                  <h5 class="card-title">{{ items.name }} R${{ items.price }}</h5>
-                  <p class="card-text">{{ items.descricao }}</p>
-                  <a href="#" class="btn" style="background-color: #ecd048; color: #000000">Visualizar</a>              
-                </div>
-              <div class="col-md-6">
-                {% if items.image == "" or items.image == null %}
-                <img src="https://cdn.discordapp.com/attachments/1096519466914947204/1096930839935340605/0fffcf4a571bc35e42b713f406363b71.jpg" class="card-img-top" max-width="150px" height="300px" alt="Produto">
-                {% else %}
-                <img src="{{ items.image.url }}" class="card-img-top" max-width="150px" height="300px" alt="Produto">
-                {% endif %}
-                <div class="card-body">
-                  <h5 class="card-title">{{ items.name }} R${{ items.price }}</h5>
-                  <p class="card-text">{{ items.descricao }}</p>
-                  <a href="#" class="btn" style="background-color: #ecd048; color: #000000">Visualizar</a>              
+                <div class="card-body" width="150px" height="150px">
+                  {% for items in categories.items %}
+                  {% if items.Category_id == categories.id %}
+                  <div class="card" style=" border: 5px solid #000000">
+                    {% if items.image == "" or items.image == null %}
+                    <img src="https://cdn.discordapp.com/attachments/1096519466914947204/1096930839935340605/0fffcf4a571bc35e42b713f406363b71.jpg" class="card-img-top" max-width="150px" height="300px" alt="Produto">
+                    {% else %}
+                    <img src="{{ items.image.url }}" class="card-img-top" max-width="150px" height="300px" alt="Produto">
+                    {% endif %}
+                    <div class="card-body">
+                      <h5 class="card-title">{{ items.name }} R${{ items.price }}</h5>
+                      <p class="card-text">{{ items.descricao }}</p>
+                      <a href="#" class="btn" style="background-color: #ecd048; color: #000000">Visualizar</a>
+                    </div>
+                  </div>
+                  {% else %}
+                  {% endif %}
+                  {% endfor %}
+                </div>              
               </div>
-            </div>
+          </div>
+
           {% else %}
-            <div class="card-group">
-              {% if items.image == "" or items.image == null %}
-              <img src="https://cdn.discordapp.com/attachments/1096519466914947204/1096930839935340605/0fffcf4a571bc35e42b713f406363b71.jpg" class="card-img-top" max-width="150px" height="300px" alt="Produto">
-              {% else %}
-              <img src="{{ items.image.url }}" class="card-img-top" max-width="150px" height="300px" alt="Produto">
-              {% endif %}
-              <div class="card-body">
-                <h5 class="card-title">{{ items.name }} R${{ items.price }}</h5>
-                <p class="card-text">{{ items.descricao }}</p>
-                <a href="#" class="btn" style="background-color: #ecd048; color: #000000">Visualizar</a>            
+          <div class="row justify-content-center">
+              <div class="col-md-6">
+                <div class="card-body" width="150px" height="150px">
+                  {% for items in categories.items %}
+                  {% if items.Category_id == categories.id %}
+                  <div class="card" style=" border: 5px solid #000000">
+                    {% if items.image == "" or items.image == null %}
+                    <img src="https://cdn.discordapp.com/attachments/1096519466914947204/1096930839935340605/0fffcf4a571bc35e42b713f406363b71.jpg" class="card-img-top" max-width="150px" height="300px" alt="Produto">
+                    {% else %}
+                    <img src="{{ items.image.url }}" class="card-img-top" max-width="150px" height="300px" alt="Produto">
+                    {% endif %}
+                    <div class="card-body">
+                      <h5 class="card-title">{{ items.name }} R${{ items.price }}</h5>
+                      <p class="card-text">{{ items.descricao }}</p>
+                      <a href="#" class="btn" style="background-color: #ecd048; color: #000000">Visualizar</a>
+                    </div>
+                  </div>
+                  {% else %}
+                  {% endif %}
+                  {% endfor %}
+                </div>              
               </div>
-          {% endif %}
-        {% endif %}
-      {% endfor %}
-    {% endif %}
+          </div>
             
       <!-- JavaScript (Opcional) -->
       <!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->
