@@ -79,7 +79,7 @@
       
       <br></br>
 
-      {% if cats %}
+    {% if cats %}
       {% for categories in cats %}
     
         <!-- Botão de Categorias 1 -->
@@ -98,11 +98,11 @@
                         {% else %}
                           <img src="{{ items.image.url }}" class="card-img-top" max-width="150px" height="300px" alt="Produto">
                         {% endif %}
-                        <div class="card-body">
-                          <h5 class="card-title">{{ items.name }} R${{ items.price }}</h5>
-                          <p class="card-text">{{ items.descricao }}</p>
-                          <a href="#" class="btn" style="background-color: #ecd048; color: #000000">Visualizar</a>
-                        </div>
+                          <div class="card-body">
+                            <h5 class="card-title">{{ items.name }} R${{ items.price }}</h5>
+                            <p class="card-text">{{ items.descricao }}</p>
+                            <a href="#" class="btn" style="background-color: #ecd048; color: #000000">Visualizar</a>
+                          </div>
                       </div>
                     {% endif %}
                   {% endfor %}
@@ -110,7 +110,7 @@
               </div>
             </div>
           {% endif %}
-    
+      
           {% elif categories.items|length == 2 %}
             <div class="row justify-content-center">
               <div class="col-md-6">
@@ -123,20 +123,20 @@
                         {% else %}
                           <img src="{{ items.image.url }}" class="card-img-top" max-width="150px" height="300px" alt="Produto">
                         {% endif %}
-                        <div class="card-body">
-                          <h5 class="card-title">{{ items.name }} R${{ items.price }}</h5>
-                          <p class="card-text">{{ items.descricao }}</p>
-                          <a href="#" class="btn" style="background-color: #ecd048; color: #000000">Visualizar</a>
+                          <div class="card-body">
+                            <h5 class="card-title">{{ items.name }} R${{ items.price }}</h5>
+                            <p class="card-text">{{ items.descricao }}</p>
+                            <a href="#" class="btn" style="background-color: #ecd048; color: #000000">Visualizar</a>
+                          </div>
                         </div>
-                      </div>
                     {% endif %}
                   {% endfor %}
                 </div>
               </div>
             </div>
           {% endif %}
-                
-          {% elif categories.items|length == 3 %}
+                  
+          {% else %}
             <div class="row justify-content-center">
               <div class="col-md-6">
                 <div class="card-body" width="150px" height="150px">
@@ -160,8 +160,9 @@
               </div>
             </div>
           {% endif %}
-        {% endfor %} 
-      {% endif %} 
+        {% endif %}
+      {% endfor %} 
+    {% endif %} 
             
       <!-- JavaScript (Opcional) -->
       <!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->
