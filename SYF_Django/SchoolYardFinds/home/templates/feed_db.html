@@ -25,10 +25,10 @@
         </a>
 
           <div class="container">
-            <form action="{% url 'buscar' %}">
+            <form>
               <div class="form">
                 <div class="col-xs-3">
-                  <input class="form-control" id="ex3" placeholder="Pesquisar" type="text" name="buscar">
+                  <input class="form-control" id="ex3" placeholder="Pesquisar" type="text">
                 </div>
               </div>
             </form>
@@ -118,13 +118,13 @@
         {% else %}
         {% endif %}
       </div>
-
+      
       <p>&nbsp;</p>
       
       {% endfor %}
       {% else %}
       {% endif %}
-
+      <!-- aaa -->
       <!-- JavaScript (Opcional) -->
       <!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->
       <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
