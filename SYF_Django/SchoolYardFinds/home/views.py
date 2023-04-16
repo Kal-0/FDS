@@ -63,3 +63,6 @@ def signup(request):
     return render(request, 'cadastro.html', {
         'form': form
     })
+
+def publicacao_view(request):
+    return render(request, 'publicacao.html')
