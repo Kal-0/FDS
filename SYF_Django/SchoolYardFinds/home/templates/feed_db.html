@@ -25,10 +25,10 @@
         </a>
 
           <div class="container">
-            <form>
+            <form action="{% url 'buscar' %}">
               <div class="form">
                 <div class="col-xs-3">
-                  <input class="form-control" id="ex3" placeholder="Pesquisar" type="text">
+                  <input class="form-control" id="ex3" placeholder="Pesquisar" type="text" name="buscar">
                 </div>
               </div>
             </form>
