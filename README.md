@@ -34,17 +34,17 @@ Para instalar o Schoolyard Find, siga estas etapas:
 
 JIRA:
 
-<[Quadro Jira](https://decoy0.atlassian.net/jira/software/projects/SF/boards/3)>
+<[Quadro Jira](https://decoy0.atlassian.net/jira/software/projects/SF/boards/3)><br>
 
 FIGMA:
 
-<[Quadro Figma](https://www.figma.com/file/2ip4H8uwjQ2fh1LfifG0ys/Prot%C3%B3tipo-Lo-Fi?node-id=0-1&t=4z1jTTTTcBTCKFU9-0)>
+<[Quadro Figma](https://www.figma.com/file/2ip4H8uwjQ2fh1LfifG0ys/Prot%C3%B3tipo-Lo-Fi?node-id=0-1&t=4z1jTTTTcBTCKFU9-0)><br>
 
-<[Figma Flow](https://www.figma.com/proto/2ip4H8uwjQ2fh1LfifG0ys/Prot%C3%B3tipo-Lo-Fi?node-id=154-3&scaling=min-zoom&page-id=0%3A1&starting-point-node-id=154%3A3)>
+<[Figma Flow](https://www.figma.com/proto/2ip4H8uwjQ2fh1LfifG0ys/Prot%C3%B3tipo-Lo-Fi?node-id=154-3&scaling=min-zoom&page-id=0%3A1&starting-point-node-id=154%3A3)><br>
 
 GOOGLE DRIVE:
 
-<[Screecast e Pair Programming](https://drive.google.com/drive/folders/1fE_FwNUclmHxMSdsRN0t-QUT1UX3w3iC)>
+<[Screecast e Pair Programming](https://drive.google.com/drive/folders/1fE_FwNUclmHxMSdsRN0t-QUT1UX3w3iC)><br>
 
 
 ## ☕ Usando Schoolyard Find
