@@ -6,8 +6,7 @@ from django.shortcuts import render, redirect
 from home.models import Category, Item
 from .forms import SignupForm
 from .models import Profile
-from django.db import models
-from django.contrib.auth.models import User
+# Create your views here.
 
 def home(request):
     return render(request,"home.html")
@@ -41,10 +40,6 @@ def save_description(request):
         return redirect('home')
     else:
         return render(request, 'edit_profile.html')
-    
-class Profile(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
-    description = models.TextField()
 
 def test(request):
     number = 0
