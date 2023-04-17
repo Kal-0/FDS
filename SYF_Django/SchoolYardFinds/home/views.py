@@ -78,8 +78,6 @@ def publicacao_view(request):
 
 def perfil(request):
     return render(request, "perfil.html")
-    description = perfil.description
-    return render(request, "perfil.html", {"description": description})
 
 def buscar(request):
     return render(request, "buscar.html")
