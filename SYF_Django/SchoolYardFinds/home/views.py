@@ -26,6 +26,12 @@ def page_categoria(request, foto_id):
         'pub': items,       
     })
 
+def produto_detalhes(request, foto_id):
+    items = get_object_or_404(Item, pk=foto_id)
+    return render(request, 'interno_publicacao.html', {
+        'pub': items,
+    })
+
 def test(request):
     number = 0
     namels=["bebel","caio","diogo"]
