@@ -110,77 +110,17 @@
 
         <div id="page" class="p-3 mb-2" style="background-color: #2da8dd;">
             <div class="card" style=" border: 5px solid #000000; width: 18rem;">
-              <input type="file" id="inputImage" onchange="displayImage()" accept="image/*"><br><br>
-              <img id="imagePreview" onload="loadImage()">
-              
+              <img src="https://cdn.discordapp.com/attachments/1081640134371446956/1097326925963337838/gato-auscultadores-vestindo-C3B3culos-de-sol-relaxante-na-relva.png" alt="Foto de Perfil" width="auto" height="210">
               <div class="card-body">
                 <div class="d-flex justify-content-between">
-                  <h5 class="card-title">NOME_SOBRENOME</h5>
+                  <h5 class="card-title">{{ request.user.username}}</h5>
                   &nbsp;
-                  <input type="color" id="colorPicker">
                 </div>
-
                 <div class="card-text" id="description" style=" border: 1px solid #000000" contenteditable="true"></div>
-
               </div>
             </div>
             
             &nbsp;
-          
-            <script>
-              function displayImage() {
-                var image = document.getElementById("imagePreview");
-                var file = document.getElementById("inputImage").files[0];
-                var reader = new FileReader();
-                reader.onloadend = function () {
-                  image.src = reader.result;
-                  localStorage.setItem("imageSrc", reader.result);
-                }
-                if (file) {
-                  reader.readAsDataURL(file);
-                } else {
-                  image.src = "";
-                  localStorage.setItem("imageSrc", "");
-                }
-              }
-              
-              function loadImage() {
-                var image = document.getElementById("imagePreview");
-                var persistedSrc = localStorage.getItem("imageSrc");
-                if (persistedSrc) {
-                  image.src = persistedSrc;
-                }
-              }
-            
-              var colorPicker = document.getElementById("colorPicker");
-              colorPicker.addEventListener("input", function() {
-                var page = document.getElementById("page");
-                page.style.backgroundColor = colorPicker.value;
-              });
-              
-              // Set background color to persisted value if it exists
-              if (localStorage.getItem("bgColor")) {
-                var page = document.getElementById("page");
-                page.style.backgroundColor = localStorage.getItem("bgColor");
-              }
-              
-              // Save background color to localStorage when color is picked
-              colorPicker.addEventListener("change", function() {
-                localStorage.setItem("bgColor", colorPicker.value);
-              });
-              
-              var description = document.getElementById("description");
-              // Set description to persisted value if it exists
-              if (localStorage.getItem("description")) {
-                description.innerHTML = localStorage.getItem("description");
-              }
-              
-              // Save description to localStorage when it is changed
-              description.addEventListener("input", function() {
-                localStorage.setItem("description", description.innerHTML);
-              });
-            </script>
-          
         
             <div class="container">
                 <h1><b>Publicação</b></h1>
@@ -211,7 +151,7 @@
                 </div>
             </div>
         </div>
-      <!-- adoro cachorros -->
+        
       <!-- JavaScript (Opcional) -->
       <!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->
       <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

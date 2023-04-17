@@ -41,12 +41,14 @@ def login_user(request):
         user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)
-            return redirect('home')
+            context = {'username': username}
+            return render(request, "home.html", context)
         else:
             messages.success(request, ("There Was An Error Loggin In, Try Again..."))
             return redirect('login')
     else:
-        return render(request, "login.html")
+        context = {'username': ''}
+        return render(request, "login.html", context)
 
 def signup(request):
     if request.method == 'POST':
@@ -63,6 +65,20 @@ def signup(request):
         'form': form
     })
 
+def publicacao_view(request):
+    if request.method == 'POST':
+        form = SignupForm(request.POST)
+
+        if form.is_valid():
+            form.save()
+
+            return redirect('login')
+    else:
+        form = SignupForm()
+        
+    return render(request, 'cadastro.html', {
+        'form': form
+    })
 
 def buscar(request):
     return render(request, "buscar.html")
