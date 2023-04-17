@@ -110,15 +110,20 @@
 
         <div id="page" class="p-3 mb-2" style="background-color: #2da8dd;">
             <div class="card" style=" border: 5px solid #000000; width: 18rem;">
+              {% if user_profile.profile_image == "" or user_profile.profile_image == null %}
+              <img src="https://cdn.discordapp.com/attachments/1096519466914947204/1096930839935340605/0fffcf4a571bc35e42b713f406363b71.jpg" alt="Foto de Perfil" width="auto" height="210">
+              {% else %}
               <img src="{{ user_profile.profile_image.url }}" alt="Foto de Perfil" width="auto" height="210">
+              {% endif %}
               <div class="card-body">
                 <div class="d-flex justify-content-between">
                   <h5 class="card-title">{{ user_profile.user.username }}</h5>
                   &nbsp;
                   
                 </div>
-                <div class="card-text" id="description" style=" border: 1px solid #000000" contenteditable="true"></div>
+                <!--<div class="card-text" id="description" style=" border: 1px solid #000000" contenteditable="true"></div>-->
                 <p class="card-text">{{ user_profile.description }}</p>
+                <a href="#" class="btn btn-primary">Editar Perfil</a>
               </div>
             </div>
             
