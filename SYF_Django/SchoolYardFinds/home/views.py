@@ -42,6 +42,11 @@ def login_user(request):
         user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)
+            
+            #cria perfil
+            print(f"user: {request.user}")
+            Profile.objects.create(user=request.user)
+            
             context = {'username': username}
             return render(request, "home.html", context)
         else:
@@ -57,7 +62,8 @@ def signup(request):
         
         if form.is_valid():
             form.save()
-
+            
+            
             return redirect('login')
     else:
         form = SignupForm()
