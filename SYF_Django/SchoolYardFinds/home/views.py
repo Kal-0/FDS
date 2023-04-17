@@ -113,10 +113,7 @@ def create_item(request):
         
         
         inProductCategory = Category.objects.get(name = request.POST.get("productCategory"))
-        print(inProductCategory)
-        
-        print(Category.objects.get(name = "dede"))
-        
+        print(inProductCategory)        
         
         inProductImage = request.POST.get("productImage")
         print(inProductImage)
