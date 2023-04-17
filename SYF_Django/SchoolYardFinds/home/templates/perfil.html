@@ -109,21 +109,18 @@
         </nav>
 
         <div id="page" class="p-3 mb-2" style="background-color: #2da8dd;">
-            <div class="card" style=" border: 5px solid #000000; width: 18rem;">
-              <input type="file" id="inputImage" onchange="displayImage()" accept="image/*"><br><br>
-              <img id="imagePreview" onload="loadImage()">
-              
-              <div class="card-body">
-                <div class="d-flex justify-content-between">
-                  <h5 class="card-title">{{ request.user.username }}</h5>
-                  &nbsp;
-                  <input type="color" id="colorPicker">
-                </div>
-
-                <div class="card-text" id="description" style=" border: 1px solid #000000" contenteditable="true"></div>
-
-              </div>
+          <div class="card-body">
+            <div class="d-flex justify-content-between">
+              <h5 class="card-title">{{ request.user.username }}</h5>
+              &nbsp;
+              <input type="color" id="colorPicker">
             </div>
+            <div class="card-text" id="description" style="border: 1px solid #000000" contenteditable="true">
+              {% with profile=request.user.profile %}
+                {{ profile.description }}
+              {% endwith %}
+            </div>
+          </div>
             
             &nbsp;
           
