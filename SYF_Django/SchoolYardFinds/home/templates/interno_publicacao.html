@@ -76,11 +76,13 @@
 
       </div>
     </nav>
+    {% if pub %}
     <div class="p-3 mb-2" style="background-color: #414141; min-height: 700px;">
         <div class="p-3 mb-2" style="background-color: #2da8dd; min-height: 700px;">
-            <h1><b>Nome produto</b></h1>
+          <p class="imagem__titulo">{{ items.name }}</p>
+            <h1><b>{{ items.name }}aaa</b></h1>
             <p style="font-size: 30px;">
-                <b>R$ 05,00</b> 
+                <b>R${{ items.price }}</b> 
             </p>
             <p style="font-size: 20px;">
                 <b>Categoria</b> 
@@ -88,14 +90,14 @@
 
             <ul style="display: flex;">
                 <li style="list-style: none; margin: auto; padding: 3%;">
-                    <img src="maria_amiga.png" alt="maria_amiga">
+                    <img src="{{ items.image.url }}" alt="maria_amiga">
                 </li>
                 
                 <li style="list-style: none; padding: 3%;">
                     <div class="descricao" style="font-size: larger;">
                         <h2>Descrição</h2>
                         <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro enim exercitationem sunt maiores. Repellendus, animi? Dicta illum modi harum numquam quidem eius fugiat quae dolore temporibus! Accusantium atque tempore eos.
+                            {{ itens.description }}
                         </p>
                         <button style="background-color: #ecd048; color: black; height: 50px; border-radius: 10px;" onclick="alert('Item adicionado ao carrinho!')">
                             <b>Adicionar ao carrinho</b>
@@ -123,6 +125,8 @@
 
         </div>
     </div>
+    {% else %}
+    {% endif %}
 
        
 </body>

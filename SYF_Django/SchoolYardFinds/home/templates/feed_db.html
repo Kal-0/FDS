@@ -105,7 +105,7 @@
           <div class="card-body" style="height: 200px;">
             <h5 class="card-title" style="height: 50px; overflow: hidden;">{{ items.name }} R${{ items.price }}</h5>
             <p class="card-text" style="height: 80px; overflow: hidden;">{{ items.descricao }}</p>
-            <a href="#" class="btn" style="background-color: #ecd048; color: #000000">Visualizar</a>
+            <a href="{% url 'produto' items.id %}" class="btn" style="background-color: #ecd048; color: #000000">Visualizar</a>
           </div>
         </div>
         {% else %}
