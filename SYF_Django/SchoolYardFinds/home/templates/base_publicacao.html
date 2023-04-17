@@ -18,7 +18,7 @@
         <nav class="navbar navbar-expand-lg" style="background-color: #e6c9ac">
             <div class="container-fluid">
 
-                <a class="navbar-brand" href="http://127.0.0.1:5500/home.html">
+                <a class="navbar-brand" href="{% url 'home' %}">
                 <img src="https://cdn.discordapp.com/attachments/1081640134371446956/1094329263110504580/IMG_1197-removebg-preview.png" class="img" width="140" height="60" alt="">
                 </a>
 
@@ -36,7 +36,7 @@
 
                     <!-- Botão de Home -->
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="http://127.0.0.1:5500/home.html">
+                        <a class="nav-link active" aria-current="page" href="{% url 'home' %}">
                             <img src="https://cdn.discordapp.com/attachments/1081640134371446956/1094364787992973462/Botao_de_Home.png" alt="Bootstrap" width="30" height="30">
                         </a>
                     </li>
