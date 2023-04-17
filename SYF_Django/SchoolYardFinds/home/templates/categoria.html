@@ -8,6 +8,13 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
+    <style> 
+      .card-body-size {
+        width: 100px;
+        height: 150px;
+      } 
+      </style>
+
     <title>Schoolyard Finds</title>
 
   </head>
@@ -80,7 +87,7 @@
       <br></br>
 
       <!-- Botão de Categorias 1 -->
-      <a href="BOTÃOCATEGORIAEMPROMOÇÃO" class="btn" style="background-color: #ecd048; color: #000000">{{ categories.name }}</a>
+      <a href="#" class="btn" style="background-color: #ecd048; color: #000000">{{ categories.name }}</a>
 
       &nbsp;
 
@@ -98,14 +105,14 @@
         
         <div class="card" style=" border: 5px solid #000000">
           {% if items.image == "" or items.image == null %}
-          <img src="https://cdn.discordapp.com/attachments/1096519466914947204/1096930839935340605/0fffcf4a571bc35e42b713f406363b71.jpg" class="card-img-top" max-width="150px" height="300px" alt="Produto">
+          <img src="https://cdn.discordapp.com/attachments/1096519466914947204/1096930839935340605/0fffcf4a571bc35e42b713f406363b71.jpg" class="img-fluid" alt="Produto">
           {% else %}
-          <img src="{{ items.image.url }}" class="card-img-top" max-width="150px" height="300px" alt="Produto">
+          <img src="{{ items.image.url }}" class="img-fluid" alt="Produto">
           {% endif %}
-          <div class="card-body" style="height: 200px;">
+          <div class="card-body card-body-size">
             <h5 class="card-title" style="height: 50px; overflow: hidden;">{{ items.name }} R${{ items.price }}</h5>
             <p class="card-text" style="height: 80px; overflow: hidden;">{{ items.descricao }}</p>
-            <a href="#" class="btn" style="background-color: #ecd048; color: #000000">Visualizar</a>
+            <a href="{% url 'produto' items.id %}" class="btn" style="background-color: #ecd048; color: #000000">Visualizar</a>
           </div>
         </div>
         

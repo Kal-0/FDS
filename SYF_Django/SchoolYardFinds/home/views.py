@@ -32,8 +32,10 @@ def produto_detalhes(request, foto_id):
         'items': items,
     })
 
-def interno_pub(request):
-    return render(request, "interno_pub.html")
+def test(request):
+    number = 0
+    namels=["bebel","caio","diogo"]
+    return render(request, "test.html", {"namels":namels, "number": number})
 
 def login_user(request):
     if request.method == "POST":
@@ -88,8 +90,12 @@ def publicacao_view(request):
     })
 
 def perfil(request):
-    user_profile = Profile.objects.get(user=request.user)
-    return render(request, "perfilR.html", {'user_profile': user_profile})
+    try:
+        user_profile = Profile.objects.get(user=request.user)
+    except Profile.DoesNotExist:
+        # Handle the case where the user does not have a profile
+        return redirect('create_profile')
+    return render(request, "perfil.html", {'user_profile': user_profile})
 
 def buscar(request):
     return render(request, "buscar.html")
@@ -130,3 +136,6 @@ def create_item(request):
         
         
     return render(request, 'base_publicacao.html', {})
+
+
+# aaaaa
