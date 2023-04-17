@@ -56,7 +56,7 @@ def login_user(request):
 def signup(request):
     if request.method == 'POST':
         form = SignupForm(request.POST)
-
+        
         if form.is_valid():
             form.save()
 
@@ -115,9 +115,12 @@ def create_item(request):
         inProductDescription = request.POST.get("productDescription")
         print(inProductDescription)
         
+        if request.POST.get("productCategory") != "":
+            inProductCategory = Category.objects.get(name = request.POST.get("productCategory"))
+            print(inProductCategory)
         
-        inProductCategory = Category.objects.get(name = request.POST.get("productCategory"))
-        print(inProductCategory)        
+        print(Category.objects.get(name = request.POST.get("productCategory")))
+        
         
         inProductImage = request.POST.get("productImage")
         print(inProductImage)
