@@ -28,9 +28,12 @@ def page_categoria(request, foto_id):
 
 def produto_detalhes(request, foto_id):
     items = get_object_or_404(Item, pk=foto_id)
-    return render(request, 'interno_publicacao.html', {
+    categories = Category.objects.filter(id=items.category.id)
+    context = {
         'items': items,
-    })
+        'cat': categories,
+    }
+    return render(request, 'interno_publicacao.html', context)
 
 def test(request):
     number = 0

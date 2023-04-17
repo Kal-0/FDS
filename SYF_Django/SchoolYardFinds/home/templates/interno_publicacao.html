@@ -83,7 +83,7 @@
                 <b>preço a declarar: R$ {{ items.price }}</b> 
             </p>
             <p style="font-size: 20px;">
-                <b>Categoria a declarar</b> 
+                <b>{{ items.category }}r</b> 
             </p>
 
             <ul style="display: flex;">
@@ -95,7 +95,7 @@
                     <div class="descricao" style="font-size: larger;">
                         <h2>Descrição</h2>
                         <p>
-                          {{ items.descricao }}
+                          {{ items.description }}
                         </p>
                         <button style="background-color: #ecd048; color: black; height: 50px; border-radius: 10px;" onclick="alert('Item adicionado ao carrinho!')">
                             <b>Adicionar ao carrinho</b>
