@@ -21,7 +21,7 @@
     <nav class="navbar navbar-expand-lg" style="background-color: #e6c9ac">
       <div class="container-fluid">
 
-        <a class="navbar-brand" href="http://127.0.0.1:5500/index.html">
+        <a class="navbar-brand" href="{% url 'home' %}">
           <img src="https://cdn.discordapp.com/attachments/1081640134371446956/1094329263110504580/IMG_1197-removebg-preview.png" class="img" width="140" height="60" alt="">
         </a>
 
@@ -39,7 +39,7 @@
 
             <!-- Botão de Home -->
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="http://127.0.0.1:5500/index.html">
+              <a class="nav-link active" aria-current="page" href="{% url 'home' %}">
                 <img src="https://cdn.discordapp.com/attachments/1081640134371446956/1094364787992973462/Botao_de_Home.png" alt="Bootstrap" width="30" height="30">
               </a>
             </li>
@@ -60,7 +60,7 @@
 
             <!-- Botão de Perfil -->
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">
+              <a class="nav-link active" aria-current="page" href="{% url 'perfil' %}">
                 <img src="https://cdn.discordapp.com/attachments/1081640134371446956/1094329727378006066/image.png" alt="Bootstrap" width="30" height="30">
               </a>            
             </li>
@@ -76,16 +76,14 @@
 
       </div>
     </nav>
-    {% if pub %}
     <div class="p-3 mb-2" style="background-color: #414141; min-height: 700px;">
         <div class="p-3 mb-2" style="background-color: #2da8dd; min-height: 700px;">
-          <p class="imagem__titulo">{{ items.name }}</p>
-            <h1><b>{{ items.name }}aaa</b></h1>
+            <h1>{{ items.name }}</h1>
             <p style="font-size: 30px;">
-                <b>R${{ items.price }}</b> 
+                <b>preço a declarar: R$ {{ items.price }}</b> 
             </p>
             <p style="font-size: 20px;">
-                <b>Categoria</b> 
+                <b>Categoria a declarar</b> 
             </p>
 
             <ul style="display: flex;">
@@ -97,7 +95,7 @@
                     <div class="descricao" style="font-size: larger;">
                         <h2>Descrição</h2>
                         <p>
-                            {{ itens.description }}
+                          {{ items.descricao }}
                         </p>
                         <button style="background-color: #ecd048; color: black; height: 50px; border-radius: 10px;" onclick="alert('Item adicionado ao carrinho!')">
                             <b>Adicionar ao carrinho</b>
@@ -117,7 +115,7 @@
                     
                 </li>
             </ul>
-            <a href="perfil.html">
+            <a href="{% url 'feed' %}">
                 <button style="background-color: #ecd048; color: black; width: 10%; height: 50px; border-radius: 10px;">
                     <b>Voltar</b>
                 </button>
@@ -125,8 +123,6 @@
 
         </div>
     </div>
-    {% else %}
-    {% endif %}
 
        
 </body>
