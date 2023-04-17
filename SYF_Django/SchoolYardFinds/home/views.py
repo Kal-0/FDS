@@ -37,9 +37,6 @@ def imagem(request, foto_id):
         'cards': items,       
     })
 
-def perfil(request):
-    return render(request, "perfil.html")
-
 def test(request):
     number = 0
     namels=["bebel","caio","diogo"]
