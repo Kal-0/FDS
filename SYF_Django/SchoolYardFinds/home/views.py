@@ -22,14 +22,14 @@ def page_categoria(request, foto_id):
     categories = get_object_or_404(Category, pk=foto_id)
     items = Item.objects.filter(check_sold=False).filter(category=categories.id)
     return render(request, 'categoria.html', {
-        'cats' : categories,
+        'categories' : categories,
         'pub': items,       
     })
 
 def produto_detalhes(request, foto_id):
     items = get_object_or_404(Item, pk=foto_id)
     return render(request, 'interno_publicacao.html', {
-        'pub': items,
+        'items': items,
     })
 
 def interno_pub(request):
@@ -93,7 +93,8 @@ def create_item(request):
     print(f"POST: {request.POST}")
     
     if request.method == 'POST':
-        
+        user = request.user
+        print(user)
         
         if request.POST.get("productName") != "":
             inProductName = request.POST.get("productName")
@@ -109,11 +110,17 @@ def create_item(request):
         print(inProductDescription)
         
         
-        inProductCategory = request.POST.get("productCategory")
+        inProductCategory = Category.objects.get(name = request.POST.get("productCategory"))
         print(inProductCategory)
         
         print(Category.objects.get(name = "dede"))
         
+        
+        inProductImage = request.POST.get("productImage")
+        print(inProductImage)
+        
+        
+        Item.objects.create(name=inProductName, price=inProductPrice, description=inProductDescription, category=inProductCategory, image=inProductImage, created_by = user)
         
         
     return render(request, 'base_publicacao.html', {})
