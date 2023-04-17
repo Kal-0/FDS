@@ -28,7 +28,8 @@ class Item(models.Model):
     
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    description     = models.TextField(default="Escreva sua descrição", max_length= 150, blank= True)
+    description = models.TextField(default="Escreva sua descrição", max_length= 150, blank= True)
+    profile_image = models.ImageField(upload_to="user/%Y/%m/%d/", blank=True , null=True)
 
     def __int__(self):
         return self.id

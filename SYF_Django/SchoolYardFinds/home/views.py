@@ -2,7 +2,8 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth import authenticate, login
 from django.contrib import messages
 from django.shortcuts import render, redirect
-from home.models import Category, Item
+from django.contrib.auth.models import User
+from home.models import Category, Item, Profile
 from .forms import SignupForm, ItemForm
 
 def home(request):
@@ -77,7 +78,8 @@ def publicacao_view(request):
     })
 
 def perfil(request):
-    return render(request, "perfil.html")
+    user_profile = Profile.objects.get(user=request.user)
+    return render(request, "perfil.html", {'user_profile': user_profile})
 
 def buscar(request):
     return render(request, "buscar.html")

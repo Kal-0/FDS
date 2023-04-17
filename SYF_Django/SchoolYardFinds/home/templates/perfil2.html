@@ -109,18 +109,16 @@
         </nav>
 
         <div id="page" class="p-3 mb-2" style="background-color: #2da8dd;">
-            <div class="card" style=" border: 5px solid #000000; width: 18rem;">
-              <img src="{{ user_profile.profile_image.url }}" alt="Foto de Perfil" width="auto" height="210">
-              <div class="card-body">
-                <div class="d-flex justify-content-between">
-                  <h5 class="card-title">{{ user_profile.user.username }}</h5>
-                  &nbsp;
-                  
+            <div class="card" style="border: 5px solid #000000; width: 18rem;">
+                <img src="{{ user_profile.user.profile_image.url }}" class="card-img-top" alt="{{ user_profile.user.username }}">
+                <div class="card-body">
+                    <h5 class="card-title">{{ user_profile.user.username }}</h5>
+                    <p class="card-text">{{ user_profile.description }}</p>
+                    <a href="#" class="btn btn-primary">Editar Perfil</a>
                 </div>
-                <div class="card-text" id="description" style=" border: 1px solid #000000" contenteditable="true"></div>
-                <p class="card-text">{{ user_profile.description }}</p>
-              </div>
             </div>
+        </div>
+        
             
             &nbsp;
         
