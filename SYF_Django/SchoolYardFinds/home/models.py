@@ -12,6 +12,19 @@ class Category(models.Model):
     
     def __str__(self):
         return self.name
+    
+
+from django.db import models
+from django.contrib.auth.models import User
+
+class Profile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    first_name = models.CharField(max_length=50)
+    last_name = models.CharField(max_length=50)
+    email = models.EmailField()
+    bio = models.TextField()
+    description = models.TextField(default="Escreva sua descrição", max_length=150, blank=True)
+
 
 class Item(models.Model):
     category        = models.ForeignKey(Category, related_name='items', on_delete=models.CASCADE)
