@@ -42,12 +42,14 @@ def login_user(request):
         user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)
-            return redirect('home')
+            context = {'username': username}
+            return render(request, "home.html", context)
         else:
             messages.success(request, ("There Was An Error Loggin In, Try Again..."))
             return redirect('login')
     else:
-        return render(request, "login.html")
+        context = {'username': ''}
+        return render(request, "login.html", context)
 
 def signup(request):
     if request.method == 'POST':
