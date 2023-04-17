@@ -85,11 +85,31 @@ def buscar(request):
     return render(request, "buscar.html")
 
 def create_item(request):
+    print(f"GET: {request.GET}")
+    print(f"POST: {request.POST}")
+    
     if request.method == 'POST':
-        form = ItemForm(request.POST, request.FILES)
-        if form.is_valid():
-            form.save()
-            return redirect('feed')
-    else:
-        form = Item()
-    return render(request, 'publicacao.html', {'form': form})
+        
+        
+        if request.POST.get("productName") != "":
+            inProductName = request.POST.get("productName")
+            print(inProductName)
+            
+           
+        if request.POST.get("productPrice") != None:
+            inProductPrice = request.POST.get("productPrice")
+            print(inProductPrice)
+            
+            
+        inProductDescription = request.POST.get("productDescription")
+        print(inProductDescription)
+        
+        
+        inProductCategory = request.POST.get("productCategory")
+        print(inProductCategory)
+        
+        print(Category.objects.get(name = "dede"))
+        
+        
+        
+    return render(request, 'base_publicacao.html', {})

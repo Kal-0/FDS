@@ -18,10 +18,10 @@
         <nav class="navbar navbar-expand-lg" style="background-color: #e6c9ac">
             <div class="container-fluid">
 
-                <a class="navbar-brand" href="http://127.0.0.1:5500/home.html">
+                <a class="navbar-brand" href="{% url 'home' %}">
                 <img src="https://cdn.discordapp.com/attachments/1081640134371446956/1094329263110504580/IMG_1197-removebg-preview.png" class="img" width="140" height="60" alt="">
                 </a>
-
+                
                 <div class="container">
                     <form>
                         <div class="form">
@@ -36,7 +36,7 @@
 
                     <!-- Botão de Home -->
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="http://127.0.0.1:5500/home.html">
+                        <a class="nav-link active" aria-current="page" href="{% url 'home' %}">
                             <img src="https://cdn.discordapp.com/attachments/1081640134371446956/1094364787992973462/Botao_de_Home.png" alt="Bootstrap" width="30" height="30">
                         </a>
                     </li>
@@ -72,8 +72,12 @@
                 </ul>
             </div>
         </nav>  
-      <form>
+      <form action="." method="POST">{% csrf_token %}
+         
         &nbsp;
+
+
+
         <!-- Caixa de Publicação -->
         <div class="d-flex justify-content-center align-items-center text-center" style="height: 82vh;">
             <div class="p-3 mb-2" style="background-color: #e6c9ac; width: 800px; height: 635px; display: flex; flex-direction: column; justify-content: center; align-items: center;">
@@ -93,28 +97,37 @@
                         
                     </div>
                 </div>
-                <label for="id_category">Category:</label>
-                  {{ form.category }}
+
 
                 <!-- Input do Nome-->
+                  <label for="productName"><b>Nome do Produto</b></label>
+
+                  <input type="text" class="form-control" id="productName" name="productName">
+
+                <!-- Input de categoria -->
                 <div class="row justify-content-center">
                     <div class="col-md-6">
                       <div class="form-group">
-                        <label for="productName"><b>Nome do Produto</b></label>
-                        <input type="text" class="form-control" id="productName" name="productName">
+
+                        <label for="id_category"><b>Category:</b></label>
+
+                        <input type="text" class="form-control" id="productCategory" name="productCategory">
+                        
                         
                       </div>
                     </div>
 
-                <!-- Input do Preço-->
+                  <!-- Input do Preço-->
                     <div class="col-md-6">
                       <div class="form-group">
+                        
                         <label for="productPrice"><b>Preço</b></label>
+
                         <input type="text" class="form-control" id="productPrice" name="productPrice">
                         
                       </div>
                     </div>
-                  </div>
+                </div>
 
                   <!-- Input da Descrição -->
                   <div class="row justify-content-center">
