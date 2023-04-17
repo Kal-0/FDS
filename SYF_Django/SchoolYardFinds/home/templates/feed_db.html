@@ -89,13 +89,13 @@
       <p>&nbsp;</p>
 
       <div class="card-group">
-        {% if cards %}
+        {% if pub %}
         <p>&nbsp;</p>
         <p>&nbsp;</p>
         <p>&nbsp;</p>
-        {% for items in cards %}
+        {% for items in pub %}
 
-        {% if items.Category_id == categories.id %}
+        {% if items.category_id == categories.id %}
         <div class="card" style=" border: 5px solid #000000">
           {% if items.image == "" or items.image == null %}
           <img src="https://cdn.discordapp.com/attachments/1096519466914947204/1096930839935340605/0fffcf4a571bc35e42b713f406363b71.jpg" class="card-img-top" width="300" height="300" alt="Bottons">
@@ -104,7 +104,7 @@
           {% endif %}
           <div class="card-body">
             <h5 class="card-title">{{ items.name }} R${{ items.price }}</h5>
-            <p class="card-text">{{ items.descricao }}</p>
+            <p class="card-text">{{ items.description}}</p>
             <a href="#" class="btn" style="background-color: #ecd048; color: #000000">Visualizar</a>
           </div>
         </div>

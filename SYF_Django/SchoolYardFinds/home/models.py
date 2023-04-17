@@ -14,10 +14,10 @@ class Category(models.Model):
         return self.name
 
 class Item(models.Model):
-    Category        = models.ForeignKey(Category, related_name='items', on_delete=models.CASCADE)
+    category        = models.ForeignKey(Category, related_name='items', on_delete=models.CASCADE)
     name            = models.CharField(max_length=50)
     price           = models.FloatField()
-    descricao       = models.TextField(default="Escreva sua descrição", max_length= 150, blank= True)
+    description     = models.TextField(default="Escreva sua descrição", max_length= 150, blank= True)
     image           = models.ImageField(upload_to="images/%Y/%m/%d/", blank=True , null=True)
     check_sold      = models.BooleanField(default=False)
     created_by      = models.ForeignKey(User, related_name='items', on_delete=models.CASCADE)

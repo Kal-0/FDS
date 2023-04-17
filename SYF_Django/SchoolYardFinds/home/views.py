@@ -1,10 +1,9 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth import authenticate, login
 from django.contrib import messages
-from django.contrib.auth.forms import UserCreationForm
 from django.shortcuts import render, redirect
 from home.models import Category, Item
-from .forms import SignupForm
+from .forms import SignupForm, ItemForm
 # Create your views here.
 
 def home(request):
@@ -16,7 +15,7 @@ def feed(request):
 
     return render(request, 'feed_db.html', {
         'cats' : categories,
-        'cards': items,
+        'pub': items,
     })
 
 def imagem(request, foto_id):
@@ -64,8 +63,16 @@ def signup(request):
         'form': form
     })
 
-def publicacao_view(request):
-    return render(request, 'publicacao.html')
 
 def buscar(request):
     return render(request, "buscar.html")
+
+def create_item(request):
+    if request.method == 'POST':
+        form = ItemForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect('feed')
+    else:
+        form = Item()
+    return render(request, 'publicacao.html', {'form': form})

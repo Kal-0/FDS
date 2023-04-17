@@ -1,6 +1,7 @@
 from django import forms
 from django.contrib.auth.models import User
 from django.contrib.auth.forms  import UserCreationForm
+from .models import Item
 
 class SignupForm(UserCreationForm):
     class Meta:
@@ -19,4 +20,15 @@ class SignupForm(UserCreationForm):
     password2 = forms.CharField(widget=forms.PasswordInput(attrs={
         'placeholder': 'Repeat password'
     }))
-    
+
+class ItemForm(forms.ModelForm):
+    class Meta:
+        model = Item
+        fields = ['name', 'description', 'price', 'image', 'category']
+        widgets = {
+            'name': forms.TextInput(attrs={'class': 'form-control'}),
+            'description': forms.Textarea(attrs={'class': 'form-control'}),
+            'price': forms.NumberInput(attrs={'class': 'form-control'}),
+            'image': forms.ClearableFileInput(attrs={'class': 'form-control'}),
+        }
+
