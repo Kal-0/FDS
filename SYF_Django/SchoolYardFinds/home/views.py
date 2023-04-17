@@ -95,7 +95,8 @@ def create_item(request):
     print(f"POST: {request.POST}")
     
     if request.method == 'POST':
-        
+        user = request.user
+        print(user)
         
         if request.POST.get("productName") != "":
             inProductName = request.POST.get("productName")
@@ -111,11 +112,17 @@ def create_item(request):
         print(inProductDescription)
         
         
-        inProductCategory = request.POST.get("productCategory")
+        inProductCategory = Category.objects.get(name = request.POST.get("productCategory"))
         print(inProductCategory)
         
         print(Category.objects.get(name = "dede"))
         
+        
+        inProductImage = request.POST.get("productImage")
+        print(inProductImage)
+        
+        
+        Item.objects.create(name=inProductName, price=inProductPrice, description=inProductDescription, category=inProductCategory, image=inProductImage, created_by = user)
         
         
     return render(request, 'base_publicacao.html', {})
