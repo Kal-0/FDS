@@ -98,11 +98,11 @@
         {% if items.category_id == categories.id %}
         <div class="card" style=" border: 5px solid #000000">
           {% if items.image == "" or items.image == null %}
-          <img src="https://cdn.discordapp.com/attachments/1096519466914947204/1096930839935340605/0fffcf4a571bc35e42b713f406363b71.jpg" class="card-img-top" max-width="150px" height="300px" alt="Produto">
+          <img src="https://cdn.discordapp.com/attachments/1096519466914947204/1096930839935340605/0fffcf4a571bc35e42b713f406363b71.jpg" class="card-img-top" max-width="100px" max-height="200px" alt="Produto">
           {% else %}
-          <img src="{{ items.image.url }}" class="card-img-top" max-width="150px" height="300px" alt="Produto">
+          <img src="{{ items.image.url }}" class="card-img-top" max-width="100px" height="200px" alt="Produto">
           {% endif %}
-          <div class="card-body" style="height: 200px;">
+          <div class="card-body" style="height: 400px;">
             <h5 class="card-title" style="height: 50px; overflow: hidden;">{{ items.name }} R${{ items.price }}</h5>
             <p class="card-text" style="height: 80px; overflow: hidden;">{{ items.descricption }}</p>
             <a href="{% url 'produto' items.id %}" class="btn" style="background-color: #ecd048; color: #000000">Visualizar</a>
