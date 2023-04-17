@@ -25,3 +25,10 @@ class Item(models.Model):
 
     def __str__(self):
         return self.name
+    
+class Profile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    description     = models.TextField(default="Escreva sua descrição", max_length= 150, blank= True)
+
+    def __int__(self):
+        return self.id

@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Category, Item
+from .models import Category, Item, Profile
 
 class ListandoCategory(admin.ModelAdmin):
     list_display = ("id", "name")
@@ -16,3 +16,5 @@ class ListandoItem(admin.ModelAdmin):
     list_per_page = 10
 
 admin.site.register(Item, ListandoItem)
+
+admin.site.register(Profile)
