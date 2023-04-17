@@ -5,18 +5,6 @@ from django.shortcuts import render, redirect
 from home.models import Category, Item
 from .forms import SignupForm, ItemForm
 
-
-from django.shortcuts import render
-from .models import Profile
-
-def perfil(request):
-    # Get the current user's profile
-    profile = Profile.objects.get(user=request.user)
-    # Pass the profile's description to the template
-    description = profile.description
-    return render(request, "perfil.html", {"description": description})
-
-
 def home(request):
     return render(request,"home.html")
 
@@ -87,6 +75,11 @@ def publicacao_view(request):
     return render(request, 'cadastro.html', {
         'form': form
     })
+
+def perfil(request):
+    return render(request, "perfil.html")
+    description = perfil.description
+    return render(request, "perfil.html", {"description": description}
 
 def buscar(request):
     return render(request, "buscar.html")
