@@ -32,10 +32,8 @@ def produto_detalhes(request, foto_id):
         'pub': items,
     })
 
-def test(request):
-    number = 0
-    namels=["bebel","caio","diogo"]
-    return render(request, "test.html", {"namels":namels, "number": number})
+def interno_pub(request):
+    return render(request, "interno_pub.html")
 
 def login_user(request):
     if request.method == "POST":
@@ -85,7 +83,7 @@ def publicacao_view(request):
 
 def perfil(request):
     user_profile = Profile.objects.get(user=request.user)
-    return render(request, "perfil.html", {'user_profile': user_profile})
+    return render(request, "perfilR.html", {'user_profile': user_profile})
 
 def buscar(request):
     return render(request, "buscar.html")
