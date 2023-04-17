@@ -18,12 +18,12 @@ def feed(request):
         'pub': items,
     })
 
-def imagem(request, foto_id):
+def page_categoria(request, foto_id):
     categories = get_object_or_404(Category, pk=foto_id)
-    items = Item.objects.filter(check_sold=False)
-    return render(request, 'galeria/imagem.html', {
+    items = Item.objects.filter(check_sold=False).filter(category=categories.id)
+    return render(request, 'categoria.html', {
         'cats' : categories,
-        'cards': items,       
+        'pub': items,       
     })
 
 def test(request):

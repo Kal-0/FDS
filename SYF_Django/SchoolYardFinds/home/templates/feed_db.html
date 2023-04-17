@@ -83,7 +83,7 @@
       {% if cats %}
       {% for categories in cats %}
 
-      <a href="#" class="btn" style="background-color: #ecd048; color: #000000">{{ categories.name }}</a>
+      <a href="{% url 'categoria' categories.id %}" class="btn" style="background-color: #ecd048; color: #000000">{{ categories.name }}</a>
 
       <!-- Cards de Itens para Comprar 1 (Título, Imagem, Texto e Botão para Página do Produto) -->
       <p>&nbsp;</p>

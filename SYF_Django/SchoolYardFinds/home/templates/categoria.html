@@ -86,86 +86,36 @@
 
       <!-- Cards de Itens para Comprar 1 (Título, Imagem, Texto e Botão para Página do Produto) -->
       
+      <p>&nbsp;</p>
+
       <div class="card-group">
+        {% if pub %}
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        {% for items in pub %}
+
+        
         <div class="card" style=" border: 5px solid #000000">
-          <img src="https://as2.ftcdn.net/v2/jpg/03/73/58/43/1000_F_373584353_XUmZsXVyXNIihm44KnTG9qma5QS6hkq5.jpg" class="card-img-top" width="300" height="300" alt="Maria Mole">
-          <div class="card-body">
-            <h5 class="card-title">Maria Mole 10 R$</h5>
-            <p class="card-text">Maria mole deliciosa.</p>
+          {% if items.image == "" or items.image == null %}
+          <img src="https://cdn.discordapp.com/attachments/1096519466914947204/1096930839935340605/0fffcf4a571bc35e42b713f406363b71.jpg" class="card-img-top" max-width="150px" height="300px" alt="Produto">
+          {% else %}
+          <img src="{{ items.image.url }}" class="card-img-top" max-width="150px" height="300px" alt="Produto">
+          {% endif %}
+          <div class="card-body" style="height: 200px;">
+            <h5 class="card-title" style="height: 50px; overflow: hidden;">{{ items.name }} R${{ items.price }}</h5>
+            <p class="card-text" style="height: 80px; overflow: hidden;">{{ items.descricao }}</p>
             <a href="#" class="btn" style="background-color: #ecd048; color: #000000">Visualizar</a>
           </div>
         </div>
+        
 
-      <p>&nbsp;</p>
-      <p>&nbsp;</p>
-      <p>&nbsp;</p>
-
-      <!-- Cards de Itens para Comprar 1 (Título, Imagem, Texto e Botão para Página do Produto) -->
-        <div class="card" style=" border: 5px solid #000000">
-          <img src="https://as1.ftcdn.net/v2/jpg/00/51/25/70/1000_F_51257090_nRwT7YiPRp6TTyB6YnipFrxfd7XLGQLt.jpg" class="card-img-top" width="300" height="300" alt="Brigadeiro">
-          <div class="card-body">
-            <h5 class="card-title">Brigadeiro 20 R$</h5>
-            <p class="card-text">10 unidades de brigadeiros.</p>
-            <a href="#" class="btn" style="background-color: #ecd048; color: #000000">Visualizar</a>
-          </div>
-        </div>
-
-      <p>&nbsp;</p>
-      <p>&nbsp;</p>
-      <p>&nbsp;</p>
-
-      <!-- Cards de Itens para Comprar 1 (Título, Imagem, Texto e Botão para Página do Produto) -->
-        <div class="card" style=" border: 5px solid #000000">
-          <img src="https://as2.ftcdn.net/v2/jpg/03/08/40/43/1000_F_308404381_LqyMIXDPOR6Ut1TqE2cJRQdxomGsQegc.jpg" class="card-img-top" width="300" height="300" alt="Bolo">
-          <div class="card-body">
-            <h5 class="card-title">Bolo de Brigadeiro 80 R$</h5>
-            <p class="card-text">Bolo feito com muito chocolate e brigadeiro.</p>
-            <a href="#" class="btn" style="background-color: #ecd048; color: #000000">Visualizar</a>
-          </div>
-        </div>
-      </div>
-
-      <p>&nbsp;</p>
-
-      <!-- Cards de Itens para Comprar 2 (Título, Imagem, Texto e Botão para Página do Produto) -->
-      
-      <div class="card-group">
-        <div class="card" style=" border: 5px solid #000000">
-          <img src="https://as1.ftcdn.net/v2/jpg/04/95/59/78/1000_F_495597893_3lkXtLlTqclxCmAGtm9RuRXd6qhPvv6i.jpg" class="card-img-top" width="300" height="300" alt="Bottons">
-          <div class="card-body">
-            <h5 class="card-title">Bottons 10 R$</h5>
-            <p class="card-text">Bottons de bandeiras de países.</p>
-            <a href="#" class="btn" style="background-color: #ecd048; color: #000000">Visualizar</a>
-          </div>
-        </div>
-
-      <p>&nbsp;</p>
-      <p>&nbsp;</p>
-      <p>&nbsp;</p>
-
-      <!-- Cards de Itens para Comprar 2 (Título, Imagem, Texto e Botão para Página do Produto) -->
-        <div class="card" style=" border: 5px solid #000000">
-          <img src="https://as1.ftcdn.net/v2/jpg/02/73/22/74/1000_F_273227473_N0WRQuX3uZCJJxlHKYZF44uaJAkh2xLG.jpg" class="card-img-top" width="300" height="300" alt="Pintura">
-          <div class="card-body">
-            <h5 class="card-title">Quadro 25 R$</h5>
-            <p class="card-text">Pintura abstrata.</p>
-            <a href="#" class="btn" style="background-color: #ecd048; color: #000000">Visualizar</a>
-          </div>
-        </div>
-
-      <p>&nbsp;</p>
-      <p>&nbsp;</p>
-      <p>&nbsp;</p>
-
-      <!-- Cards de Itens para Comprar 1 (Título, Imagem, Texto e Botão para Página do Produto) -->
-        <div class="card" style=" border: 5px solid #000000">
-          <img src="https://as1.ftcdn.net/v2/jpg/04/64/84/46/1000_F_464844617_HIyW9gCSfLj4JAzg92U3EsPXpZx140oT.jpg" class="card-img-top" width="300" height="300" alt="Stickers">
-          <div class="card-body">
-            <h5 class="card-title">Stickers 20 R$</h5>
-            <p class="card-text">Diversos stickers bonitos.</p>
-            <a href="#" class="btn" style="background-color: #ecd048; color: #000000">Visualizar</a>
-          </div>
-        </div>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        {% endfor %}
+        {% else %}
+        {% endif %}
       </div>
 
       <p>&nbsp;</p>

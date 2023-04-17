@@ -1,5 +1,5 @@
 from django.urls import path
-from home.views import home, feed, perfil, test, login_user, signup, create_item, buscar
+from home.views import home, feed, perfil, test, login_user, signup, create_item, buscar, page_categoria
 
 urlpatterns = [
     path('home/', home, name='home'),#2
@@ -10,4 +10,5 @@ urlpatterns = [
     path('signup/', signup, name='signup'),#1.1
     path('publicacao/', create_item, name='create_item'),
     path('buscar', buscar, name='buscar'),
+    path('categoria/<int:foto_id>', page_categoria, name='categoria')
 ]
