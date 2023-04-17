@@ -5,6 +5,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.shortcuts import render, redirect
 from home.models import Category, Item
 from .forms import SignupForm
+from .models import Profile
 # Create your views here.
 
 def home(request):
@@ -29,6 +30,16 @@ def imagem(request, foto_id):
 
 def perfil(request):
     return render(request, "perfil.html")
+
+def save_description(request):
+    if request.method == 'POST':
+        description = request.POST.get('description', '')
+        profile, created = Profile.objects.get_or_create(user=request.user)
+        profile.description = description
+        profile.save()
+        return redirect('home')
+    else:
+        return render(request, 'edit_profile.html')
 
 def test(request):
     number = 0
