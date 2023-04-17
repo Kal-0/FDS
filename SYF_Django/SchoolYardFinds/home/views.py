@@ -31,16 +31,6 @@ def imagem(request, foto_id):
 def perfil(request):
     return render(request, "perfil.html")
 
-def save_description(request):
-    if request.method == 'POST':
-        description = request.POST.get('description', '')
-        profile, created = Profile.objects.get_or_create(user=request.user)
-        profile.description = description
-        profile.save()
-        return redirect('home')
-    else:
-        return render(request, 'edit_profile.html')
-
 def test(request):
     number = 0
     namels=["bebel","caio","diogo"]
