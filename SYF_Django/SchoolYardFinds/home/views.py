@@ -22,14 +22,14 @@ def page_categoria(request, foto_id):
     categories = get_object_or_404(Category, pk=foto_id)
     items = Item.objects.filter(check_sold=False).filter(category=categories.id)
     return render(request, 'categoria.html', {
-        'cats' : categories,
+        'categories' : categories,
         'pub': items,       
     })
 
 def produto_detalhes(request, foto_id):
     items = get_object_or_404(Item, pk=foto_id)
     return render(request, 'interno_publicacao.html', {
-        'pub': items,
+        'items': items,
     })
 
 def test(request):
