@@ -5,7 +5,6 @@ from django.contrib.auth.forms import UserCreationForm
 from django.shortcuts import render, redirect
 from home.models import Category, Item
 from .forms import SignupForm
-from .models import Profile
 # Create your views here.
 
 def home(request):
