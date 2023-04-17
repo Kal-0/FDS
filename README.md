@@ -44,7 +44,7 @@ FIGMA:
 
 GOOGLE DRIVE:
 
-<[Sketch e Storyboars](https://drive.google.com/drive/folders/1fE_FwNUclmHxMSdsRN0t-QUT1UX3w3iC)>
+<[Sketch e Storyboards](https://drive.google.com/drive/folders/1fE_FwNUclmHxMSdsRN0t-QUT1UX3w3iC)>
 
 <[Screencasts](https://drive.google.com/drive/folders/1tLMSk-QiT_0Hup6dKK3AOzqBuoBOML4j)>
 
