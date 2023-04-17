@@ -15,9 +15,9 @@
 
 ## 📁 Backlog e Painel
 
-<img src="https://cdn.discordapp.com/attachments/1081640134371446956/1089871336920317982/Captura_de_tela_2023-03-27_081641.png" width="1000px;" alt="Backlog"/><br>
+<img src="https://cdn.discordapp.com/attachments/1081640134371446956/1097659916069650542/Captura_de_tela_2023-04-17_200800.png" width="1000px;" alt="Backlog"/><br>
 
-<img src="https://cdn.discordapp.com/attachments/1081640134371446956/1089871396575916032/Captura_de_tela_2023-03-27_081613.png" width="1000px;" alt="Painel"/><br>
+<img src="https://cdn.discordapp.com/attachments/1081640134371446956/1097659915838955601/Captura_de_tela_2023-04-17_200730.png" width="1000px;" alt="Painel"/><br>
 
 ## 💻 Pré-requisitos
 
