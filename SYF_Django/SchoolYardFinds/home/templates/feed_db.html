@@ -84,6 +84,7 @@
       {% for categories in cats %}
 
       <a href="#" class="btn" style="background-color: #ecd048; color: #000000">{{ categories.name }}</a>
+
       <!-- Cards de Itens para Comprar 1 (Título, Imagem, Texto e Botão para Página do Produto) -->
       <p>&nbsp;</p>
 
@@ -101,9 +102,9 @@
           {% else %}
           <img src="{{ items.image.url }}" class="card-img-top" max-width="150px" height="300px" alt="Produto">
           {% endif %}
-          <div class="card-body">
-            <h5 class="card-title">{{ items.name }} R${{ items.price }}</h5>
-            <p class="card-text">{{ items.descricao }}</p>
+          <div class="card-body" style="height: 200px;">
+            <h5 class="card-title" style="height: 50px; overflow: hidden;">{{ items.name }} R${{ items.price }}</h5>
+            <p class="card-text" style="height: 80px; overflow: hidden;">{{ items.descricao }}</p>
             <a href="#" class="btn" style="background-color: #ecd048; color: #000000">Visualizar</a>
           </div>
         </div>
@@ -117,12 +118,13 @@
         {% else %}
         {% endif %}
       </div>
-      
+
       <p>&nbsp;</p>
-      
+
       {% endfor %}
       {% else %}
       {% endif %}
+
       <!-- JavaScript (Opcional) -->
       <!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->
       <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
