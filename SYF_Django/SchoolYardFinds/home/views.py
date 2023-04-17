@@ -131,4 +131,5 @@ def create_item(request):
         
     return render(request, 'base_publicacao.html', {})
 
+
 # aaaaa
