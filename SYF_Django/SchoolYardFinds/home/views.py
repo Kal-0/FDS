@@ -50,7 +50,11 @@ def login_user(request):
             
             #cria perfil
             print(f"user: {request.user}")
-            Profile.objects.create(user=request.user)
+            print(Profile.objects.filter(user=request.user))
+            if not Profile.objects.filter(user=request.user):
+                
+                print("criou")
+                Profile.objects.create(user=request.user)
             
             context = {'username': username}
             return render(request, "home.html", context)
@@ -94,10 +98,12 @@ def publicacao_view(request):
 
 def perfil(request):
     try:
+        print(f"================================={Profile.objects.get(user=request.user)}")
+        print(f"================================={Profile.objects.get(user=request.user)}")
         user_profile = Profile.objects.get(user=request.user)
     except Profile.DoesNotExist:
         # Handle the case where the user does not have a profile
-        return redirect('create_profile')
+        return redirect('login')
     return render(request, "perfil.html", {'user_profile': user_profile})
 
 def buscar(request):
@@ -124,11 +130,16 @@ def create_item(request):
         inProductDescription = request.POST.get("productDescription")
         print(inProductDescription)
         
-        if request.POST.get("productCategory") != "":
+        inProductCategory=None
+        if Category.objects.filter(name=request.POST.get("productCategory")):
             inProductCategory = Category.objects.get(name = request.POST.get("productCategory"))
             print(inProductCategory)
         
-        print(Category.objects.get(name = request.POST.get("productCategory")))
+            print(Category.objects.get(name= request.POST.get("productCategory")))
+            
+        else:
+            Category.objects.create(name= request.POST.get("productCategory"))
+            inProductCategory = Category.objects.get(name = request.POST.get("productCategory"))
         
         
         inProductImage = request.POST.get("productImage")
