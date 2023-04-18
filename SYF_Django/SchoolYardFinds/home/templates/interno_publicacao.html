@@ -88,7 +88,11 @@
 
             <ul style="display: flex;">
                 <li style="list-style: none; margin: auto; padding: 3%;">
+                  {% if items.image == "" or items.image == null %}
+                    <img src="https://cdn.discordapp.com/attachments/1096519466914947204/1096930839935340605/0fffcf4a571bc35e42b713f406363b71.jpg" alt="maria_amiga">
+                  {% else %}
                     <img src="{{ items.image.url }}" alt="maria_amiga">
+                  {% endif %}
                 </li>
                 
                 <li style="list-style: none; padding: 3%;">
