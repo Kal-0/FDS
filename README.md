@@ -30,7 +30,7 @@ Antes de começar, verifique se você atendeu aos seguintes requisitos:
 
 ## 🚀 Schoolyard Find
 
-Para instalar o Schoolyard Find, siga estas etapas:
+Ferramentas:
 
 JIRA:
 
@@ -48,7 +48,11 @@ GOOGLE DRIVE:
 
 <[Screencasts](https://drive.google.com/drive/folders/1tLMSk-QiT_0Hup6dKK3AOzqBuoBOML4j)>
 
-<[Pair Programming](https://drive.google.com/drive/folders/1441ZlJdDW0m1_KSqb98R9jETa0zYaEn8)><br></br>
+<[Pair Programming](https://drive.google.com/drive/folders/1441ZlJdDW0m1_KSqb98R9jETa0zYaEn8)>
+
+<[Diagrama de atividades]([https://drive.google.com/drive/folders/1441ZlJdDW0m1_KSqb98R9jETa0zYaEn8](https://drive.google.com/drive/folders/17ZE7ORyRPMqHQ2eKl1c-UdGEq4xrpw7K?usp=share_link))>
+
+<br></br>
 
 
 ## ☕ Usando Schoolyard Find
