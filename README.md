@@ -7,7 +7,7 @@
 ![GitHub Files](https://img.shields.io/github/directory-file-count/Kal-0/FDS)
 ![GitHub repo size](https://img.shields.io/github/repo-size/Kal-0/FDS)
 ![GitHub language count](https://img.shields.io/github/languages/count/Kal-0/FDS)
-![Bitbucket open issues][(https://img.shields.io/github/issues-raw/kal-0/FDS)]
+![Bitbucket open issues](https://img.shields.io/github/issues-raw/kal-0/FDS)
 ![Bitbucket open pull requests](https://img.shields.io/bitbucket/pr-raw/Kal-0/FDS)
 
 <img src="https://media.discordapp.net/attachments/1081640134371446956/1094329263110504580/IMG_1197-removebg-preview.png?width=1548&height=644" alt="Logo do Projeto">
