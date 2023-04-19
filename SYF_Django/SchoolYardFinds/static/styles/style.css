@@ -1,0 +1,47 @@
+.imagem__imagem {
+    width: 500px;
+    border-radius: 20px;
+  }
+
+.botao_amarelo {
+    background-color: #ecd048; 
+    color: #000000;
+    border-radius: 5px;
+  }
+
+
+/* CSS QUE ESTAVA EM PERFIL */
+.card-img-top {
+    max-height: 200px;
+    object-fit: cover;
+}
+
+#page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #2da8dd;
+}
+
+.card {
+    border: 5px solid #000000;
+    width: 400px;
+    margin-right: 30px;
+    margin-left: 30px;
+}
+
+#profile-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-card {
+    background-color: #ecd048;
+    color: #000000;
+    width: 300px;
+    height: 100px;
+    line-height: 90px;
+}
+

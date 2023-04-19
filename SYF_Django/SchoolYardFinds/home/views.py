@@ -108,9 +108,6 @@ def perfil(request):
         'pub': items,
         })
 
-def buscar(request):
-    return render(request, "home/buscar.html")
-
 def create_item(request):
     print(f"GET: {request.GET}")
     print(f"POST: {request.POST}")
@@ -151,7 +148,7 @@ def create_item(request):
         Item.objects.create(name=inProductName, price=inProductPrice, description=inProductDescription, category=inProductCategory, image=inProductImage, created_by = user)
         
         
-    return render(request, 'home/base_publicacao.html', {})
+    return render(request, 'home/criando_publicacao.html', {})
 
 
 # aaaaa

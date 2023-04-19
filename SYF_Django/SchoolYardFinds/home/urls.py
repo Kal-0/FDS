@@ -1,5 +1,5 @@
 from django.urls import path
-from home.views import home, feed, perfil, login_user, signup, create_item, buscar, page_categoria, produto_detalhes
+from home.views import home, feed, perfil, login_user, signup, create_item, page_categoria, produto_detalhes
 
 urlpatterns = [
     path('home/', home, name='home'),#2

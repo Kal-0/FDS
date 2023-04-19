@@ -1,0 +1,61 @@
+{% load static %}
+
+ <!-- Barra de Navegação (Logo, Pesquisa, Home, Carrinho e Perfil) -->
+<nav class="navbar navbar-expand-lg" style="background-color: #e6c9ac">
+    <div class="container-fluid">
+
+      <a class="navbar-brand" href="{% url 'home' %}">
+        <img src="https://cdn.discordapp.com/attachments/1097961194427514930/1097961213377380395/image.png" class="img" width="117" height="74" alt="">
+      </a>
+
+        <div class="container">
+          <form>
+            <div class="form">
+              <div class="col-xs-3">
+                <input class="form-control" id="ex3" placeholder="Pesquisar" type="text">
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+          <!-- Botão de Home -->
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{% url 'home' %}">
+              <img src="https://cdn.discordapp.com/attachments/1081640134371446956/1094364787992973462/Botao_de_Home.png" alt="Bootstrap" width="30" height="30">
+            </a>
+          </li>
+
+          <!-- Botão de Carrinho -->
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">
+              <img src="https://cdn.discordapp.com/attachments/1081640134371446956/1094731666582413363/Botao_Carrinho.png" alt="Bootstrap" width="30" height="30">
+            </a>            
+          </li>
+
+          <!-- Botão de Chat -->
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">
+              <img src="https://cdn.discordapp.com/attachments/1081640134371446956/1094364787699351602/Botao_Chat.png" alt="Bootstrap" width="30" height="30">
+            </a>
+          </li>
+
+          <!-- Botão de Perfil -->
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{% url 'perfil' %}">
+              <img src="https://cdn.discordapp.com/attachments/1081640134371446956/1094329727378006066/image.png" alt="Bootstrap" width="30" height="30">
+            </a>            
+          </li>
+
+          <!-- Botão de Configuração -->
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">
+              <img src="https://cdn.discordapp.com/attachments/1081640134371446956/1094731666901188709/Botao_Configuracao.png" alt="Bootstrap" width="30" height="30">
+            </a>            
+          </li>
+
+        </ul>
+
+    </div>
+  </nav>
