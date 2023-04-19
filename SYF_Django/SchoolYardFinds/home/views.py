@@ -97,14 +97,16 @@ def publicacao_view(request):
     })
 
 def perfil(request):
+    items = Item.objects.filter(check_sold=False)
     try:
-        print(f"================================={Profile.objects.get(user=request.user)}")
-        print(f"================================={Profile.objects.get(user=request.user)}")
         user_profile = Profile.objects.get(user=request.user)
     except Profile.DoesNotExist:
         # Handle the case where the user does not have a profile
         return redirect('login')
-    return render(request, "perfil.html", {'user_profile': user_profile})
+    return render(request, "perfil.html", {
+        'user_profile': user_profile,
+        'pub': items,
+        })
 
 def buscar(request):
     return render(request, "buscar.html")
