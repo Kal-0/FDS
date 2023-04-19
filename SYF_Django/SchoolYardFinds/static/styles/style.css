@@ -1,3 +1,21 @@
+.imagem__conteudo {
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    width: 500px;
+}
+
+.imagem__imagem2 {
+    width: 100px;
+    border-radius: 20px;
+  }
+
+.icone_barra {
+    width: 30px;
+    height: 30px;
+}
+
 .imagem__imagem {
     width: 500px;
     border-radius: 20px;
@@ -8,6 +26,17 @@
     color: #000000;
     border-radius: 5px;
   }
+
+.logo_grande{
+    width: 846px;
+    height: 216px;
+}
+
+.logo_menor{
+    width: 117px;
+    height: 74px;
+}
+
 
 
 /* CSS QUE ESTAVA EM PERFIL */
