@@ -33,7 +33,7 @@
         <div class="card col-md-4 mb-4">
           <p>&nbsp;</p>
           {% if items.image == "" or items.image == null %}
-          <img src="https://cdn.discordapp.com/attachments/1096519466914947204/1096930839935340605/0fffcf4a571bc35e42b713f406363b71.jpg" class="img" alt="Produto">
+          <img src="{% static '/assets/imagens/home/not_found.png' %}" class="img" alt="Produto">
           {% else %}
           <img src="{{ items.image.url }}" class="img" alt="Produto">
           {% endif %}

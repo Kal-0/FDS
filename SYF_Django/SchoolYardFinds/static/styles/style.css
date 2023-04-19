@@ -1,16 +1,3 @@
-.imagem__conteudo {
-    background-color: transparent;
-    display: flex;
-    flex-direction: column;
-    border-radius: 20px;
-    width: 500px;
-}
-
-.imagem__imagem2 {
-    width: 100px;
-    border-radius: 20px;
-  }
-
 .icone_barra {
     width: 30px;
     height: 30px;
