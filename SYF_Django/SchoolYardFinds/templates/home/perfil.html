@@ -3,13 +3,13 @@
 {% block content %}
 
   
-  <body>
+  <body style="background-color: #2da8dd">
     <bs-body-color>
     
         <!-- Barra de Navegação (Logo, Pesquisa, Home, Carrinho e Perfil) -->
         {% include 'home/partials/_barra.html'%}
 
-        <div id="page" class="p-3 mb-2" style="background-color: #2da8dd;">
+        <div id="page" class="p-3 mb-2">
             <div class="card" style=" border: 5px solid #000000; width: 18rem;">
               {% if user_profile.profile_image == "" or user_profile.profile_image == null %}
               <img src="https://cdn.discordapp.com/attachments/1096519466914947204/1096930839935340605/0fffcf4a571bc35e42b713f406363b71.jpg" alt="Foto de Perfil" width="auto" height="210">

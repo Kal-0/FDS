@@ -2,13 +2,14 @@
 {% load static %}
 {% block content %}
 
-  <body>
+  <body style="background-color: #414141; min-height: 700px;">
     <bs-body-color>
     <!-- Barra de Navegação (Logo, Pesquisa, Home, Carrinho e Perfil) -->
     {% include 'home/partials/_barra.html'%}
 
 
-    <div class="p-3 mb-2" style="background-color: #414141; min-height: 700px;">
+    <div class="p-3 mb-2">
+        &nbsp;
         <div class="p-3 mb-2" style="background-color: #2da8dd; min-height: 700px;">
             <h1>{{ items.name }}</h1>
             <p style="font-size: 30px;">
