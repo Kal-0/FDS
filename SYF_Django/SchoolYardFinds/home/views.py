@@ -13,7 +13,7 @@ def feed(request):
     items = Item.objects.filter(check_sold=False)
     categories = Category.objects.all()
 
-    return render(request, 'home/feed_db.html', {
+    return render(request, 'home/feed.html', {
         'cats' : categories,
         'pub': items,
     })

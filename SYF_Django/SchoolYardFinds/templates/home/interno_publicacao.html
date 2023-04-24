@@ -12,11 +12,11 @@
         &nbsp;
         <div class="p-3 mb-2" style="background-color: #2da8dd; min-height: 700px;">
             <h1>{{ items.name }}</h1>
-            <p style="font-size: 30px;">
-                <b>preço a declarar: R$ {{ items.price }}</b> 
+            <p style="font-size: 27px;">
+                <b>{{ items.created_by }}</b> 
             </p>
             <p style="font-size: 20px;">
-                <b>{{ items.category }}</b> 
+                <b>R${{ items.price }} || {{ items.category }}</b> 
             </p>
 
             <ul style="display: flex;">
@@ -34,17 +34,17 @@
                         <p>
                           {{ items.description }}
                         </p>
-                        <button style="background-color: #ecd048; color: black; height: 50px; border-radius: 10px;" onclick="alert('Item adicionado ao carrinho!')">
+                        <button class="botao_amarelo" onclick="alert('Item adicionado ao carrinho!')">
                             <b>Adicionar ao carrinho</b>
                         </button><br><br>
-                        <button style="background-color: #ecd048; color: black; height: 50px; border-radius: 10px;"onclick="alert('Item comprado!')">
+                        <button class="botao_amarelo"onclick="alert('Item comprado!')">
                             <b>Comprar agora</b>
                         </button><br><br>
                         <button class="botao_amarelo" onclick="alert('Item foi favoritado!')">
                             <b>Favoritar</b>
                         </button><br><br>
                         
-                        <button style="background-color: #ecd048; color: black; height: 50px; border-radius: 10px;">
+                        <button class="botao_amarelo">
                             <b>Aba de comentários</b>
                         </button><br><br>
 
@@ -53,7 +53,7 @@
                 </li>
             </ul>
             <a href="javascript:history.back()">
-                <button style="background-color: #ecd048; color: black; width: 10%; height: 50px; border-radius: 10px;">
+                <button class="botao_amarelo">
                     <b>Voltar</b>
                 </button>
             </a>

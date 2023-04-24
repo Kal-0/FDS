@@ -8,10 +8,11 @@
     {% include 'home/partials/_barra.html'%}
     <div class="p-3 mb-2">
 
-        <br></br>
+        {% if cats %}
+        {% for categories in cats %}
 
         <!-- Botão de Categorias 1 -->
-        <a href="#" class="botao_amarelo">{{ categories.name }}</a>
+        <a href="{% url 'categoria' categories.id %}" class="botao_amarelo">{{ categories.name }}</a>
 
 
 
@@ -22,6 +23,8 @@
             <ul class="cards__lista">
                 {% if pub %}
                 {% for items in pub %}
+
+                {% if items.category_id == categories.id %}
                 <li class="card_feed">
                     {% if items.image == "" or items.image == null %}
                     <img class="card_image" src="{% static '/assets/imagens/home/not_found.png' %}" alt="Produto">
@@ -34,12 +37,18 @@
                         <a href="{% url 'produto' items.id %}" class="botao_amarelo">Visualizar</a>
                     </div>
                 </li>
+                {% else %}
+                {% endif %}
 
                 {% endfor %}
                 {% else %}
                 {% endif %}
             </ul>
         </div>
+
+        {% endfor %}
+        {% else %}
+        {% endif %}
 
         <!-- JavaScript (Opcional) -->
         <!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->
@@ -55,7 +64,7 @@
     </div>
     <!-- Barra de Navegação (Logo, Pesquisa, Home, Carrinho e Perfil) -->
 
-
+    {% include 'home/partials/_footer.html'%}
 
 </body>
 
