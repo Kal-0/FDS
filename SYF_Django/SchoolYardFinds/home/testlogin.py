@@ -2,7 +2,7 @@ from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
 
 # Configura o driver do Selenium
-driver = webdriver.Chrome(ChromeDriverManager().install())
+driver = webdriver.Chrome(executable_path=r"SYF_Django/SchoolYardFinds/chromedriver.exe")
 
 # Acessa a página de login
 driver.get('http://localhost:8000/login/')
