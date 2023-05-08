@@ -64,6 +64,27 @@
     height: 206px;
 }
 
+.footer_cpy{
+    background-color: #e6c9ac;
+    /* developy by Life Thread Devs */
+
+    position: absolute;
+    width: 100%;
+    height: 70px;
+
+}
+
+.footer_texto{
+    font-family: 'Domine';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 60px;
+    text-align: center;
+
+    color: #414141;
+}
+
 
 /* CSS QUE ESTAVA EM PERFIL */
 .card-img-top {
