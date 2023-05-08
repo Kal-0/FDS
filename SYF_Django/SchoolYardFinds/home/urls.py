@@ -1,5 +1,5 @@
 from django.urls import path
-from home.views import home, feed, perfil, login_user, signup, create_item, page_categoria, produto_detalhes
+from home.views import home, feed, perfil, login_user, signup, create_item, page_categoria, produto_detalhes, carrinho
 from django.contrib.auth.views import LogoutView
 
 urlpatterns = [
@@ -12,4 +12,5 @@ urlpatterns = [
     path('categoria/<int:foto_id>', page_categoria, name='categoria'),
     path('produto/<int:foto_id>', produto_detalhes, name='produto'),
     path('logout/', LogoutView.as_view(), name='logout'),
+    path('carrinho/', carrinho, name='carrinho'),
 ]

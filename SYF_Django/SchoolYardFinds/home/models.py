@@ -33,3 +33,10 @@ class Profile(models.Model):
 
     def __int__(self):
         return self.id
+
+class Carrinho(models.Model):
+    user = models.ForeignKey(Profile, related_name='list_car', on_delete=models.CASCADE)
+    itens_carrinho = models.ForeignKey(Item, related_name='list_car', on_delete=models.CASCADE)
+
+    def __int__(self):
+        return self.user

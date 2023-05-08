@@ -3,7 +3,7 @@ from django.contrib.auth import authenticate, login
 from django.contrib import messages
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
-from home.models import Category, Item, Profile
+from home.models import Category, Item, Profile, Carrinho
 from .forms import SignupForm, ItemForm
 
 def home(request):
@@ -150,5 +150,13 @@ def create_item(request):
         
     return render(request, 'home/criando_publicacao.html', {})
 
+def carrinho(request):
+    user_profile = Profile.objects.get(user=request.user)
+    user_car = Carrinho.objects.filter(user = user_profile.id)
+    items = Item.objects.filter(check_sold=False)
 
+    return render(request, "home/teste_carrinho.html", {
+        'user_carrinho': user_car,
+        'pub': items,
+        })
 # aaaaa
