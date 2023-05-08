@@ -1,8 +1,12 @@
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
+from selenium.webdriver.chrome.service import Service
 
-# Configura o driver do Selenium
-driver = webdriver.Chrome(executable_path=r"C:\Users\mgand\OneDrive\Área de Trabalho\FDS\chromedriver_win32")
+# Cria um objeto Service com o caminho do driver
+service = Service(ChromeDriverManager().install())
+
+# Configura o driver do Selenium com o objeto Service
+driver = webdriver.Chrome(service=service)
 
 # Acessa a página de login
 driver.get('http://localhost:8000/login/')
