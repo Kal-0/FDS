@@ -68,7 +68,9 @@
     background-color: #e6c9ac;
     /* developy by Life Thread Devs */
 
-    position: absolute;
+    position: fixed;
+    right: 0;
+    top: 94%;
     width: 100%;
     height: 70px;
 
