@@ -22,9 +22,9 @@
             <ul style="display: flex;">
                 <li style="list-style: none; margin: auto; padding: 3%;">
                   {% if items.image == "" or items.image == null %}
-                    <img class="imagem__imagem" src="{% static '/assets/imagens/home/not_found.png' %}" alt="maria_amiga">
+                    <img class="imagem__imagem" src="{% static '/assets/imagens/home/not_found.png' %}" alt="imagem">
                   {% else %}
-                    <img class="imagem__imagem" src="{{ items.image.url }}" alt="maria_amiga">
+                    <img class="imagem__imagem" src="{{ items.image.url }}" alt="imagem">
                   {% endif %}
                 </li>
                 
