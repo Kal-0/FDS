@@ -159,4 +159,3 @@ def carrinho(request):
         'user_carrinho': user_car,
         'pub': items,
         })
-# aaaaa
