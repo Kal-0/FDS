@@ -46,7 +46,9 @@ FIGMA:
 
 GOOGLE DRIVE:
 
-<[Sketch e Storyboards](https://drive.google.com/drive/folders/1fE_FwNUclmHxMSdsRN0t-QUT1UX3w3iC)>
+<[Sketchs](https://drive.google.com/drive/folders/1fE_FwNUclmHxMSdsRN0t-QUT1UX3w3iC)>
+
+<[Storyboards](https://www.figma.com/file/2ip4H8uwjQ2fh1LfifG0ys/Prot%C3%B3tipo-Lo-Fi?type=design&node-id=200%3A19&t=aEKpXn9853zZryfc-1)>
 
 <[Screencasts](https://drive.google.com/drive/folders/1tLMSk-QiT_0Hup6dKK3AOzqBuoBOML4j)>
 
