@@ -123,3 +123,22 @@
     line-height: 90px;
 }
 
+.card_image_carrinho {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 15px 0px 0px 15px;
+    margin-right: 15px;
+}
+
+.carrinho_texto_titulo{
+    font-family: 'Domine';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 60px;
+    text-align: center;
+
+    color: #e6c9ac;
+}
+
