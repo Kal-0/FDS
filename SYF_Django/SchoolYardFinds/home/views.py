@@ -159,3 +159,6 @@ def carrinho(request):
         'user_carrinho': user_car,
         'pub': items,
         })
+
+def edit_profile(request):
+    return(request, "home/edit_profile.html")
