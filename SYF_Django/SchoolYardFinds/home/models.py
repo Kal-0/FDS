@@ -37,6 +37,7 @@ class Profile(models.Model):
 class Carrinho(models.Model):
     user = models.ForeignKey(Profile, related_name='list_car', on_delete=models.CASCADE)
     itens_carrinho = models.ForeignKey(Item, related_name='list_car', on_delete=models.CASCADE)
+    status = models.BooleanField(default="True")
 
     def __int__(self):
         return self.user

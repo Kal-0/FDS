@@ -155,10 +155,13 @@ def carrinho(request):
     user_car = Carrinho.objects.filter(user = user_profile.id)
     items = Item.objects.filter(check_sold=False)
 
-    return render(request, "home/teste_carrinho.html", {
+    return render(request, "home/carrinho.html", {
         'user_carrinho': user_car,
         'pub': items,
         })
 
 def edit_profile(request):
-    return(request, "home/edit_profile.html")
+    user_profile = Profile.objects.get(user=request.user)
+    return(request, "home/edit_profile.html", {
+        'user_profile': user_profile,
+        })
