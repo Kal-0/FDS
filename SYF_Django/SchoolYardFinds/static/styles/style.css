@@ -69,8 +69,7 @@
     /* developy by Life Thread Devs */
 
     position: fixed;
-    right: 0;
-    top: 94%;
+    bottom: 0;
     width: 100%;
     height: 70px;
 
@@ -141,4 +140,18 @@
 
     color: #e6c9ac;
 }
+
+.card_carrinho {
+    background-color: #ffffff;
+    border: 5px solid #000000;
+    border-radius: 20px;
+    width: 90vw ;
+    height: 309px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-right: 15px;
+    margin-left: 15px;
+}
+
+
 

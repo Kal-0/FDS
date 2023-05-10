@@ -163,3 +163,18 @@ def carrinho(request):
 def edit_profile(request):
     user_profile = Profile.objects.get(user=request.user)
     return render(request, "home/edit_profile.html", {'user_profile': user_profile, }) 
+
+from django.shortcuts import get_object_or_404, redirect
+from .models import Item, Carrinho
+
+def add_to_cart(request, item_id):
+    item = get_object_or_404(Item, id=item_id)
+
+    # Cria um objeto Carrinho com o usuário atual e o item selecionado
+    cart_item = Carrinho.objects.create(
+        user=request.user.profile,
+        itens_carrinho=item
+    )
+
+    # Redireciona o usuário de volta ao item que eles acabaram de adicionar ao carrinho
+    return redirect('produto', foto_id=item.id)
