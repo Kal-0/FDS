@@ -8,14 +8,11 @@
     {% include 'home/partials/_barra.html'%}
     <div class="p-3 mb-2">
 
-        <!-- Botão de Categorias 1 -->
         <p class="carrinho_texto_titulo"> CARRINHO </p>
        {% if user_carrinho %}
        {% for user_car in user_carrinho %}
-
-        <!-- Cards de Itens para Comprar 1 (Título, Imagem, Texto e Botão para Página do Produto) -->
         
-
+        <!-- criar uma variavel contadorar, vai somar os pressos do intens no carrinho -->
         <div class="card-group">
 
             <ul class="cards__lista">
@@ -23,6 +20,9 @@
                 {% for items in pub %}
 
                 {% if items == user_car.itens_carrinho %}
+
+                <!-- Adicionar a variavel dentro desse if desse loop, adicionar o presso que pode ser chamado do db assim: {{ items.price }}-->
+
 
                 <div class="card mb-3" style="width: 1400px; height: 309px; border-radius: 20px;">
                     <div class="row g-0">
@@ -35,7 +35,7 @@
                       </div>
                       <div class="col-md-8">
                         <div class="card-body">
-                            <p class="card-text" style="height: 20px; overflow: hidden;">{{ items.category }} || R${{ items.price }}</p>
+                            <p class="card-text" style="height: 20px; overflow: hidden;">{{ items.category }} || R${{ items.price }}</p> 
                             <h5 class="card-title" style="height: 50px; overflow: hidden;">{{ items.name }}</h5>
                             <p class="card-text" style="height: 80px; overflow: hidden;">{{ items.description  }}</p>
                             <a href="{% url 'produto' items.id %}" class="botao_amarelo">Visualizar</a> 
@@ -50,15 +50,16 @@
 
                 {% endfor %}
                 {% else %}
+                <!-- criar aqui um html para carrinho vasio -->
                 {% endif %}
             </ul>
         </div>
 
+        <!-- imprimir o presso total aqui, usando no texto a mesma classe que ta escrito carrinho no inicio, pra puchar o css -->
+
         {% endfor %}
         {% else %}
-        <div>
-            teste
-        </div>
+        <!-- repitir html carrinho vasio -->
         {% endif %}
 
         <!-- JavaScript (Opcional) -->

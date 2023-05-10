@@ -1,6 +1,5 @@
 # FDS
 # Schoolyard Finds
-## link do site: http://schoolyardfinds.sa-east-1.elasticbeanstalk.com
 
 <!---Esses são exemplos. Veja https://shields.io para outras pessoas ou para personalizar este conjunto de escudos. Você pode querer incluir dependências, status do projeto e informações de licença aqui--->
 
@@ -11,9 +10,11 @@
 ![Bitbucket open pull requests](https://img.shields.io/bitbucket/pr-raw/Kal-0/FDS)
 ![Bitbucket Commits/Year](https://img.shields.io/github/commit-activity/y/kal-0/FDS)
 
-<img src="https://media.discordapp.net/attachments/1081640134371446956/1094329263110504580/IMG_1197-removebg-preview.png?width=1548&height=644" alt="Logo do Projeto">
+<img src="https://media.discordapp.net/attachments/938158080733110393/1105822709268611162/image.png?width=1524&height=450" alt="Logo do Projeto">
 
 > Esse projeto foi feito para a comunidade da nossa universidade, com o objetivo de facilitar o comércio entre os membros das faculdades, por meio de uma plataforma de comunicação, onde seus usuários poderam publicar produtos que desejam vender, e mostrar interesse sobre os itens de outros usuários, para então, negociarem de forma mais rápida e concreta.
+
+<[Link para site](http://schoolyardfinds.sa-east-1.elasticbeanstalk.com)><br></br>
 
 ## 📁 Backlog e Painel
 
