@@ -162,6 +162,4 @@ def carrinho(request):
 
 def edit_profile(request):
     user_profile = Profile.objects.get(user=request.user)
-    return(request, "home/edit_profile.html", {
-        'user_profile': user_profile,
-        })
+    return render(request, "home/edit_profile.html", {'user_profile': user_profile, }) 
