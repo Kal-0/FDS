@@ -37,6 +37,7 @@ jobs:
         chromedriver --url-base-/wd/hub &
     - name: Run local Server
       run: |
+        cd SYF_Django/SchoolYardFinds 
         python manage.py runserver &
         sleep 5
         python manage.py test
