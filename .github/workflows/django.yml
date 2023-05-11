@@ -27,7 +27,10 @@ jobs:
         wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
         sudo apt install ./google-chrome-stable_current_amd64.deb
         python -m pip install --upgrade pip
+        cd SYF_Django/SchoolYardFinds 
         pip install -r requirements.txt
+        cd ..
+        cd ..
         pip install msedge-selenium-tools
     - uses: nanasess/setup-chromedriver@v2
     - run: |

@@ -37,12 +37,12 @@
 
                         <form action="{% url 'add_to_cart' item_id=items.id %}" method="POST">
                             {% csrf_token %}
-                            <button class="botao_amarelo" type="submit">
+                            <button class="botao_amarelo" type="submit" onclick="alert('Adicionado ao carrinho!')">
                               <b>Adicionar ao carrinho</b>
                             </button><br><br>
                         </form>
-                        <button class="botao_amarelo"onclick="alert('Item comprado!')">
-                            <b>Comprar agora</b>
+                        <button class="botao_amarelo"onclick="alert('Negociação aberta!')">
+                            <b>Abrir Negociação</b>
                         </button><br><br>
                         <button class="botao_amarelo" onclick="alert('Item foi favoritado!')">
                             <b>Favoritar</b>

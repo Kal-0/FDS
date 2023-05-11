@@ -152,7 +152,7 @@ def create_item(request):
 
 def carrinho(request):
     user_profile = Profile.objects.get(user=request.user)
-    user_car = Carrinho.objects.filter(user = user_profile.id)
+    user_car = Carrinho.objects.filter(user = user_profile.id).filter(status = True)
     items = Item.objects.filter(check_sold=False)
 
     return render(request, "home/carrinho.html", {
@@ -170,11 +170,16 @@ from .models import Item, Carrinho
 def add_to_cart(request, item_id):
     item = get_object_or_404(Item, id=item_id)
 
-    # Cria um objeto Carrinho com o usuário atual e o item selecionado
-    cart_item = Carrinho.objects.create(
+    Carrinho.objects.create(
         user=request.user.profile,
         itens_carrinho=item
     )
 
-    # Redireciona o usuário de volta ao item que eles acabaram de adicionar ao carrinho
     return redirect('produto', foto_id=item.id)
+
+def remove_cart(request, car_id):
+    cart = get_object_or_404(Carrinho, id = car_id)
+    cart.status = False
+    cart.save()
+
+    return redirect('carrinho')

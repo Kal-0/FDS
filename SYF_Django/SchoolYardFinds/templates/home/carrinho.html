@@ -38,9 +38,25 @@
                             <p class="card-text" style="height: 20px; overflow: hidden;">{{ items.category }} || R${{ items.price }}</p> 
                             <h5 class="card-title" style="height: 50px; overflow: hidden;">{{ items.name }}</h5>
                             <p class="card-text" style="height: 80px; overflow: hidden;">{{ items.description  }}</p>
-                            <a href="{% url 'produto' items.id %}" class="botao_amarelo">Visualizar</a> 
-                            <a href="{% url 'produto' items.id %}" class="botao_amarelo">Abrir Negociação</a> 
-                            <a href="{% url 'produto' items.id %}" class="botao_amarelo" style="background-color: #ed2929;">Remover</a> 
+                            <div class="text-center">
+                              <div class="row">
+                                  <div class="col-sm-4">
+                                      <form action="{% url 'produto' items.id %}">
+                                        <button class="botao_amarelo" type="submit">Visualizar</button>
+                                      </form>
+                                  </div>
+                                  <div class="col-sm-4">
+                                      <form action="{% url 'produto' items.id %}">
+                                        <button class="botao_amarelo" type="submit">Abrir Negociação</button>
+                                      </form>
+                                  </div>
+                                  <div class="col-sm-4">
+                                      <form action="{% url 'remove_cart' user_car.id %}" method="POST">
+                                          {% csrf_token %}
+                                          <button class="botao_amarelo" type="submit" style="background-color: #ed2929;">Remover</button>
+                                      </form>
+                                  </div>
+                              </div>
                         </div>
                       </div>
                     </div>
