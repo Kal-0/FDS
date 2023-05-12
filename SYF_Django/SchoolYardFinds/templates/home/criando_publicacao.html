@@ -8,10 +8,11 @@
         <!-- Barra de Navegação (Logo, Pesquisa, Home, Carrinho e Perfil) -->
         {% include 'home/partials/_barra.html'%}
 
-      <form action="." method="POST">{% csrf_token %}
-         
+      <form action="." method="POST">
+        {% csrf_token %}
+        {{form.as_p}}
         &nbsp;
-
+        
 
 
         <!-- Caixa de Publicação -->

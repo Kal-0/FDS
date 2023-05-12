@@ -25,13 +25,13 @@
 
             <div class="card-body">
               <div class="d-flex justify-content-between">
-                <h5 class="card-title">{{ user_profile.user.username }}</h5>
+                <h5 class="card-title">{{ user_profile.user.name }}</h5>
                 &nbsp;
               </div>
             
               <!--<div class="card-text" id="description" style=" border: 1px solid #000000" contenteditable="true"></div>-->
               <p class="card-text">{{ user_profile.description }}</p>
-              <button type="submit" value="Submit" class="botao_amarelo" style="background-color: #2da8dd">Salvar</button>
+              <button type="submit" value="Submit" href="{% url 'perfil' %}" class="botao_amarelo" style="background-color: #2da8dd">Salvar</button>
               <a href="{% url 'perfil' %}" class="botao_amarelo" style="background-color: #ed2929;">Voltar</a>
             </div>
             </div>

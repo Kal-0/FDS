@@ -18,12 +18,13 @@
               {% endif %}
               <div class="card-body">
                 <div class="d-flex justify-content-between">
-                  <h5 class="card-title">{{ user_profile.user.username }}</h5>
+                  <h5 class="card-title"><strong>{{ user_profile.name }}</strong></h5>
                   &nbsp;
                   
                 </div>
+                <p class="card-text">Numero: <strong>{{ user_profile.phone }}</strong> </p>
                 <!--<div class="card-text" id="description" style=" border: 1px solid #000000" contenteditable="true"></div>-->
-                <p class="card-text">{{ user_profile.description }}</p>
+                <p class="card-text">Bio: <strong>{{ user_profile.description }}</strong></p>
                 <a href="{% url 'edit' %}" class="btn btn-primary">Editar Perfil</a>
                 <a href="{% url 'logout' %}" class="btn btn-danger">Logout</a>
               </div>

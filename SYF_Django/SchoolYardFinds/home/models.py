@@ -28,10 +28,10 @@ class Item(models.Model):
     
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    description = models.TextField(default="Escreva sua descrição", max_length= 150, blank= True)
-    profile_image = models.ImageField(upload_to="user/%Y/%m/%d/", blank=True , null=True)
     name = models.CharField(max_length=200, null=True)
     phone= models.CharField(default = "0000-0000", max_length=200,null=True)
+    profile_image = models.ImageField(upload_to="user/%Y/%m/%d/", blank=True , null=True)
+    description = models.TextField(default="Escreva sua descrição", max_length= 150, blank= True)
     date_created= models.DateTimeField(auto_now_add=True, null=True)
 
     def __str__(self):

@@ -171,15 +171,15 @@ def carrinho(request):
     })
 
 def edit_profile(request):
-    customer = request.user
-    form = ProfileForm(instance=customer)
+    user_profile = Profile.objects.get(user=request.user)
+    form = ProfileForm(instance=user_profile)
     if  request.method == 'POST':
-        form = ProfileForm(request.POST, request.FILES, instance=customer)
+        form = ProfileForm(request.POST, request.FILES, instance=user_profile)
         if form.is_valid():
            form.save()
            print("SALVEI")
+           return redirect('perfil')
     context={'form': form}
-
 
     return render(request, "home/edit_profile.html", context) 
 
