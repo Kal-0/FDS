@@ -4,7 +4,7 @@ from django.contrib import messages
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from home.models import Category, Item, Profile, Carrinho
-from .forms import SignupForm, ItemForm
+from .forms import SignupForm, ItemForm, ProfileForm
 
 def home(request):
     return render(request,"home/home.html")
@@ -171,15 +171,17 @@ def carrinho(request):
     })
 
 def edit_profile(request):
-    #customer = request.user
-    #form = CustomerForm(instance=customer)
-    #if  request.method == 'POST':
-        #form = CustomerForm(request.POST, request.FILES, instance=customer)
-       # if form.is_valid():
-      #      form.save()
-     #       print("SALVEI")
-    #context={'form': form}
-    return render(request, "home/edit_profile.html") 
+    customer = request.user
+    form = ProfileForm(instance=customer)
+    if  request.method == 'POST':
+        form = ProfileForm(request.POST, request.FILES, instance=customer)
+        if form.is_valid():
+           form.save()
+           print("SALVEI")
+    context={'form': form}
+
+
+    return render(request, "home/edit_profile.html", context) 
 
 from django.shortcuts import get_object_or_404, redirect
 from .models import Item, Carrinho
@@ -199,9 +201,6 @@ def remove_cart(request, car_id):
     cart.delete()
 
     return redirect('carrinho')
-<<<<<<< HEAD
-=======
 
 def chat(request):
     return render(request, 'home/chat.html')
->>>>>>> c60c2d313d9909d33269ae2903c4fe89e7166453
