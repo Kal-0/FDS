@@ -196,3 +196,9 @@ def remove_cart(request, car_id):
 
 def chat(request):
     return render(request, 'home/chat.html')
+
+def config(request):
+    return render(request, 'home/configs.html')
+
+def busca(request):
+    return render(request, 'home/busca.html')

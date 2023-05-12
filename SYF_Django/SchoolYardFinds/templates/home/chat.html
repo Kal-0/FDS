@@ -1,0 +1,35 @@
+{% extends 'home/base.html' %}
+{% load static %}
+{% block content %}
+
+
+<body style="background-color: #414141">
+
+    {% include 'home/partials/_barra.html'%}
+
+    <br><br><br><br><br><br><br><br>
+
+    <div style="display: flex; justify-content: center; align-items: center;">   
+        <img class="img" style="width: 100px; height: auto;" src="{% static '/assets/imagens/home/image.png' %}" alt="imagem">
+    </div><br>
+ 
+    <p class="carrinho_texto_titulo" style="font-size: 70px;"> FUNÇÃO EM DESENVOLVIMENTO </p>
+    <p class="carrinho_texto_titulo"> Volte mais tarde </p>
+
+    <div style="display: flex; justify-content: center; align-items: center;">   
+        <a href="javascript:history.back()">
+            <button class="botao_amarelo">
+                <b>Voltar para ultima pagina</b>
+            </button>
+        </a>    
+    </div><br>
+
+    <!-- Barra de Navegação (Logo, Pesquisa, Home, Carrinho e Perfil) -->
+
+    {% include 'home/partials/_footer.html'%}
+
+</body>
+
+</html>
+
+{% endblock %}
