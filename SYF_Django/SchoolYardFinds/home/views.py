@@ -152,13 +152,24 @@ def create_item(request):
 
 def carrinho(request):
     user_profile = Profile.objects.get(user=request.user)
-    user_car = Carrinho.objects.filter(user = user_profile.id).filter(status = True)
+    user_car = Carrinho.objects.filter(user=user_profile.id, status=True)
     items = Item.objects.filter(check_sold=False)
+
+    valor_total = 0
+    itens_quant = 0
+
+    for carrinho in user_car:
+        for item in items:
+            if carrinho.itens_carrinho == item:
+                valor_total += item.price
+                itens_quant += 1
 
     return render(request, "home/carrinho.html", {
         'user_carrinho': user_car,
         'pub': items,
-        })
+        'valor_total': valor_total,
+        'itens_quant': itens_quant,
+    })
 
 def edit_profile(request):
     user_profile = Profile.objects.get(user=request.user)

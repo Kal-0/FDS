@@ -17,5 +17,16 @@ class ListandoItem(admin.ModelAdmin):
 
 admin.site.register(Item, ListandoItem)
 
-admin.site.register(Profile)
-admin.site.register(Carrinho)
+class ListandoProfile(admin.ModelAdmin):
+    list_display = ("id", "user")
+    list_display_links =("id", "user")
+    search_fields = ("user",)
+
+admin.site.register(Profile, ListandoProfile)
+
+class ListandoCarrinho(admin.ModelAdmin):
+    list_display = ("id", "user", "itens_carrinho", "status")
+    list_display_links =("id", "user", "itens_carrinho")
+    list_editable = ("status",)
+
+admin.site.register(Carrinho, ListandoCarrinho)

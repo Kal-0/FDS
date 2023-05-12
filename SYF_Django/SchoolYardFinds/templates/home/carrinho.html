@@ -7,12 +7,13 @@
 
     {% include 'home/partials/_barra.html'%}
     <div class="p-3 mb-2">
-
-        <p class="carrinho_texto_titulo"> CARRINHO </p>
+      
        {% if user_carrinho %}
+       <p class="carrinho_texto_titulo"> CARRINHO </p>
+       <p class="carrinho_texto_titulo">Total: R${{ valor_total }} - {{ itens_quant }} itens</p>
+
        {% for user_car in user_carrinho %}
         
-        <!-- criar uma variavel contadorar, vai somar os pressos do intens no carrinho -->
         <div class="card-group">
 
             <ul class="cards__lista">
@@ -20,9 +21,6 @@
                 {% for items in pub %}
 
                 {% if items == user_car.itens_carrinho %}
-
-                <!-- Adicionar a variavel dentro desse if desse loop, adicionar o presso que pode ser chamado do db assim: {{ items.price }}-->
-
 
                 <div class="card mb-3" style="width: 88vw; height: 309px; border-radius: 20px;">
                     <div class="row g-0">
@@ -65,17 +63,18 @@
                 {% endif %}
 
                 {% endfor %}
+
                 {% else %}
-                <!-- criar aqui um html para carrinho vasio -->
                 {% endif %}
             </ul>
         </div>
 
-        <!-- imprimir o presso total aqui, usando no texto a mesma classe que ta escrito carrinho no inicio, pra puchar o css -->
-
         {% endfor %}
+        <form action="{% url 'feed' %}">
+          <button class="botao_amarelo" style="margin-left: 73px;" type="submit">Voltar as compras</button>
+        </form>
         {% else %}
-        <!-- repitir html carrinho vasio -->
+        <!-- criar aqui um html para carrinho vasio -->
         {% endif %}
 
         <!-- JavaScript (Opcional) -->

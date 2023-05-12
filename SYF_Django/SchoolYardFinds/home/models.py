@@ -31,8 +31,8 @@ class Profile(models.Model):
     description = models.TextField(default="Escreva sua descrição", max_length= 150, blank= True)
     profile_image = models.ImageField(upload_to="user/%Y/%m/%d/", blank=True , null=True)
 
-    def __int__(self):
-        return self.id
+    def __str__(self):
+        return self.user.username
 
 class Carrinho(models.Model):
     user = models.ForeignKey(Profile, related_name='list_car', on_delete=models.CASCADE)
@@ -40,4 +40,4 @@ class Carrinho(models.Model):
     status = models.BooleanField(default="True")
 
     def __int__(self):
-        return self.user
+        return self.id
