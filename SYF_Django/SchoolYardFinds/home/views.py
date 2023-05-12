@@ -186,10 +186,13 @@ def add_to_cart(request, item_id):
         itens_carrinho=item
     )
 
-    return redirect('produto', foto_id=item.id)
+    return redirect('carrinho')
 
 def remove_cart(request, car_id):
     cart = get_object_or_404(Carrinho, id = car_id)
     cart.delete()
 
     return redirect('carrinho')
+
+def chat(request):
+    return render(request, 'home/chat.html')
