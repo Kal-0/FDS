@@ -1,7 +1,8 @@
 from django import forms
 from django.contrib.auth.models import User
 from django.contrib.auth.forms  import UserCreationForm
-from .models import Item
+from django.forms import ModelForm
+from .models import Item, Profile
 
 class SignupForm(UserCreationForm):
     class Meta:
@@ -32,3 +33,10 @@ class ItemForm(forms.ModelForm):
             'image': forms.ClearableFileInput(attrs={'class': 'form-control'}),
         }
 
+
+
+class CustomerForm(ModelForm):
+    class Meta:
+        model = Profile
+        fields = '__all__'
+        exclude = ['user']

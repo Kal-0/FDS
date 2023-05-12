@@ -12,13 +12,16 @@
       <div id="page" class="p-3 mb-2">
           <div class="card" style=" border: 5px solid #000000; width: 40rem;">
 
-            <form method="POST" enctype="multipart/form-data">
+            <form method="POST" action="" enctype="multipart/form-data">
               {% csrf_token %}
+              {{form.as_p}}
               <div class="form-group">
-                <input type="file" class="form-control-file" id="profile_image" name="profile_image">
+                <img class='profile-pic' src="{{request.user.user_profile.profile_pic.url}}">
               </div>
-              <button type="submit" class="btn btn-primary">Upload</button>
-            </form>
+              <div>
+                
+              </div>
+            
 
             <div class="card-body">
               <div class="d-flex justify-content-between">
@@ -31,8 +34,8 @@
               <button type="submit" value="Submit" class="botao_amarelo" style="background-color: #2da8dd">Salvar</button>
               <a href="{% url 'perfil' %}" class="botao_amarelo" style="background-color: #ed2929;">Voltar</a>
             </div>
-          </div>
-            
+            </div>
+           </form> 
           &nbsp;
         
           </div>

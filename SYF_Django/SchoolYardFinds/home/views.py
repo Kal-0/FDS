@@ -54,7 +54,7 @@ def login_user(request):
             if not Profile.objects.filter(user=request.user):
                 
                 print("criou")
-                Profile.objects.create(user=request.user)
+                Profile.objects.create(user=request.user, name=username)
             
             context = {'username': username}
             return render(request, "home/home.html", context)
@@ -71,8 +71,7 @@ def signup(request):
         
         if form.is_valid():
             form.save()
-            
-            
+    
             return redirect('login')
     else:
         form = SignupForm()
@@ -172,8 +171,15 @@ def carrinho(request):
     })
 
 def edit_profile(request):
-    user_profile = Profile.objects.get(user=request.user)
-    return render(request, "home/edit_profile.html", {'user_profile': user_profile, }) 
+    #customer = request.user
+    #form = CustomerForm(instance=customer)
+    #if  request.method == 'POST':
+        #form = CustomerForm(request.POST, request.FILES, instance=customer)
+       # if form.is_valid():
+      #      form.save()
+     #       print("SALVEI")
+    #context={'form': form}
+    return render(request, "home/edit_profile.html") 
 
 from django.shortcuts import get_object_or_404, redirect
 from .models import Item, Carrinho
