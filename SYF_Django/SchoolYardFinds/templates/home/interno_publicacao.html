@@ -41,9 +41,11 @@
                               <b>Adicionar ao carrinho</b>
                             </button><br><br>
                         </form>
-                        <button class="botao_amarelo"onclick="alert('Negociação aberta!')">
-                            <b>Abrir Negociação</b>
-                        </button><br><br>
+                        <form action="{% url 'chat' %}">
+                            <button class="botao_amarelo" type="submit" onclick="alert('Negociação aberta!')">
+                                <b>Abrir Negociação</b>
+                            </button><br><br>
+                        </form>
                         <button class="botao_amarelo" onclick="alert('Item foi favoritado!')">
                             <b>Favoritar</b>
                         </button><br><br>

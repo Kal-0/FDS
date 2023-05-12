@@ -132,3 +132,7 @@ dmypy.json
 # Pyre type checker
 .pyre/
 .DS_Store
+SYF_Django/SchoolYardFinds/templates/home/chat.html
+SYF_Django/SchoolYardFinds/static/.DS_Store
+SYF_Django/SchoolYardFinds/static/assets/.DS_Store
+
