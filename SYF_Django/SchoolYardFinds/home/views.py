@@ -179,7 +179,6 @@ def add_to_cart(request, item_id):
 
 def remove_cart(request, car_id):
     cart = get_object_or_404(Carrinho, id = car_id)
-    cart.status = False
-    cart.save()
+    cart.delete()
 
     return redirect('carrinho')
