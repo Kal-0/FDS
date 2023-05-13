@@ -1,7 +1,6 @@
 {% extends 'home/base.html' %}
 {% load static %}
 {% block content %}
-
   
 <body style="background-color: #2da8dd">
   <bs-body-color>
@@ -11,10 +10,12 @@
 
       <div id="page" class="p-3 mb-2">
           <div class="card" style=" border: 5px solid #000000; width: 40rem;">
-
+            
             <form method="POST" action="" enctype="multipart/form-data">
+              &nbsp;
               {% csrf_token %}
               {{form.as_p}}
+
               <div class="form-group">
                 <img class='profile-pic' src="{{request.user.user_profile.profile_pic.url}}">
               </div>
@@ -22,21 +23,37 @@
                 
               </div>
             
+              <div class="col-md-6">
+                <div class="form-group">
 
-            <div class="card-body">
-              <div class="d-flex justify-content-between">
-                <h5 class="card-title">{{ user_profile.user.name }}</h5>
-                &nbsp;
+                  <label for="id_name"><b>Name:</b></label>
+
+                  <input type="text" class="form-control" id="name" name="name">
+                  
+                  <br></br>
+
+                  <label for="id_phone"><b>Phone:</b></label>
+
+                  <input type="text" class="form-control" id="phone" name="phone">
+
+                </div>
               </div>
+
+              <div class="card-body">
+                <div class="d-flex justify-content-between">
+                  <h5 class="card-title">{{ user_profile.user.name }}</h5>
+                  &nbsp;
+                </div>
+                
             
-              <!--<div class="card-text" id="description" style=" border: 1px solid #000000" contenteditable="true"></div>-->
-              <p class="card-text">{{ user_profile.description }}</p>
               <button type="submit" value="Submit" href="{% url 'perfil' %}" class="botao_amarelo" style="background-color: #2da8dd">Salvar</button>
               <a href="{% url 'perfil' %}" class="botao_amarelo" style="background-color: #ed2929;">Voltar</a>
             </div>
             </div>
-           </form> 
-          &nbsp;
+            
+            </form> 
+            
+            &nbsp;
         
           </div>
       </div>
