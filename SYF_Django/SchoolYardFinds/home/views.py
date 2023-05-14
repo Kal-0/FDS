@@ -6,7 +6,14 @@ from django.contrib.auth.models import User
 from home.models import Category, Item, Profile, Carrinho
 from .forms import SignupForm, ItemForm, ProfileForm
 
+
+
+
 def home(request):
+    
+    #print(request.session["username"])
+    
+    context = {"username"}
     return render(request,"home/home.html")
 
 def feed(request):
@@ -41,23 +48,28 @@ def test(request):
     return render(request, "home/test.html", {"namels":namels, "number": number})
 
 def login_user(request):
+    
+    request.user = None
+    #request.session["user"] = None
+    #print(request.session["user"])
     if request.method == "POST":
         username = request.POST['username']
         password = request.POST['password']
         user = authenticate(request, username=username, password=password)
+        #print(f"user: {user}")
         if user is not None:
             login(request, user)
             
             #cria perfil
             print(f"user: {request.user}")
-            print(Profile.objects.filter(user=request.user))
+            #print(Profile.objects.filter(user=request.user))
             if not Profile.objects.filter(user=request.user):
                 
-                print("criou")
+                #print("criou")
                 Profile.objects.create(user=request.user, name=username)
             
-            context = {'username': username}
-            return render(request, "home/home.html", context)
+            #request.session["username"] = username
+            return redirect("home")
         else:
             messages.success(request, ("There Was An Error Loggin In, Try Again..."))
             return redirect('login')

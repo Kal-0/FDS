@@ -2,3 +2,4 @@ asgiref==3.6.0
 Django==4.1
 Pillow==9.5.0
 sqlparse==0.4.3
+selenium==4.9.1
