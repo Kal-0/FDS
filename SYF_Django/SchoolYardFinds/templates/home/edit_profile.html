@@ -23,21 +23,7 @@
                 
               </div>
             
-              <div class="col-md-6">
-                <div class="form-group">
-
-                  <label for="id_name"><b>Name:</b></label>
-
-                  <input type="text" class="form-control" id="name" name="name">
-                  
-                  <br></br>
-
-                  <label for="id_phone"><b>Phone:</b></label>
-
-                  <input type="text" class="form-control" id="phone" name="phone">
-
-                </div>
-              </div>
+             
 
               <div class="card-body">
                 <div class="d-flex justify-content-between">
@@ -46,7 +32,7 @@
                 </div>
                 
             
-              <button type="submit" value="Submit" href="{% url 'perfil' %}" class="botao_amarelo" style="background-color: #2da8dd">Salvar</button>
+              <button type="submit" value="Submit" href="{% url 'perfil' %}" name="save_btn" class="botao_amarelo" style="background-color: #2da8dd">Salvar</button>
               <a href="{% url 'perfil' %}" class="botao_amarelo" style="background-color: #ed2929;">Voltar</a>
             </div>
             </div>

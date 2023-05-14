@@ -120,22 +120,24 @@ def perfil(request):
         })
 
 def create_item(request):
-    print(f"GET: {request.GET}")
-    print(f"POST: {request.POST}")
+    #print(f"GET: {request.GET}")
+    #print(f"POST: {request.POST}")
     
     if request.method == 'POST':
         user = request.user
         print(user)
         
-        if request.POST.get("productName") != "":
+        if request.POST.get("productName") != "" and request.POST.get("productName") != None:
             inProductName = request.POST.get("productName")
             print(inProductName)
-            
+        else:
+            return render(request, 'home/criando_publicacao.html', {})
            
         if request.POST.get("productPrice") != None:
             inProductPrice = request.POST.get("productPrice")
             print(inProductPrice)
-            
+        else:
+            return render(request, 'home/criando_publicacao.html', {})    
             
         inProductDescription = request.POST.get("productDescription")
         print(inProductDescription)
@@ -145,7 +147,7 @@ def create_item(request):
             inProductCategory = Category.objects.get(name = request.POST.get("productCategory"))
             print(inProductCategory)
         
-            print(Category.objects.get(name= request.POST.get("productCategory")))
+            #print(Category.objects.get(name= request.POST.get("productCategory")))
             
         else:
             Category.objects.create(name= request.POST.get("productCategory"))

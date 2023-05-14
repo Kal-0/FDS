@@ -8,70 +8,70 @@
     {% include 'home/partials/_barra.html'%}
     <div class="p-3 mb-2">
       
-       {% if user_carrinho %}
-       <p class="carrinho_texto_titulo"> CARRINHO </p>
-       <p class="carrinho_texto_titulo">Total: R${{ valor_total }} - {{ itens_quant }} itens</p>
+      {% if user_carrinho %}
+        <p class="carrinho_texto_titulo"> CARRINHO </p>
+        <p class="carrinho_texto_titulo">Total: R${{ valor_total }} - {{ itens_quant }} itens</p>
 
-       {% for user_car in user_carrinho %}
+        {% for user_car in user_carrinho %}
         
-        <div class="card-group">
+          <div class="card-group">
 
             <ul class="cards__lista">
                 {% if pub %}
-                {% for items in pub %}
+                  {% for items in pub %}
 
-                {% if items == user_car.itens_carrinho %}
+                    {% if items == user_car.itens_carrinho %}
 
-                <div class="card mb-3" style="width: 88vw; height: 309px; border-radius: 20px;">
-                    <div class="row g-0">
-                      <div class="col-md-4">
-                        {% if items.image == "" or items.image == null %}
-                        <img class="card_image_carrinho" src="{% static '/assets/imagens/home/not_found.png' %}" alt="Produto">
-                        {% else %}
-                        <img class="card_image_carrinho" src="{{ items.image.url }}" alt="Produto">
-                        {% endif %}
-                      </div>
-                      <div class="col-md-8">
-                        <div class="card-body">
-                            <p class="card-text" style="height: 20px; overflow: hidden;">{{ items.category }} || R${{ items.price }}</p> 
-                            <h5 class="card-title" style="height: 50px; overflow: hidden;">{{ items.name }}</h5>
-                            <p class="card-text" style="height: 80px; overflow: hidden;">{{ items.description  }}</p>
-                            <div class="text-center">
-                              <div class="row">
-                                  <div class="col-sm-4">
-                                      <form action="{% url 'produto' items.id %}">
-                                        <button class="botao_amarelo" type="submit">Visualizar</button>
-                                      </form>
-                                  </div>
-                                  <div class="col-sm-4">
-                                      <form action="{% url 'chat' %}">
-                                        <button class="botao_amarelo" type="submit">Abrir Negociação</button>
-                                      </form>
-                                  </div>
-                                  <div class="col-sm-4">
-                                      <form action="{% url 'remove_cart' user_car.id %}" method="POST">
-                                          {% csrf_token %}
-                                          <button class="botao_amarelo" type="submit" style="background-color: #ed2929;">Remover</button>
-                                      </form>
-                                  </div>
+                      <div class="card mb-3" style="width: 88vw; height: 309px; border-radius: 20px;">
+                          <div class="row g-0">
+                            <div class="col-md-4">
+                              {% if items.image == "" or items.image == null %}
+                              <img class="card_image_carrinho" src="{% static '/assets/imagens/home/not_found.png' %}" alt="Produto">
+                              {% else %}
+                              <img class="card_image_carrinho" src="{{ items.image.url }}" alt="Produto">
+                              {% endif %}
+                            </div>
+                            <div class="col-md-8">
+                              <div class="card-body">
+                                  <p class="card-text" style="height: 20px; overflow: hidden;">{{ items.category }} || R${{ items.price }}</p> 
+                                  <h5 class="card-title" style="height: 50px; overflow: hidden;">{{ items.name }}</h5>
+                                  <p class="card-text" style="height: 80px; overflow: hidden;">{{ items.description  }}</p>
+                                  <div class="text-center">
+                                    <div class="row">
+                                        <div class="col-sm-4">
+                                            <form action="{% url 'produto' items.id %}">
+                                              <button class="botao_amarelo" type="submit">Visualizar</button>
+                                            </form>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <form action="{% url 'chat' %}">
+                                              <button class="botao_amarelo" type="submit">Abrir Negociação</button>
+                                            </form>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <form action="{% url 'remove_cart' user_car.id %}" method="POST">
+                                                {% csrf_token %}
+                                                <button name="removeItem_btn" class="botao_amarelo" type="submit" style="background-color: #ed2929;">Remover</button>
+                                            </form>
+                                        </div>
+                                    </div>
                               </div>
+                            </div>
+                          </div>
                         </div>
-                      </div>
-                    </div>
-                  </div>
-                {% else %}
-                {% endif %}
+                    {% else %}
+                    {% endif %}
 
-                {% endfor %}
+                  {% endfor %}
 
                 {% else %}
                 {% endif %}
             </ul>
-        </div>
+          </div>
 
-        {% endfor %}
+      {% endfor %}
         <form action="{% url 'feed' %}">
-          <button class="botao_amarelo" style="margin-left: 73px;" type="submit">Voltar as compras</button>
+          <button name="goShopping_btn" class="botao_amarelo" style="margin-left: 73px;" type="submit">Voltar as compras</button>
         </form>
         {% else %}
         <!-- criar aqui um html para carrinho vasio -->
@@ -84,7 +84,7 @@
         <p class="carrinho_texto_titulo"> adicione itens ao seu carrinho </p>
         <div style="display: flex; justify-content: center; align-items: center;">
           <form action="{% url 'feed' %}">
-            <button class="botao_amarelo" type="submit">Ir as compras</button>
+            <button name="goShopping_btn" class="botao_amarelo" type="submit">Ir as compras</button>
           </form>          
         </div>
 

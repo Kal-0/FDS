@@ -37,7 +37,7 @@
 
                         <form action="{% url 'add_to_cart' item_id=items.id %}" method="POST">
                             {% csrf_token %}
-                            <button class="botao_amarelo" type="submit" onclick="alert('Adicionado ao carrinho!')">
+                            <button name="addToCart_btn" class="botao_amarelo" type="submit" onclick="alert('Adicionado ao carrinho!')">
                               <b>Adicionar ao carrinho</b>
                             </button><br><br>
                         </form>
@@ -61,7 +61,7 @@
                 </li>
             </ul>
             <a href="javascript:history.back()">
-                <button class="botao_amarelo">
+                <button name="back_btn" class="botao_amarelo">
                     <b>Voltar</b>
                 </button>
             </a>

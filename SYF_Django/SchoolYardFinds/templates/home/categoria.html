@@ -12,7 +12,7 @@
 
         <!-- Botão de Categorias 1 -->
         <a href="#" class="botao_amarelo">{{ categories.name }}</a>
-        <a href="{% url 'feed' %}" class="botao_amarelo" style="background-color: #ed2929;">Voltar</a>
+        <a href="{% url 'feed' %}" name="back_btn" class="botao_amarelo" style="background-color: #ed2929;">Voltar</a>
 
         <!-- Cards de Itens para Comprar 1 (Título, Imagem, Texto e Botão para Página do Produto) -->
 
@@ -30,7 +30,7 @@
                     <div class="card-body">
                         <h5 class="card-title" style="height: 50px; overflow: hidden;">{{ items.name }} R${{ items.price }}</h5>
                         <p class="card-text" style="height: 80px; overflow: hidden;">{{ items.description }}</p>
-                        <a href="{% url 'produto' items.id %}" class="botao_amarelo">Visualizar</a>
+                        <a href="{% url 'produto' items.id %}" id="viewProduct_btn{{forloop.counter}}" name="{{ items.name }}_btn" class="botao_amarelo">Visualizar</a>
                     </div>
                 </li>
 

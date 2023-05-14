@@ -12,7 +12,7 @@
         {% for categories in cats %}
 
         <!-- Botão de Categorias 1 -->
-        <a href="{% url 'categoria' categories.id %}" class="botao_amarelo">{{ categories.name }}</a>
+        <a href="{% url 'categoria' categories.id %}" name="{{ categories.name }}_btn" class="botao_amarelo">{{ categories.name }}</a>
 
 
 
@@ -34,7 +34,7 @@
                     <div class="card-body">
                         <h5 class="card-title" style="height: 50px; overflow: hidden;">{{ items.name }} R${{ items.price }}</h5>
                         <p class="card-text" style="height: 80px; overflow: hidden;">{{ items.description }}</p>
-                        <a href="{% url 'produto' items.id %}" class="botao_amarelo">Visualizar</a>
+                        <a href="{% url 'produto' items.id %}" name="{{items.name}}_btn" class="botao_amarelo">Visualizar</a>
                     </div>
                 </li>
                 {% else %}
