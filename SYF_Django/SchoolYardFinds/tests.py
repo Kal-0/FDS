@@ -127,8 +127,6 @@ class T2loginFormTest(LiveServerTestCase):
         
 class T3addPublicationTest(LiveServerTestCase):
     def testForm(self):
-        driver = webdriver.Chrome(executable_path=driver_path)
-        
         wait = WebDriverWait(driver, 10)
         
         driver.get("http://127.0.0.1:8000/")

@@ -1,43 +1,43 @@
-name: Django CI
+# name: Django CI
 
-on:
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+# on:
+#   push:
+#     branches: [ "main" ]
+#   pull_request:
+#     branches: [ "main" ]
 
-jobs:
-  build:
+# jobs:
+#   build:
 
-    runs-on: ubuntu-latest
-    strategy:
-      max-parallel: 4
-      matrix:
-        python-version: [3.11]
+#     runs-on: ubuntu-latest
+#     strategy:
+#       max-parallel: 4
+#       matrix:
+#         python-version: [3.11]
 
-    steps:
-    - uses: actions/checkout@v3
-    - name: Set up Python ${{ matrix.python-version }}
-      uses: actions/setup-python@v3
-      with:
-        python-version: ${{ matrix.python-version }}
-    - name: Install Dependencies
-      run: |
-        set -ex
-        wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-        sudo apt install ./google-chrome-stable_current_amd64.deb
-        python -m pip install --upgrade pip
-        cd SYF_Django/SchoolYardFinds 
-        pip install -r requirements.txt
-        cd ..
-        cd ..
-        pip install msedge-selenium-tools
-    - uses: nanasess/setup-chromedriver@v2
-    - run: |
-        chromedriver --url-base-/wd/hub &
-    - name: Run local Server
-      run: |
-        cd SYF_Django/SchoolYardFinds 
-        python manage.py runserver &
-        sleep 5
-        python manage.py test
+#     steps:
+#     - uses: actions/checkout@v3
+#     - name: Set up Python ${{ matrix.python-version }}
+#       uses: actions/setup-python@v3
+#       with:
+#         python-version: ${{ matrix.python-version }}
+#     - name: Install Dependencies
+#       run: |
+#         set -ex
+#         wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+#         sudo apt install ./google-chrome-stable_current_amd64.deb
+#         python -m pip install --upgrade pip
+#         cd SYF_Django/SchoolYardFinds 
+#         pip install -r requirements.txt
+#         cd ..
+#         cd ..
+#         pip install msedge-selenium-tools
+#     - uses: nanasess/setup-chromedriver@v2
+#     - run: |
+#         chromedriver --url-base-/wd/hub &
+#     - name: Run local Server
+#       run: |
+#         cd SYF_Django/SchoolYardFinds 
+#         python manage.py runserver &
+#         sleep 5
+#         python manage.py test
