@@ -75,6 +75,19 @@
         </form>
         {% else %}
         <!-- criar aqui um html para carrinho vasio -->
+
+        <br><br><br><br><br><br>
+        <div style="display: flex; justify-content: center; align-items: center;">
+          <img class="icone_barra" style="width: 65px; height: auto; margin-bottom: 30px; margin-right: 10px;" src="{% static '/assets/imagens/home/cesta.png' %}" alt="Bootstrap"> 
+          <p class="carrinho_texto_titulo" style="font-size: 60px;">CARRINHO VAZIO </p>
+        </div>
+        <p class="carrinho_texto_titulo"> adicione itens ao seu carrinho </p>
+        <div style="display: flex; justify-content: center; align-items: center;">
+          <form action="{% url 'feed' %}">
+            <button class="botao_amarelo" type="submit">Ir as compras</button>
+          </form>          
+        </div>
+
         {% endif %}
 
         <!-- JavaScript (Opcional) -->

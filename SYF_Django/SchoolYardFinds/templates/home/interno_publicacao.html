@@ -46,14 +46,16 @@
                                 <b>Abrir Negociação</b>
                             </button><br><br>
                         </form>
-                        <button class="botao_amarelo" onclick="alert('Item foi favoritado!')">
-                            <b>Favoritar</b>
-                        </button><br><br>
-                        
+                        <form action="{% url 'chat' %}">
+                            <button class="botao_amarelo" onclick="alert('Item foi favoritado!')">
+                                <b>Favoritar</b>
+                            </button><br><br>                            
+                        </form>
+                        <form action="{% url 'chat' %}">                       
                         <button class="botao_amarelo">
                             <b>Aba de comentários</b>
-                        </button><br><br>
-
+                        </button><br><br>                            
+                        </form>
                     </div>
                     
                 </li>
