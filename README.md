@@ -33,7 +33,7 @@ Antes de começar, verifique se você atendeu aos seguintes requisitos:
 
 ## 🚀 Schoolyard Find
 
-Ferramentas:
+### Ferramentas:
 
 JIRA:
 
