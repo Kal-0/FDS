@@ -41,6 +41,8 @@ Antes de começar, verifique se você atendeu aos seguintes requisitos:
 
 <[Protótipo de Baixa](https://www.figma.com/file/2ip4H8uwjQ2fh1LfifG0ys/Prot%C3%B3tipo-Lo-Fi?node-id=0-1&t=4z1jTTTTcBTCKFU9-0)>
 
+<[Storyboards](https://www.figma.com/file/2ip4H8uwjQ2fh1LfifG0ys/Prot%C3%B3tipo-Lo-Fi?type=design&node-id=200%3A19&t=aEKpXn9853zZryfc-1)>
+
 <[Figma Flow](https://www.figma.com/proto/2ip4H8uwjQ2fh1LfifG0ys/Prot%C3%B3tipo-Lo-Fi?node-id=154-3&scaling=min-zoom&page-id=0%3A1&starting-point-node-id=154%3A3)><br></br>
 
 ### GOOGLE DRIVE:
@@ -48,8 +50,6 @@ Antes de começar, verifique se você atendeu aos seguintes requisitos:
 <[Google Drive](https://drive.google.com/drive/folders/0ABr0JCEViWteUk9PVA)>
 
 <[Sketches](https://drive.google.com/drive/folders/1fE_FwNUclmHxMSdsRN0t-QUT1UX3w3iC)>
-
-<[Storyboards](https://www.figma.com/file/2ip4H8uwjQ2fh1LfifG0ys/Prot%C3%B3tipo-Lo-Fi?type=design&node-id=200%3A19&t=aEKpXn9853zZryfc-1)>
 
 <[Screencasts](https://drive.google.com/drive/folders/1tLMSk-QiT_0Hup6dKK3AOzqBuoBOML4j)>
 
