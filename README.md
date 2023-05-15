@@ -45,6 +45,8 @@ Antes de começar, verifique se você atendeu aos seguintes requisitos:
 
 ### GOOGLE DRIVE:
 
+<[Google Drive](https://drive.google.com/drive/folders/0ABr0JCEViWteUk9PVA)>
+
 <[Sketches](https://drive.google.com/drive/folders/1fE_FwNUclmHxMSdsRN0t-QUT1UX3w3iC)>
 
 <[Storyboards](https://www.figma.com/file/2ip4H8uwjQ2fh1LfifG0ys/Prot%C3%B3tipo-Lo-Fi?type=design&node-id=200%3A19&t=aEKpXn9853zZryfc-1)>
