@@ -13,8 +13,6 @@
 
 > Esse projeto foi feito para a comunidade da nossa universidade, com o objetivo de facilitar o comércio entre os membros das faculdades, por meio de uma plataforma de comunicação, onde seus usuários poderam publicar produtos que desejam vender, e mostrar interesse sobre os itens de outros usuários, para então, negociarem de forma mais rápida e concreta.
 
-<[Link para site](http://schoolyardfinds.sa-east-1.elasticbeanstalk.com)><br></br>
-
 ## 📁 Backlog e Painel
 
 <img src="https://cdn.discordapp.com/attachments/1096519466914947204/1107632707984445581/Captura_de_tela_2023-05-15_082652.png" width="1000px;" alt="Backlog"/><br>
@@ -29,8 +27,11 @@ Antes de começar, verifique se você atendeu aos seguintes requisitos:
 * Você tem uma máquina `<Windows / Linux / Mac>`. Indique qual sistema operacional é compatível / não compatível.
 * Você leu `<guia / link / documentação_relacionada_ao_projeto>`.
 
-
 ## 🚀 Ferramentas do Schoolyard Find
+
+### LINK DO SITE
+
+<[Link](http://schoolyardfinds.sa-east-1.elasticbeanstalk.com)><br></br>
 
 ### JIRA:
 
