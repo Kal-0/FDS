@@ -56,9 +56,6 @@ Antes de começar, verifique se você atendeu aos seguintes requisitos:
 
 <[Diagrama de atividades](https://drive.google.com/drive/folders/17ZE7ORyRPMqHQ2eKl1c-UdGEq4xrpw7K)>
 
-<br></br>
-
-
 ## ☕ Usando Schoolyard Find
 
 Para usar Schoolyard Find, siga estas etapas:
