@@ -125,20 +125,6 @@ Desenvolvedores:
   </tr>
 </table>
 
-Orientadores:
-<table>
-  <tr>
-    <td align="center">
-      <a href="#">
-        <img src="https://avatars.githubusercontent.com/u/106926790?s=400&u=d51d91a8d447afbb4a9d0be21d664b82d7091fc5&v=4" width="100px;" alt="Foto Kal"/><br>
-        <sub>
-          <b>Caio Cesar</b>
-        </sub>
-      </a>
-    </td>
-  </tr>
-</table>
-
 ## 📝 Licença
 
 Esse projeto está sob licença. Veja o arquivo [LICENÇA](LICENSE) para mais detalhes.
