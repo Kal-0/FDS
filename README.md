@@ -31,31 +31,29 @@ Antes de começar, verifique se você atendeu aos seguintes requisitos:
 * Você leu `<guia / link / documentação_relacionada_ao_projeto>`.
 
 
-## 🚀 Schoolyard Find
+## 🚀 Ferramentas do Schoolyard Find
 
-### Ferramentas:
-
-JIRA:
+### JIRA:
 
 <[Quadro Jira](https://decoy0.atlassian.net/jira/software/projects/SF/boards/3)><br></br>
 
-FIGMA:
+### FIGMA:
 
 <[Protótipo de Baixa](https://www.figma.com/file/2ip4H8uwjQ2fh1LfifG0ys/Prot%C3%B3tipo-Lo-Fi?node-id=0-1&t=4z1jTTTTcBTCKFU9-0)>
 
 <[Figma Flow](https://www.figma.com/proto/2ip4H8uwjQ2fh1LfifG0ys/Prot%C3%B3tipo-Lo-Fi?node-id=154-3&scaling=min-zoom&page-id=0%3A1&starting-point-node-id=154%3A3)><br></br>
 
-GOOGLE DRIVE:
+### GOOGLE DRIVE:
 
-<[Sketchs](https://drive.google.com/drive/folders/1fE_FwNUclmHxMSdsRN0t-QUT1UX3w3iC)>
+<[Sketches](https://drive.google.com/drive/folders/1fE_FwNUclmHxMSdsRN0t-QUT1UX3w3iC)>
 
 <[Storyboards](https://www.figma.com/file/2ip4H8uwjQ2fh1LfifG0ys/Prot%C3%B3tipo-Lo-Fi?type=design&node-id=200%3A19&t=aEKpXn9853zZryfc-1)>
 
 <[Screencasts](https://drive.google.com/drive/folders/1tLMSk-QiT_0Hup6dKK3AOzqBuoBOML4j)>
 
-<[Pair Programming](https://drive.google.com/drive/folders/1441ZlJdDW0m1_KSqb98R9jETa0zYaEn8)>
+<[Pair Programming](https://docs.google.com/document/d/1mSuI-qKT06lHE_SEwzT0t8QsgcZj92air1IL0T6JQcA/edit)>
 
-<[Diagrama de atividades](https://drive.google.com/drive/folders/17ZE7ORyRPMqHQ2eKl1c-UdGEq4xrpw7K?usp=share_link)>
+<[Diagrama de atividades](https://drive.google.com/drive/folders/17ZE7ORyRPMqHQ2eKl1c-UdGEq4xrpw7K)>
 
 <br></br>
 
