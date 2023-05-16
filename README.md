@@ -31,7 +31,7 @@ Antes de começar, verifique se você atendeu aos seguintes requisitos:
 
 ### LINK DO SITE
 
-<[Link](http://schoolyardfinds.sa-east-1.elasticbeanstalk.com)><br></br>
+<[Link](http://schoolyardfinds1.us-east-1.elasticbeanstalk.com/)><br></br>
 
 ### JIRA:
 
