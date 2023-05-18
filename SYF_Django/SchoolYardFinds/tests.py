@@ -203,6 +203,8 @@ class T3addPublicationTest(LiveServerTestCase):
         # productPrice = wait.until(EC.element_to_be_clickable((By.NAME, "productPrice")))
         # productDescription = wait.until(EC.element_to_be_clickable((By.NAME, "productDescription")))
         # publish_btn = wait.until(EC.element_to_be_clickable((By.ID, "submit_register1")))
+        decoy_publication = True
+
         
         
         
