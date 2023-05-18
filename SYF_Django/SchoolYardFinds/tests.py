@@ -102,6 +102,7 @@ class T2loginFormTest(LiveServerTestCase):
         global decoy_user, logged_in
         wait = WebDriverWait(driver, 10)
         
+        print(f"///////////////////decoy_user: {decoy_user}")
         if decoy_user == False:
             T1registerFormTest.testForm(self)
         
@@ -148,7 +149,7 @@ class T2loginFormTest(LiveServerTestCase):
         
 class T3addPublicationTest(LiveServerTestCase):
     def testForm(self):
-        global logged_in
+        global logged_in, decoy_publication
         wait = WebDriverWait(driver, 10)
         
         
@@ -206,6 +207,8 @@ class T3addPublicationTest(LiveServerTestCase):
         decoy_publication = True
 
         
+        decoy_publication = True
+        
         
         
 class T4viewPublicationTest(LiveServerTestCase):
@@ -215,6 +218,8 @@ class T4viewPublicationTest(LiveServerTestCase):
         
         
         print(f"///////////////////logged: {logged_in}")
+        print(f"///////////////////decoy_publication: {decoy_publication}")
+        
         if logged_in == False:
             #login
             
@@ -307,6 +312,8 @@ class T5addItensToCartTest(LiveServerTestCase):
         
         
         print(f"///////////////////logged: {logged_in}")
+        print(f"///////////////////decoy_publication: {decoy_publication}")
+        
         if logged_in == False:
             #login
             T2loginFormTest.testForm(self)

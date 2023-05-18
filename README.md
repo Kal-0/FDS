@@ -31,7 +31,7 @@ Antes de começar, verifique se você atendeu aos seguintes requisitos:
 
 ### LINK DO SITE
 
-<[Link](http://schoolyardfinds.sa-east-1.elasticbeanstalk.com)><br></br>
+<[Link](http://schoolyardfinds1.us-east-1.elasticbeanstalk.com/)><br></br>
 
 ### JIRA:
 
@@ -55,7 +55,7 @@ Antes de começar, verifique se você atendeu aos seguintes requisitos:
 
 <[Pair Programming](https://docs.google.com/document/d/1mSuI-qKT06lHE_SEwzT0t8QsgcZj92air1IL0T6JQcA/edit)>
 
-<[Diagrama de atividades](https://drive.google.com/drive/folders/17ZE7ORyRPMqHQ2eKl1c-UdGEq4xrpw7K)>
+<[Diagrama de atividades](https://drive.google.com/drive/folders/1uGEFYpptQfeVT83OvW_Num1Ex2-JRRqi)>
 
 ## ☕ Usando Schoolyard Find
 
