@@ -14,6 +14,9 @@ from selenium.webdriver.support import expected_conditions as EC
 
 
 driver_path = r"chromedriver.exe"
+
+driver_path = r"/ctests/chromedriver.exe"
+
 global driver
 driver = webdriver.Chrome(executable_path=driver_path)
 
