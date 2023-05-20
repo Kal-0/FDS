@@ -119,5 +119,7 @@ jobs:
 
 
       - name: Run tests with Selenium
+
         run: |
+          cd SYF_Django/SchoolYardFinds
           python manage.py test  # Replace with your test command
