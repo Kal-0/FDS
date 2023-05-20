@@ -126,6 +126,13 @@ jobs:
           sudo mv chromedriver SYF_Django/SchoolYardFinds/ctests/
           sudo chmod +x SYF_Django/SchoolYardFinds/ctests/chromedriver
 
+          cd SYF_Django/SchoolYardFinds/ctests/
+          ls
+          cd .. 
+          cd ..
+          cd ..
+          ls
+
 
 
       - name: Run tests with Selenium
