@@ -117,6 +117,12 @@ jobs:
 
           unzip chromedriver_linux64.zip
           ls
+          cd SYF_Django
+          ls
+          cd SchoolYardFinds
+          ls
+          cd ctests
+          ls
           sudo mv chromedriver SYF_Django/SchoolYardFinds/ctests/
           sudo chmod +x SYF_Django/SchoolYardFinds/ctests/chromedriver
 
