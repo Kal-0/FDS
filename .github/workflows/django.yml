@@ -32,7 +32,7 @@
 
 
 #         python -m pip install --upgrade pip
-#         cd SYF_Django/SchoolYardFinds 
+#         cd SYF_Django/SchoolYardFinds
 #         pip install -r requirements.txt
 #         cd ..
 #         cd ..
@@ -42,7 +42,7 @@
 #         chromedriver --url-base-/wd/hub &
 #     - name: Run local Server
 #       run: |
-#         cd SYF_Django/SchoolYardFinds 
+#         cd SYF_Django/SchoolYardFinds
 #         python manage.py runserver &
 #         sleep 5
 #         python manage.py test
@@ -83,7 +83,7 @@ jobs:
           pip install -r requirements.txt
 
           pip install msedge-selenium-tools
-          
+
           cd ..
           cd ..
 
@@ -116,13 +116,13 @@ jobs:
           wget "https://chromedriver.storage.googleapis.com/${CHROMEDRIVER_VERSION}/chromedriver_linux64.zip"
 
           unzip chromedriver_linux64.zip
-          ls
-          cd SYF_Django
-          ls
-          cd SchoolYardFinds
-          ls
-          cd ctests
-          ls
+          # ls
+          # cd SYF_Django
+          # ls
+          # cd SchoolYardFinds
+          # ls
+          # cd ctests
+          # ls
           sudo mv chromedriver SYF_Django/SchoolYardFinds/ctests/
           sudo chmod +x SYF_Django/SchoolYardFinds/ctests/chromedriver
 
