@@ -1,0 +1,76 @@
+{% extends 'home/base.html' %}
+{% load static %}
+{% block content %}
+
+  <body style="background-color: #414141; min-height: 700px;">
+    <bs-body-color>
+    <!-- Barra de Navegação (Logo, Pesquisa, Home, Carrinho e Perfil) -->
+    {% include 'home/partials/_barra.html'%}
+
+
+    <div class="p-3 mb-2">
+        &nbsp;
+        <div class="p-3 mb-2" style="background-color: #2da8dd; min-height: 700px;">
+            <h1>{{ items.name }}</h1>
+            <p style="font-size: 27px;">
+                <b>{{ items.created_by }}</b> 
+            </p>
+            <p style="font-size: 20px;">
+                <b>R${{ items.price }} || {{ items.category }}</b> 
+            </p>
+
+            <ul style="display: flex;">
+                <li style="list-style: none; margin: auto; padding: 3%;">
+                  {% if items.image == "" or items.image == null %}
+                    <img class="imagem__imagem" src="{% static '/assets/imagens/home/not_found.png' %}" alt="imagem">
+                  {% else %}
+                    <img class="imagem__imagem" src="{{ items.image.url }}" alt="imagem">
+                  {% endif %}
+                </li>
+                
+                <li style="list-style: none; padding: 3%;">
+                    <div class="descricao" style="font-size: larger;">
+                        <h2>Descrição</h2>
+                        <p>
+                          {{ items.description }}
+                        </p>
+
+                        <form action="{% url 'add_to_cart' item_id=items.id %}" method="POST">
+                            {% csrf_token %}
+                            <button name="addToCart_btn" class="botao_amarelo" type="submit" onclick="alert('Adicionado ao carrinho!')">
+                              <b>Adicionar ao carrinho</b>
+                            </button><br><br>
+                        </form>
+                        <form action="{% url 'chat' %}">
+                            <button class="botao_amarelo" type="submit" onclick="alert('Negociação aberta!')">
+                                <b>Abrir Negociação</b>
+                            </button><br><br>
+                        </form>
+                        <form action="{% url 'chat' %}">
+                            <button class="botao_amarelo" onclick="alert('Item foi favoritado!')">
+                                <b>Favoritar</b>
+                            </button><br><br>                            
+                        </form>
+                        <form action="{% url 'chat' %}">                       
+                        <button class="botao_amarelo">
+                            <b>Aba de comentários</b>
+                        </button><br><br>                            
+                        </form>
+                    </div>
+                    
+                </li>
+            </ul>
+            <a href="javascript:history.back()">
+                <button name="back_btn" class="botao_amarelo">
+                    <b>Voltar</b>
+                </button>
+            </a>
+
+        </div>
+        
+
+        
+    </div>
+    {% include 'home/partials/_footer.html'%}
+       
+{% endblock %}
