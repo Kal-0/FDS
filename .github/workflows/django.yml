@@ -111,16 +111,13 @@ jobs:
           # $env:PATH += ";C:/SYF_Django/SchoolYardFinds/chromedriver_win32"
           #- uses: nanasess/setup-chromedriver@v2
 
-          print("oia os print////////////\n\n")
+          
 
           CHROME_VERSION=$(google-chrome-stable --version | awk '{print $3}' | cut -d "." -f 1)
-          print(CHROME_VERSION)
-
           CHROME_VERSION = 113.0.5672.127
 
-          CHROMEDRIVER_VERSION=$(curl -s "https://chromedriver.storage.googleapis.com/LATEST_RELEASE_${CHROME_VERSION}")
-          print(CHROMEDRIVER_VERSION)
 
+          CHROMEDRIVER_VERSION=$(curl -s "https://chromedriver.storage.googleapis.com/LATEST_RELEASE_${CHROME_VERSION}")
           CHROMEDRIVER_VERSION = 113.0.5672.127
 
           wget "https://chromedriver.storage.googleapis.com/${CHROMEDRIVER_VERSION}/chromedriver_linux64.zip"
