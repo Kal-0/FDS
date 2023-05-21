@@ -1,43 +1,142 @@
-name: Django CI
+# name: Django CI
+
+# on:
+#   push:
+#     branches: [ "main" ]
+#   pull_request:
+#     branches: [ "main" ]
+
+# jobs:
+#   build:
+
+#     runs-on: ubuntu-latest
+#     strategy:
+#       max-parallel: 4
+#       matrix:
+#         python-version: [3.11]
+
+#     steps:
+#     - uses: actions/checkout@v3
+
+#     - name: Set up Python ${{ matrix.python-version }}
+#       uses: actions/setup-python@v3
+#       with:
+#         python-version: ${{ matrix.python-version }}
+
+
+#     - name: Install Dependencies
+#       run: |
+#         set -ex
+#         wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+#         sudo apt install ./google-chrome-stable_current_amd64.deb
+
+
+#         python -m pip install --upgrade pip
+#         cd SYF_Django/SchoolYardFinds
+#         pip install -r requirements.txt
+#         cd ..
+#         cd ..
+#         pip install msedge-selenium-tools
+#     - uses: nanasess/setup-chromedriver@v2
+#     - run: |
+#         chromedriver --url-base-/wd/hub &
+#     - name: Run local Server
+#       run: |
+#         cd SYF_Django/SchoolYardFinds
+#         python manage.py runserver &
+#         sleep 5
+#         python manage.py test
+
+
+
+
+
+
+name: Django CI Tests with Selenium
 
 on:
   push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+    branches:
+      - main  # Replace with the appropriate branch name
 
 jobs:
-  build:
-
-    runs-on: ubuntu-latest
-    strategy:
-      max-parallel: 4
-      matrix:
-        python-version: [3.11]
+  test:
+    runs-on: ubuntu-latest  # Use the Windows environment
 
     steps:
-    - uses: actions/checkout@v3
-    - name: Set up Python ${{ matrix.python-version }}
-      uses: actions/setup-python@v3
-      with:
-        python-version: ${{ matrix.python-version }}
-    - name: Install Dependencies
-      run: |
-        set -ex
-        wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-        sudo apt install ./google-chrome-stable_current_amd64.deb
-        python -m pip install --upgrade pip
-        cd SYF_Django/SchoolYardFinds 
-        pip install -r requirements.txt
-        cd ..
-        cd ..
-        pip install msedge-selenium-tools
-    - uses: nanasess/setup-chromedriver@v2
-    - run: |
-        chromedriver --url-base-/wd/hub &
-    - name: Run local Server
-      run: |
-        cd SYF_Django/SchoolYardFinds 
-        python manage.py runserver &
-        sleep 5
-      #  python manage.py test
+
+
+
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v3
+        with:
+          python-version: ${{ matrix.python-version }} # Replace with the desired Python version
+
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          cd SYF_Django/SchoolYardFinds
+          pip install -r requirements.txt
+
+          pip install msedge-selenium-tools
+
+          cd ..
+          cd ..
+
+
+      - name: Set up Chrome and chromedriver
+        run: |
+          ## Download and install Chrome
+
+
+          # Invoke-WebRequest -Uri 'https://dl.google.com/chrome/install/latest/chrome_installer.exe' -OutFile 'C:\chrome_installer.exe'
+          # Start-Process -FilePath 'C:/chrome_installer.exe' -Args '--silent', '--install' -Wait
+
+          set -ex
+          wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+          sudo apt install ./google-chrome-stable_current_amd64.deb
+
+
+          #.
+          ## Download and install chromedriver
+
+          # Invoke-WebRequest -Uri 'https://chromedriver.storage.googleapis.com/LATEST_RELEASE' -OutFile 'C:\chromedriver_version.txt'
+          # $chromedriverVersion = Get-Content -Path 'C:\chromedriver_version.txt'
+          # Invoke-WebRequest -Uri "https://chromedriver.storage.googleapis.com/$chromedriverVersion/chromedriver_win32.zip" -OutFile 'C:\chromedriver_win32.zip'
+          # Expand-Archive -Path 'C:/chromedriver_win32.zip' -DestinationPath 'C:/SYF_Django/SchoolYardFinds'
+          # $env:PATH += ";C:/SYF_Django/SchoolYardFinds/chromedriver_win32"
+          #- uses: nanasess/setup-chromedriver@v2
+
+          CHROME_VERSION=$(google-chrome-stable --version | awk '{print $3}' | cut -d "." -f 1)
+          CHROMEDRIVER_VERSION=$(curl -s "https://chromedriver.storage.googleapis.com/LATEST_RELEASE_${CHROME_VERSION}")
+          wget "https://chromedriver.storage.googleapis.com/${CHROMEDRIVER_VERSION}/chromedriver_linux64.zip"
+
+          unzip chromedriver_linux64.zip
+          # ls
+          # cd SYF_Django
+          # ls
+          # cd SchoolYardFinds
+          # ls
+          # cd ctests
+          # ls
+          sudo mv chromedriver SYF_Django/SchoolYardFinds/ctests/
+          sudo chmod +x SYF_Django/SchoolYardFinds/ctests/chromedriver
+
+          cd SYF_Django/SchoolYardFinds/ctests/
+          ls
+          cd .. 
+          cd ..
+          cd ..
+          ls
+
+
+
+      - name: Run tests with Selenium
+
+        run: |
+          cd SYF_Django/SchoolYardFinds
+          python manage.py test  # Replace with your test command
