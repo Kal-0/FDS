@@ -15,6 +15,7 @@
 #       matrix:
 #         python-version: [3.11]
 
+
 #     steps:
 #     - uses: actions/checkout@v3
 
@@ -63,6 +64,13 @@ jobs:
   test:
     runs-on: ubuntu-latest  # Use the Windows environment
 
+
+    strategy:
+      matrix:
+        python-version: [3.11]
+        chrome-version: ["113.0.5672.127"]
+        chromedriver-version: ["113.0.5672.127"]
+
     steps:
 
 
@@ -97,8 +105,8 @@ jobs:
           # Start-Process -FilePath 'C:/chrome_installer.exe' -Args '--silent', '--install' -Wait
 
           set -ex
-          wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-          sudo apt install ./google-chrome-stable_current_amd64.deb
+          wget https://dl.google.com/linux/direct/google-chrome-stable_${{ matrix.chrome-version }}_amd64.deb -O chrome.deb
+          sudo apt install ./chrome.deb=${{ matrix.chrome-version }}
 
 
           #.
@@ -113,14 +121,14 @@ jobs:
 
           
 
-          CHROME_VERSION=$(google-chrome-stable --version | awk '{print $3}' | cut -d "." -f 1)
-          CHROME_VERSION = 113.0.5672.127
+          #(+)CHROME_VERSION=$(google-chrome-stable --version | awk '{print $3}' | cut -d "." -f 1)
+          
 
 
           CHROMEDRIVER_VERSION=$(curl -s "https://chromedriver.storage.googleapis.com/LATEST_RELEASE_${CHROME_VERSION}")
-          CHROMEDRIVER_VERSION = 113.0.5672.127
 
-          wget "https://chromedriver.storage.googleapis.com/${CHROMEDRIVER_VERSION}/chromedriver_linux64.zip"
+
+          wget "https://chromedriver.storage.googleapis.com/${{ matrix.chromedriver-version }}/chromedriver_linux64.zip"
 
           unzip chromedriver_linux64.zip
           # ls
