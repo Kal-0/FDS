@@ -17,6 +17,8 @@ driver_path = r"chromedriver.exe"
 
 driver_path = r"ctests/chromedriver"
 
+print("/////////////chromeDriver SET\n")
+
 timeout = 10
 
 options = webdriver.ChromeOptions()
