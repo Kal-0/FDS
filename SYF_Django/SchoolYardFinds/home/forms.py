@@ -10,13 +10,13 @@ class SignupForm(UserCreationForm):
         fields = ('username','email', 'password1', 'password2')
         
     username = forms.CharField(widget=forms.TextInput(attrs={
-        'placeholder': 'Your username'
+        'placeholder': 'Username'
     }))
     email = forms.CharField(widget=forms.EmailInput(attrs={
-        'placeholder': 'Your email address'
+        'placeholder': 'E-mail'
     }))
     password1 = forms.CharField(widget=forms.PasswordInput(attrs={
-        'placeholder': 'Your password'
+        'placeholder': 'Password'
     }))
     password2 = forms.CharField(widget=forms.PasswordInput(attrs={
         'placeholder': 'Repeat password'

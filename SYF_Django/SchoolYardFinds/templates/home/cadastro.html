@@ -22,58 +22,64 @@
           {{ form.non_field_errors }}
         
           <div class="d-flex justify-content-center align-items-center text-center" style="height: 45vh;">
-            <div class="p-3 mb-2" style="background-color: #414141; width: 600px; height: 350px; display: inline-block;">
+            <div class="p-3 mb-2" style="background-color: #414141; width: 600px; height: 400px; display: inline-block; margin-top: 15px; margin-bottom: 15px; margin-right: 15px; margin-left: 15px; border: 5px solid #000000; border-radius: 20px;">
               &nbsp;
+              
               <!-- Input do Nome -->
               <div class="form-group row justify-content-center align-items-center">
-                <label for="{{form.username.id_for_label}}" class="col-sm-2 col-form-label" style="color: #2da8dd"><b>Username</b></label>
-                <div class="col-sm-8">
+                <label for="{{form.username.id_for_label}}" class="col-sm-2 col-form-label" style="color: #e6c9ac"><b>Username</b></label>
+                <div class="col-sm-4">
                   {{form.username}}
                 </div>
               </div>
         
               <!-- Input do Email -->
               <div class="form-group row justify-content-center align-items-center">
-                <label for="{{form.email.id_for_label}}" class="col-sm-2 col-form-label" style="color: #2da8dd"><b>Email</b></label>
-                <div class="col-sm-8">
+                <label for="{{form.email.id_for_label}}" class="col-sm-2 col-form-label" style="color: #e6c9ac"><b>Email</b></label>
+                <div class="col-sm-4">
                   {{form.email}}
                 </div>
               </div>
         
               <!-- Input da Senha1 -->
               <div class="form-group row justify-content-center align-items-center">
-                <label for="{{form.password1.id_for_label}}" class="col-sm-2 col-form-label" style="color: #2da8dd"><b>Password</b></label>
-                <div class="col-sm-8">
+                <label for="{{form.password1.id_for_label}}" class="col-sm-2 col-form-label" style="color: #e6c9ac"><b>Password</b></label>
+                <div class="col-sm-4">
                   {{form.password1}}
                 </div>
               </div>
         
               <!-- Input da Senha2 -->
               <div class="form-group row justify-content-center align-items-center">
-                <label for="{{form.password2.id_for_label}}" class="col-sm-2 col-form-label" style="color: #2da8dd"><b>Repeat Password</b></label>
-                <div class="col-sm-8">
+                <label for="{{form.password2.id_for_label}}" class="col-sm-2 col-form-label" style="color: #e6c9ac"><b>Repeat Password</b></label>
+                <div class="col-sm-4">
                   {{form.password2}}
                 </div>
               </div>
         
-              {% if form.errors or form.non_field_errors %}
-                <div class="col-sm-2"> 
-                  {% for field in form%}
-                    {{ field.errors }}
-                  {% endfor %}
-                </div>
-              {% endif %}
-        
               <!-- Botão de Cadastro -->
-              <div class="form-group row justify-content-center">
                 <div class="col-auto">
                   <button type="submit" class="btn mb-3" id="submit_register1" style="background-color: #ecd048; color: #000000; width: 200px; height: 40px">Cadastro</button>
                 </div>
-              </div>
+
+                <div class="col-auto">
+                  <a href="{% url 'login' %}" class="btn mb-3" name="back_btn" style="background-color: #ed2929; color: #000000; width: 200px; height: 40px">Voltar</a>
+                </div>
         
             </div>
           </div>
         </form>
+
+        <!-- Mensagem de erro -->
+        <div class="form-group row justify-content-center align-items-center">
+          {% if form.errors or form.non_field_errors %}
+            <div class="col-sm-12"> 
+              {% for field in form%}
+                {{ field.errors }}
+              {% endfor %}
+            </div>
+          {% endif %}
+        </div>
         
         
         &nbsp;  
