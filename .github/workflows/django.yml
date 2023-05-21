@@ -211,17 +211,18 @@ jobs:
           #.
           ## Download and install chromedriver
 
-          
 
+
+          #CHROME_VERSION=$(google-chrome-stable --version | awk '{print $3}')
           CHROME_VERSION=$(google-chrome-stable --version | awk '{print $3}' | cut -d "." -f 1)
-          CHROME_VERSION=$(google-chrome-stable --version | awk '{print $3}')
+          
 
           echo ${CHROME_VERSION}
 
-          CHROMEDRIVER_VERSION=$(curl -s "https://chromedriver.storage.googleapis.com/LATEST_RELEASE_${{matrix.chrome-version}}")
+          CHROMEDRIVER_VERSION=$(curl -s "https://chromedriver.storage.googleapis.com/LATEST_RELEASE_${CHROME_VERSION}")
           echo ${CHROMEDRIVER_VERSION}
 
-          wget "https://chromedriver.storage.googleapis.com/${{ matrix.chromedriver-version }}/chromedriver_linux64.zip"
+          wget "https://chromedriver.storage.googleapis.com/${CHROMEDRIVER_VERSION}/chromedriver_linux64.zip"
 
           unzip chromedriver_linux64.zip
           # ls
