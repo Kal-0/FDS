@@ -232,6 +232,8 @@ jobs:
           # ls
           # cd ctests
           # ls
+
+
           sudo mv chromedriver SYF_Django/SchoolYardFinds/ctests/
           sudo chmod +x SYF_Django/SchoolYardFinds/ctests/chromedriver
 
@@ -250,5 +252,8 @@ jobs:
           cd SYF_Django/SchoolYardFinds
           cd ctests
           ls
+          
+          chromedriver
+          echo "chromedriver set"
           cd ..
           python manage.py test  # Replace with your test command
