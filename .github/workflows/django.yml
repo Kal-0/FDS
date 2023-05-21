@@ -15,7 +15,6 @@
 #       matrix:
 #         python-version: [3.11]
 
-
 #     steps:
 #     - uses: actions/checkout@v3
 
@@ -47,6 +46,106 @@
 #         python manage.py runserver &
 #         sleep 5
 #         python manage.py test
+
+
+
+
+
+
+# name: Django CI Tests with Selenium
+
+# on:
+#   push:
+#     branches:
+#       - main  # Replace with the appropriate branch name
+
+# jobs:
+#   test:
+#     runs-on: ubuntu-latest  # Use the Windows environment
+
+#     steps:
+
+
+
+#       - name: Checkout code
+#         uses: actions/checkout@v3
+
+#       - name: Set up Python ${{ matrix.python-version }}
+#         uses: actions/setup-python@v3
+#         with:
+#           python-version: ${{ matrix.python-version }} # Replace with the desired Python version
+
+
+#       - name: Install dependencies
+#         run: |
+#           python -m pip install --upgrade pip
+#           cd SYF_Django/SchoolYardFinds
+#           pip install -r requirements.txt
+
+#           pip install msedge-selenium-tools
+
+#           cd ..
+#           cd ..
+
+
+#       - name: Set up Chrome and chromedriver
+#         run: |
+#           ## Download and install Chrome
+
+
+#           # Invoke-WebRequest -Uri 'https://dl.google.com/chrome/install/latest/chrome_installer.exe' -OutFile 'C:\chrome_installer.exe'
+#           # Start-Process -FilePath 'C:/chrome_installer.exe' -Args '--silent', '--install' -Wait
+
+#           set -ex
+#           wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+#           sudo apt install ./google-chrome-stable_current_amd64.deb
+
+
+#           #.
+#           ## Download and install chromedriver
+
+#           # Invoke-WebRequest -Uri 'https://chromedriver.storage.googleapis.com/LATEST_RELEASE' -OutFile 'C:\chromedriver_version.txt'
+#           # $chromedriverVersion = Get-Content -Path 'C:\chromedriver_version.txt'
+#           # Invoke-WebRequest -Uri "https://chromedriver.storage.googleapis.com/$chromedriverVersion/chromedriver_win32.zip" -OutFile 'C:\chromedriver_win32.zip'
+#           # Expand-Archive -Path 'C:/chromedriver_win32.zip' -DestinationPath 'C:/SYF_Django/SchoolYardFinds'
+#           # $env:PATH += ";C:/SYF_Django/SchoolYardFinds/chromedriver_win32"
+#           #- uses: nanasess/setup-chromedriver@v2
+
+#           CHROME_VERSION=$(google-chrome-stable --version | awk '{print $3}' | cut -d "." -f 1)
+          
+#           CHROMEDRIVER_VERSION=$(curl -s "https://chromedriver.storage.googleapis.com/LATEST_RELEASE_${CHROME_VERSION}")
+#           wget "https://chromedriver.storage.googleapis.com/${CHROMEDRIVER_VERSION}/chromedriver_linux64.zip"
+
+#           unzip chromedriver_linux64.zip
+#           # ls
+#           # cd SYF_Django
+#           # ls
+#           # cd SchoolYardFinds
+#           # ls
+#           # cd ctests
+#           # ls
+#           sudo mv chromedriver SYF_Django/SchoolYardFinds/ctests/
+#           sudo chmod +x SYF_Django/SchoolYardFinds/ctests/chromedriver
+
+#           cd SYF_Django/SchoolYardFinds/ctests/
+#           ls
+#           cd .. 
+#           cd ..
+#           cd ..
+#           ls
+
+
+
+#       - name: Run tests with Selenium
+
+#         run: |
+#           cd SYF_Django/SchoolYardFinds
+#           cd ctests
+#           ls
+#           cd ..
+#           python manage.py test  # Replace with your test command
+
+
 
 
 
@@ -101,31 +200,24 @@ jobs:
           ## Download and install Chrome
 
 
-          # Invoke-WebRequest -Uri 'https://dl.google.com/chrome/install/latest/chrome_installer.exe' -OutFile 'C:\chrome_installer.exe'
-          # Start-Process -FilePath 'C:/chrome_installer.exe' -Args '--silent', '--install' -Wait
-
           set -ex
-          wget https://dl.google.com/linux/chrome/deb/pool/main/g/google-chrome-stable/google-chrome-stable_${{ matrix.chrome-version }}_amd64.deb -O chrome.deb
-          sudo apt install ./chrome.deb=${{ matrix.chrome-version }}
+          wget https://dl.google.com/linux/chrome/deb/pool/main/g/google-chrome-stable/google-chrome-stable_current_amd64.deb -O chrome.deb
+          sudo apt install ./chrome.deb
           
+
+
+
 
           #.
           ## Download and install chromedriver
 
-          # Invoke-WebRequest -Uri 'https://chromedriver.storage.googleapis.com/LATEST_RELEASE' -OutFile 'C:\chromedriver_version.txt'
-          # $chromedriverVersion = Get-Content -Path 'C:\chromedriver_version.txt'
-          # Invoke-WebRequest -Uri "https://chromedriver.storage.googleapis.com/$chromedriverVersion/chromedriver_win32.zip" -OutFile 'C:\chromedriver_win32.zip'
-          # Expand-Archive -Path 'C:/chromedriver_win32.zip' -DestinationPath 'C:/SYF_Django/SchoolYardFinds'
-          # $env:PATH += ";C:/SYF_Django/SchoolYardFinds/chromedriver_win32"
-          #- uses: nanasess/setup-chromedriver@v2
-
           
 
-          #(+)CHROME_VERSION=$(google-chrome-stable --version | awk '{print $3}' | cut -d "." -f 1)
-          
+          CHROME_VERSION=$(google-chrome-stable --version | awk '{print $3}' | cut -d "." -f 1)
 
+          echo ${CHROME_VERSION}
 
-          CHROMEDRIVER_VERSION=$(curl -s "https://chromedriver.storage.googleapis.com/LATEST_RELEASE_${CHROME_VERSION}")
+          CHROMEDRIVER_VERSION=$(curl -s "https://chromedriver.storage.googleapis.com/LATEST_RELEASE_${{matrix.chrome-version}}")
 
 
           wget "https://chromedriver.storage.googleapis.com/${{ matrix.chromedriver-version }}/chromedriver_linux64.zip"
