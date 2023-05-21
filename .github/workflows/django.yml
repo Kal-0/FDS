@@ -111,6 +111,8 @@ jobs:
           # $env:PATH += ";C:/SYF_Django/SchoolYardFinds/chromedriver_win32"
           #- uses: nanasess/setup-chromedriver@v2
 
+          print("oia os print////////////\n\n")
+
           CHROME_VERSION=$(google-chrome-stable --version | awk '{print $3}' | cut -d "." -f 1)
           print(CHROME_VERSION)
 
