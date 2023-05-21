@@ -139,4 +139,7 @@ jobs:
 
         run: |
           cd SYF_Django/SchoolYardFinds
+          cd ctests
+          ls
+          cd ..
           python manage.py test  # Replace with your test command

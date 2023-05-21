@@ -17,7 +17,7 @@ driver_path = r"chromedriver.exe"
 
 driver_path = r"ctests/chromedriver"
 
-print("/////////////chromeDriver SET\n")
+
 
 timeout = 10
 
@@ -28,6 +28,7 @@ global driver
 driver = webdriver.Chrome(executable_path=driver_path, options=options)
 driver.set_page_load_timeout(timeout)
 
+print("/////////////chromeDriver SET\n")
 
 global decoy_user, logged_in, decoy_publication
 decoy_user = False
