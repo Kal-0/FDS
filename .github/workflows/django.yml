@@ -253,7 +253,8 @@ jobs:
           cd ctests
           ls
           
-          chromedriver
+          # chromedriver
           echo "chromedriver set"
+          
           cd ..
           python manage.py test  # Replace with your test command
