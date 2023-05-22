@@ -14,10 +14,10 @@ from selenium.webdriver.support import expected_conditions as EC
 
 
 #windows:
-#driver_path = r"chromedriver.exe"
+driver_path = r"chromedriver.exe"
 
 #linux-tests
-driver_path = r"ctests/chromedriver"
+#driver_path = r"ctests/chromedriver"
 
 
 
@@ -28,8 +28,8 @@ options = webdriver.ChromeOptions()
 global driver
 
 
-#driver = webdriver.Chrome(executable_path=driver_path, options=options)
-driver = webdriver.Chrome()
+driver = webdriver.Chrome(executable_path=driver_path, options=options)
+#driver = webdriver.Chrome()
 
 driver.set_page_load_timeout(timeout)
 
