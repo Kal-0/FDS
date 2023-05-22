@@ -44,8 +44,8 @@
                                             </form>
                                         </div>
                                         <div class="col-sm-4">
-                                            <form action="{% url 'chat' %}">
-                                              <button class="botao_amarelo" type="submit">Abrir Negociação</button>
+                                            <form action="{% url 'finalizar_cart' user_car.id %}">
+                                              <button class="botao_amarelo" type="submit" onclick="alert('Aguardando confimação do vendedor...')">Finalizar Compra</button>
                                             </form>
                                         </div>
                                         <div class="col-sm-4">

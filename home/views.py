@@ -216,8 +216,16 @@ def remove_cart(request, car_id):
 
     return redirect('carrinho')
 
-def chat(request):
-    return render(request, 'home/chat.html')
+def finalizar_cart(request, car_id):
+    cart = get_object_or_404(Carrinho, id = car_id)
+
+    cart.status = False
+    cart.save()
+
+    return redirect('carrinho')
+
+def painel_de_vendas(request):
+    return render(request, 'home/panel_de_vendas.html')
 
 def config(request):
     return render(request, 'home/configs.html')

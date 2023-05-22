@@ -7,6 +7,25 @@
 
     {% include 'home/partials/_barra.html'%}
 
+    <br>
+    <div style="display: flex; justify-content: center; align-items: center;">
+        
+        <div>
+            <form action="{% url 'config' %}">
+              <button class="botao_amarelo" type="submit">----</button>
+            </form>
+        </div>
+        <div>
+            <form action="{% url 'config' %}">
+              <button class="botao_amarelo" type="submit" onclick="alert('Aguardando confimação do vendedor...')">----</button>
+            </form>
+        </div>
+        <div>
+            <form action="{% url 'config' %}" method="POST">
+                <button name="removeItem_btn" class="botao_amarelo" type="submit">----</button>
+            </form>
+        </div>
+    </div>
     <br><br><br><br><br><br><br><br>
 
     <div style="display: flex; justify-content: center; align-items: center;">   
