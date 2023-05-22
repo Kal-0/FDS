@@ -13,19 +13,27 @@ from selenium.webdriver.support import expected_conditions as EC
 
 
 
+#windows:
 driver_path = r"chromedriver.exe"
 
-driver_path = r"ctests/chromedriver"
+#linux-tests
+#driver_path = r"ctests/chromedriver"
+
+
 
 timeout = 10
 
 options = webdriver.ChromeOptions()
 
 global driver
-#driver = webdriver.Chrome(executable_path=driver_path)
+
+
 driver = webdriver.Chrome(executable_path=driver_path, options=options)
+#driver = webdriver.Chrome()
+
 driver.set_page_load_timeout(timeout)
 
+print("/////////////chromeDriver SET\n")
 
 global decoy_user, logged_in, decoy_publication
 decoy_user = False
