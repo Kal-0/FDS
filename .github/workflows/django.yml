@@ -280,7 +280,7 @@ on:
 
 jobs:
   test:
-    runs-on: ubuntu-latest  # Use the Windows environment
+    runs-on: windows-latest  # Use the Windows environment
 
 
     strategy:
@@ -334,16 +334,14 @@ jobs:
 
           
           $CHROME_VERSION = (Get-ItemProperty 'HKLM:\Software\Microsoft\Windows\CurrentVersion\App Paths\chrome.exe').'(Default)' | Split-Path -Leaf
-          $CHROMEDRIVER_VERSION = Invoke-WebRequest -Uri "https://chromedriver.storage.googleapis.com/LATEST_RELEASE_$($CHROME_VERSION)" -UseBasicParsing | Select-Object -ExpandProperty Content
-
           echo ${CHROME_VERSION}
 
-          CHROMEDRIVER_VERSION=$(curl -s "https://chromedriver.storage.googleapis.com/LATEST_RELEASE_${CHROME_VERSION}")
+          $CHROMEDRIVER_VERSION = Invoke-WebRequest -Uri "https://chromedriver.storage.googleapis.com/LATEST_RELEASE_$($CHROME_VERSION)" -UseBasicParsing | Select-Object -ExpandProperty Content
           echo ${CHROMEDRIVER_VERSION}
 
-          wget "https://chromedriver.storage.googleapis.com/${CHROMEDRIVER_VERSION}/chromedriver_linux64.zip"
+          #//wget "https://chromedriver.storage.googleapis.com/${CHROMEDRIVER_VERSION}/chromedriver_linux64.zip"
 
-          unzip chromedriver_linux64.zip
+          #unzip chromedriver_linux64.zip
           # ls
           # cd SYF_Django
           # ls
@@ -353,8 +351,8 @@ jobs:
           # ls
 
 
-          sudo mv chromedriver SYF_Django/SchoolYardFinds/ctests/
-          sudo chmod +x SYF_Django/SchoolYardFinds/ctests/chromedriver
+          #//sudo mv chromedriver SYF_Django/SchoolYardFinds/ctests/
+          #//sudo chmod +x SYF_Django/SchoolYardFinds/ctests/chromedriver
 
           cd SYF_Django/SchoolYardFinds/ctests/
           ls
