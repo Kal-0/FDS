@@ -319,8 +319,8 @@ jobs:
           ## Download and install Chrome
 
 
-          wget https://dl.google.com/chrome/install/latest/chrome_installer.exe -O chrome_installer.exe
-          Start-Process -FilePath 'C:/chrome_installer.exe' -Args '--silent', '--install' -Wait
+          Invoke-WebRequest -Uri 'https://dl.google.com/chrome/install/latest/chrome_installer.exe' -OutFile 'C:\chrome_installer.exe'
+          Start-Process -FilePath 'C:\chrome_installer.exe' -Args '--silent', '--install' -Wait
 
           
 
@@ -333,10 +333,10 @@ jobs:
 
 
           
-          $CHROME_VERSION = (Get-ItemProperty 'HKLM:\Software\Microsoft\Windows\CurrentVersion\App Paths\chrome.exe').'(Default)' | Split-Path -Leaf
+          $CHROME_VERSION = (Get-ItemProperty -Path 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\App Paths\chrome.exe' -Name '(Default)').'(Default)' -replace '^(.*)\\chrome.exe$', '$1'
           echo ${CHROME_VERSION}
 
-          $CHROMEDRIVER_VERSION = Invoke-WebRequest -Uri "https://chromedriver.storage.googleapis.com/LATEST_RELEASE_$($CHROME_VERSION)" -UseBasicParsing | Select-Object -ExpandProperty Content
+          $CHROMEDRIVER_VERSION = (Invoke-WebRequest -Uri "https://chromedriver.storage.googleapis.com/LATEST_RELEASE_$($CHROME_VERSION)").Content.Trim()
           echo ${CHROMEDRIVER_VERSION}
 
           #//wget "https://chromedriver.storage.googleapis.com/${CHROMEDRIVER_VERSION}/chromedriver_linux64.zip"
