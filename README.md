@@ -1,4 +1,5 @@
-# FDS - Schoolyard Finds
+# FDS
+# Schoolyard Finds
 
 <!---Esses são exemplos. Veja https://shields.io para outras pessoas ou para personalizar este conjunto de escudos. Você pode querer incluir dependências, status do projeto e informações de licença aqui--->
 
@@ -13,11 +14,13 @@
 
 > Esse projeto foi feito para a comunidade da nossa universidade, com o objetivo de facilitar o comércio entre os membros das faculdades, por meio de uma plataforma de comunicação, onde seus usuários poderam publicar produtos que desejam vender, e mostrar interesse sobre os itens de outros usuários, para então, negociarem de forma mais rápida e concreta.
 
+<[Link para site](http://schoolyardfinds.sa-east-1.elasticbeanstalk.com)><br></br>
+
 ## 📁 Backlog e Painel
 
-<img src="https://cdn.discordapp.com/attachments/1096519466914947204/1107632707984445581/Captura_de_tela_2023-05-15_082652.png" width="1000px;" alt="Backlog"/><br>
+<img src="https://cdn.discordapp.com/attachments/1081640134371446956/1097659916069650542/Captura_de_tela_2023-04-17_200800.png" width="1000px;" alt="Backlog"/><br>
 
-<img src="https://cdn.discordapp.com/attachments/1096519466914947204/1107632708261249115/Captura_de_tela_2023-05-15_082910.png" width="1000px;" alt="Painel"/><br>
+<img src="https://cdn.discordapp.com/attachments/1081640134371446956/1097659915838955601/Captura_de_tela_2023-04-17_200730.png" width="1000px;" alt="Painel"/><br>
 
 ## 💻 Pré-requisitos
 
@@ -27,35 +30,35 @@ Antes de começar, verifique se você atendeu aos seguintes requisitos:
 * Você tem uma máquina `<Windows / Linux / Mac>`. Indique qual sistema operacional é compatível / não compatível.
 * Você leu `<guia / link / documentação_relacionada_ao_projeto>`.
 
-## 🚀 Ferramentas do Schoolyard Find
 
-### LINK DO SITE
+## 🚀 Schoolyard Find
 
-<[Link](http://schoolyardfinds1.us-east-1.elasticbeanstalk.com/)><br></br>
+Ferramentas:
 
-### JIRA:
+JIRA:
 
 <[Quadro Jira](https://decoy0.atlassian.net/jira/software/projects/SF/boards/3)><br></br>
 
-### FIGMA:
+FIGMA:
 
-<[Protótipo de Baixa](https://www.figma.com/file/2ip4H8uwjQ2fh1LfifG0ys/Prot%C3%B3tipo-Lo-Fi?node-id=0-1&t=4z1jTTTTcBTCKFU9-0)>
-
-<[Storyboards](https://www.figma.com/file/2ip4H8uwjQ2fh1LfifG0ys/Prot%C3%B3tipo-Lo-Fi?type=design&node-id=200%3A19&t=aEKpXn9853zZryfc-1)>
+<[Quadro Figma](https://www.figma.com/file/2ip4H8uwjQ2fh1LfifG0ys/Prot%C3%B3tipo-Lo-Fi?node-id=0-1&t=4z1jTTTTcBTCKFU9-0)>
 
 <[Figma Flow](https://www.figma.com/proto/2ip4H8uwjQ2fh1LfifG0ys/Prot%C3%B3tipo-Lo-Fi?node-id=154-3&scaling=min-zoom&page-id=0%3A1&starting-point-node-id=154%3A3)><br></br>
 
-### GOOGLE DRIVE:
+GOOGLE DRIVE:
 
-<[Google Drive](https://drive.google.com/drive/folders/0ABr0JCEViWteUk9PVA)>
+<[Sketchs](https://drive.google.com/drive/folders/1fE_FwNUclmHxMSdsRN0t-QUT1UX3w3iC)>
 
-<[Sketches](https://drive.google.com/drive/folders/1fE_FwNUclmHxMSdsRN0t-QUT1UX3w3iC)>
+<[Storyboards](https://www.figma.com/file/2ip4H8uwjQ2fh1LfifG0ys/Prot%C3%B3tipo-Lo-Fi?type=design&node-id=200%3A19&t=aEKpXn9853zZryfc-1)>
 
 <[Screencasts](https://drive.google.com/drive/folders/1tLMSk-QiT_0Hup6dKK3AOzqBuoBOML4j)>
 
-<[Pair Programming](https://docs.google.com/document/d/1mSuI-qKT06lHE_SEwzT0t8QsgcZj92air1IL0T6JQcA/edit)>
+<[Pair Programming](https://drive.google.com/drive/folders/1441ZlJdDW0m1_KSqb98R9jETa0zYaEn8)>
 
-<[Diagrama de atividades](https://drive.google.com/drive/folders/1uGEFYpptQfeVT83OvW_Num1Ex2-JRRqi)>
+<[Diagrama de atividades](https://drive.google.com/drive/folders/17ZE7ORyRPMqHQ2eKl1c-UdGEq4xrpw7K?usp=share_link)>
+
+<br></br>
+
 
 ## ☕ Usando Schoolyard Find
 
@@ -119,6 +122,20 @@ Desenvolvedores:
         <img src="https://avatars.githubusercontent.com/u/113111708?v=4" width="100px;" alt="Foto Sofia Valadares"/><br>
         <sub>
           <b>Sofia Valadares</b>
+        </sub>
+      </a>
+    </td>
+  </tr>
+</table>
+
+Orientadores:
+<table>
+  <tr>
+    <td align="center">
+      <a href="#">
+        <img src="https://avatars.githubusercontent.com/u/106926790?s=400&u=d51d91a8d447afbb4a9d0be21d664b82d7091fc5&v=4" width="100px;" alt="Foto Kal"/><br>
+        <sub>
+          <b>Caio Cesar</b>
         </sub>
       </a>
     </td>
