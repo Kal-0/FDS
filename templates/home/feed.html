@@ -12,7 +12,7 @@
         {% for categories in cats %}
 
         <!-- Botão de Categorias 1 -->
-        <a href="{% url 'categoria' categories.id %}" name="{{ categories.name }}_btn" class="botao_amarelo" style="background-color: #ecd048; color: #000000;">{{ categories.name }}</a>
+        <a href="{% url 'categoria' categories.id %}" name="{{ categories.name }}_btn" class="botao_amarelo" style="background-color: #ecd048; color: #000000;"><b> Categoria: {{ categories.name }}</b></a>
 
 
 
