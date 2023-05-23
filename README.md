@@ -14,7 +14,7 @@
 
 > Esse projeto foi feito para a comunidade da nossa universidade, com o objetivo de facilitar o comércio entre os membros das faculdades, por meio de uma plataforma de comunicação, onde seus usuários poderam publicar produtos que desejam vender, e mostrar interesse sobre os itens de outros usuários, para então, negociarem de forma mais rápida e concreta.
 
-<[Link para site](http://schoolyardfinds.sa-east-1.elasticbeanstalk.com)><br></br>
+<[Link para site](http://schoolyardfinds1.us-east-1.elasticbeanstalk.com/)><br></br>
 
 ## 📁 Backlog e Painel
 
