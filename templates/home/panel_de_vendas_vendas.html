@@ -11,21 +11,22 @@
     <div style="display: flex; justify-content: center; align-items: center;">
         
         <div>
-            <form action="{% url 'config' %}">
-              <button class="botao_amarelo" type="submit">----</button>
+            <form action="{% url 'painel_de_vendas_negociações' %}">
+              <button class="botao_amarelo" type="submit" style="border-radius: 5px 0px 0px 5px; width: 150px; border: none;">Negociações</button>
             </form>
         </div>
         <div>
-            <form action="{% url 'config' %}">
-              <button class="botao_amarelo" type="submit" onclick="alert('Aguardando confimação do vendedor...')">----</button>
+            <form action="#">
+              <button class="botao_amarelo" type="submit" style="border-radius: 0px 0px 0px 0px; width: 150px; border: none; background-color: antiquewhite;">Vendas</button>
             </form>
         </div>
         <div>
-            <form action="{% url 'config' %}" method="POST">
-                <button name="removeItem_btn" class="botao_amarelo" type="submit">----</button>
+            <form action="{% url 'painel_de_vendas_estoque' %}">
+                <button class="botao_amarelo" type="submit" style="border-radius: 0px 5px 5px 0px; width: 150px; border: none;">Estoque</button>
             </form>
         </div>
     </div>
+    
     <br><br><br><br><br><br><br><br>
 
     <div style="display: flex; justify-content: center; align-items: center;">   

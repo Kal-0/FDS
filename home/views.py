@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect, get_object_or_404
+from django.shortcuts import render, redirect, get_object_or_404, reverse
 from django.contrib.auth import authenticate, login
 from django.contrib import messages
 from django.shortcuts import render, redirect
@@ -224,8 +224,25 @@ def finalizar_cart(request, car_id):
 
     return redirect('carrinho')
 
-def painel_de_vendas(request):
-    return render(request, 'home/panel_de_vendas.html')
+def add_to_compra(request, item_id):
+    item = get_object_or_404(Item, id=item_id)
+
+    Carrinho.objects.create(
+        user=request.user.profile,
+        itens_carrinho=item,
+        status = False
+    )
+
+    return redirect('feed')
+
+def painel_de_vendas_negociações(request):
+    return render(request, 'home/panel_de_vendas_negociações.html')
+
+def painel_de_vendas_vendas(request):
+    return render(request, 'home/panel_de_vendas_vendas.html')
+
+def painel_de_vendas_estoque(request):
+    return render(request, 'home/panel_de_vendas_estoque.html')
 
 def config(request):
     return render(request, 'home/configs.html')

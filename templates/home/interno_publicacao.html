@@ -41,9 +41,10 @@
                               <b>Adicionar ao carrinho</b>
                             </button><br><br>
                         </form>
-                        <form action="{% url 'painel_de_vendas' %}">
-                            <button class="botao_amarelo" type="submit" onclick="alert('Negociação aberta!')">
-                                <b>- ver este botão-</b>
+                        <form action="{% url 'add_to_compra' item_id=items.id %}" method="POST">
+                            {% csrf_token %}
+                            <button class="botao_amarelo" type="submit" onclick="alert('Aguardando confimação do vendedor...')">
+                                <b>Comprar produto</b>
                             </button><br><br>
                         </form>
                         <form action="{% url 'busca' %}">
