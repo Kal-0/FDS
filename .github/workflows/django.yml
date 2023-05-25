@@ -484,10 +484,16 @@ jobs:
       - name: Run tests with Selenium
 
         run: |
+
+
+          python manage.py makemigrations
+          python manage.py migrate
+
+
           python manage.py runserver
           sleep 5
 
-          
+
           cd TestDrivers/
           ls
 
