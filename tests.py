@@ -87,6 +87,7 @@ class T1registerFormTest(LiveServerTestCase):
         time.sleep(3)
         
         register_btn.send_keys(Keys.RETURN)
+        time.sleep(0.2)
         
         
         
@@ -109,6 +110,7 @@ class T1registerFormTest(LiveServerTestCase):
         time.sleep(2)
         
         register_btn.send_keys(Keys.RETURN)
+        assert "signup/" not in driver.current_url
         time.sleep(3)
         
         decoy_user = True 

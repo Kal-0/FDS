@@ -271,6 +271,127 @@
 
 ##WINDOWS VERSION
 
+# name: Django CI Tests with Selenium
+
+# on:
+#   push:
+#     branches:
+#       - main  # Replace with the appropriate branch name
+
+# jobs:
+#   test:
+#     runs-on: windows-latest  # Use the Windows environment
+
+
+#     strategy:
+#       matrix:
+#         python-version: [3.11]
+#         chrome-version: ["113.0.5672.127"]
+#         chromedriver-version: ["113.0.5672.127"]
+
+#     steps:
+
+
+
+#       - name: Checkout code
+#         uses: actions/checkout@v3
+
+#       - name: Set up Python ${{ matrix.python-version }}
+#         uses: actions/setup-python@v3
+#         with:
+#           python-version: ${{ matrix.python-version }} # Replace with the desired Python version
+
+
+#       - name: Install dependencies
+#         run: |
+#           python -m pip install --upgrade pip
+#           cd SYF_Django/SchoolYardFinds
+#           pip install -r requirements.txt
+
+#           pip install msedge-selenium-tools
+
+#           cd ..
+#           cd ..
+
+
+#       - name: Set up Chrome and chromedriver
+#         run: |
+#           ## Download and install Chrome
+
+
+#           Invoke-WebRequest -Uri 'https://dl.google.com/chrome/install/latest/chrome_installer.exe' -OutFile 'C:\chrome_installer.exe'
+#           Start-Process -FilePath 'C:\chrome_installer.exe' -Args '--silent', '--install' -Wait
+
+          
+
+
+
+
+#           #.
+#           ## Download and install chromedriver
+
+
+
+          
+#           $CHROME_VERSION = (Get-ItemProperty -Path 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\App Paths\chrome.exe' -Name '(Default)').'(Default)' -replace '^(.*)\\chrome.exe$', '$1'
+#           echo ${CHROME_VERSION}
+
+#           $CHROMEDRIVER_VERSION = (Invoke-WebRequest -Uri "https://chromedriver.storage.googleapis.com/LATEST_RELEASE_$($CHROME_VERSION)").Content.Trim()
+#           echo ${CHROMEDRIVER_VERSION}
+
+#           #//wget "https://chromedriver.storage.googleapis.com/${CHROMEDRIVER_VERSION}/chromedriver_linux64.zip"
+
+#           #unzip chromedriver_linux64.zip
+#           # ls
+#           # cd SYF_Django
+#           # ls
+#           # cd SchoolYardFinds
+#           # ls
+#           # cd ctests
+#           # ls
+
+
+#           #//sudo mv chromedriver SYF_Django/SchoolYardFinds/ctests/
+#           #//sudo chmod +x SYF_Django/SchoolYardFinds/ctests/chromedriver
+
+#           cd SYF_Django/SchoolYardFinds/ctests/
+#           ls
+#           cd .. 
+#           cd ..
+#           cd ..
+#           ls
+
+
+
+#       - name: Run tests with Selenium
+
+#         run: |
+#           cd SYF_Django/SchoolYardFinds
+#           cd ctests
+#           ls
+          
+#           # chromedriver
+#           echo "chromedriver set"
+          
+#           cd ..
+#           python manage.py test  # Replace with your test command
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## New-Start
+
 name: Django CI Tests with Selenium
 
 on:
@@ -280,7 +401,7 @@ on:
 
 jobs:
   test:
-    runs-on: windows-latest  # Use the Windows environment
+    runs-on: ubuntu-latest  # Use the Windows environment
 
 
     strategy:
@@ -310,8 +431,8 @@ jobs:
 
           pip install msedge-selenium-tools
 
-          cd ..
-          cd ..
+          ls
+          sleep 2
 
 
       - name: Set up Chrome and chromedriver
@@ -319,9 +440,9 @@ jobs:
           ## Download and install Chrome
 
 
-          Invoke-WebRequest -Uri 'https://dl.google.com/chrome/install/latest/chrome_installer.exe' -OutFile 'C:\chrome_installer.exe'
-          Start-Process -FilePath 'C:\chrome_installer.exe' -Args '--silent', '--install' -Wait
-
+          set -ex
+          wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -O chrome.deb
+          sudo apt install ./chrome.deb
           
 
 
@@ -332,32 +453,28 @@ jobs:
 
 
 
-          
-          $CHROME_VERSION = (Get-ItemProperty -Path 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\App Paths\chrome.exe' -Name '(Default)').'(Default)' -replace '^(.*)\\chrome.exe$', '$1'
+          #CHROME_VERSION=$(google-chrome-stable --version | awk '{print $3}')
+
+          CHROME_VERSION=$(google-chrome-stable --version | awk '{print $3}' | cut -d "." -f 1)
           echo ${CHROME_VERSION}
 
-          $CHROMEDRIVER_VERSION = (Invoke-WebRequest -Uri "https://chromedriver.storage.googleapis.com/LATEST_RELEASE_$($CHROME_VERSION)").Content.Trim()
+
+          CHROMEDRIVER_VERSION=$(curl -s "https://chromedriver.storage.googleapis.com/LATEST_RELEASE_${CHROME_VERSION}")
           echo ${CHROMEDRIVER_VERSION}
 
-          #//wget "https://chromedriver.storage.googleapis.com/${CHROMEDRIVER_VERSION}/chromedriver_linux64.zip"
+          wget "https://chromedriver.storage.googleapis.com/${CHROMEDRIVER_VERSION}/chromedriver_linux64.zip"
 
-          #unzip chromedriver_linux64.zip
-          # ls
-          # cd SYF_Django
-          # ls
-          # cd SchoolYardFinds
-          # ls
-          # cd ctests
-          # ls
-
-
-          #//sudo mv chromedriver SYF_Django/SchoolYardFinds/ctests/
-          #//sudo chmod +x SYF_Django/SchoolYardFinds/ctests/chromedriver
-
-          cd SYF_Django/SchoolYardFinds/ctests/
+          unzip chromedriver_linux64.zip
+          
           ls
-          cd .. 
-          cd ..
+
+          sudo mv chromedriver TestDrivers/
+          sudo chmod +x TestDrivers/chromedriver
+
+
+          cd TestDrivers
+          ls
+
           cd ..
           ls
 
@@ -366,12 +483,13 @@ jobs:
       - name: Run tests with Selenium
 
         run: |
-          cd SYF_Django/SchoolYardFinds
-          cd ctests
+          cd TestDrivers/
           ls
-          
-          # chromedriver
-          echo "chromedriver set"
-          
+
           cd ..
+
+
+          python manage.py runserver
+          sleep 5
+
           python manage.py test  # Replace with your test command
