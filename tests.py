@@ -17,7 +17,7 @@ from selenium.webdriver.support import expected_conditions as EC
 driver_path = r"chromedriver.exe"
 
 #linux-tests
-#driver_path = r"ctests/chromedriver"
+driver_path = r"TestDrivers/chromedriver"
 
 
 
@@ -25,8 +25,9 @@ timeout = 10
 
 options = webdriver.ChromeOptions()
 
-global driver
 
+
+global driver
 
 driver = webdriver.Chrome(executable_path=driver_path, options=options)
 #driver = webdriver.Chrome()
@@ -34,6 +35,8 @@ driver = webdriver.Chrome(executable_path=driver_path, options=options)
 driver.set_page_load_timeout(timeout)
 
 print("/////////////chromeDriver SET\n")
+
+
 
 global decoy_user, logged_in, decoy_publication
 decoy_user = False
@@ -87,7 +90,36 @@ class T1registerFormTest(LiveServerTestCase):
         time.sleep(3)
         
         register_btn.send_keys(Keys.RETURN)
-        time.sleep(0.2)
+        time.sleep(2)
+        
+        #decoy already-exists-account doesnt exists case
+        if "signup/" not in driver.current_url:
+            register_btn = driver.find_element(By.ID, "register1")
+        
+            register_btn.send_keys(Keys.RETURN)
+            #pagina de cadastro
+            assert "signup/" in driver.current_url
+            
+            time.sleep(1)
+            
+            
+            username = driver.find_element(By.NAME, "username")
+            email = driver.find_element(By.NAME, "email")
+            password1 = driver.find_element(By.NAME, "password1")
+            password2 = driver.find_element(By.NAME, "password2")
+            register_btn = driver.find_element(By.ID, "submit_register1")
+            
+            username.send_keys("cadastroJaExistente")
+            email.send_keys("cadastroJaExistente@gmail.com")
+            password1.send_keys("senha1234")
+            password2.send_keys("senha1234")
+            time.sleep(3)
+            
+            register_btn.send_keys(Keys.RETURN)
+            
+            
+        
+        time.sleep(3)
         
         
         

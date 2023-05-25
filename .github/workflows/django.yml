@@ -427,7 +427,7 @@ jobs:
         run: |
           python -m pip install --upgrade pip
 
-          
+
           pip install -r requirements.txt
 
           pip install msedge-selenium-tools
@@ -484,13 +484,16 @@ jobs:
       - name: Run tests with Selenium
 
         run: |
+          python manage.py runserver
+          sleep 5
+
+          
           cd TestDrivers/
           ls
 
           cd ..
 
 
-          python manage.py runserver
-          sleep 5
+          
 
           python manage.py test  # Replace with your test command
