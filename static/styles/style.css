@@ -158,5 +158,13 @@
     
 }
 
+.card_image_panel {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 15px 0px 0px 15px;
+    margin-right: 15px;
+}
+
 
 

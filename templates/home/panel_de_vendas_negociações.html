@@ -27,6 +27,62 @@
         </div>
     </div>
     
+    <br><br>
+    {% if user_carrinho %}
+        <p class="carrinho_texto_titulo"> FINALIZAR NEGOCIAÇÕES </p>
+
+        {% for user_car in user_carrinho %}
+        
+          <div class="card-group">
+
+            <ul class="cards__lista">
+                {% if pub %}
+                  {% for items in pub %}
+
+                    {% if items == user_car.itens_carrinho %}
+
+                      <div class="card mb-3" style="width: 88vw; height: 189px; border-radius: 20px;">
+                          <div class="row g-0">
+                            <div class="col-md-2">
+                              {% if items.image == "" or items.image == null %}
+                              <img class="card_image_carrinho" src="{% static '/assets/imagens/home/not_found.png' %}" style="height: 180px; width: 250px;" alt="Produto">
+                              {% else %}
+                              <img class="card_image_carrinho" src="{{ items.image.url }}" style="height: 180px; width: 250px;" alt="Produto">
+                              {% endif %}
+                            </div>
+                            <div class="col-md-8">
+                              <div class="card-body">
+                                  <h5 class="card-title" style="height: 30px; overflow: hidden;"> Item: {{ items.name }} || {{ user_car.user }}</h5>
+                                  <h5 class="card-title" style="height: 30px; overflow: hidden;"> Usuario: {{ user_car.user }}</h5>
+                                  <p class="card-text" style="height: 18px; overflow: hidden;"> ID da compra: {{ user_car.id }}</p>
+                              </div>
+                            </div>
+                            <div class="col-md-2">
+                                <br>
+                                <form action="{% url 'confimar_venda' user_car.id %}" method="POST">
+                                    {% csrf_token %}
+                                    <button name="goShopping_btn" class="botao_amarelo" style="background-color: #81ed29; width: 165px;" type="submit">Confirmar compra</button>
+                                </form><br>
+                                <form action="{% url 'feed' %}">
+                                    <button name="goShopping_btn" class="botao_amarelo" style="background-color: #ed2929; width: 165px;" type="submit">Compra falsa</button>
+                                </form>
+                            </div>
+                          </div>
+                    {% else %}
+                    {% endif %}
+
+                  {% endfor %}
+
+                {% else %}
+                {% endif %}
+            </ul>
+          </div>
+
+      {% endfor %}
+
+      {% else %}
+      {% endif %}
+
     <br><br><br><br><br><br><br><br>
 
     <div style="display: flex; justify-content: center; align-items: center;">   

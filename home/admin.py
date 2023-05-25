@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Category, Item, Profile, Carrinho
+from .models import Category, Item, Profile, Carrinho, Historico
 
 class ListandoCategory(admin.ModelAdmin):
     list_display = ("id", "name")
@@ -30,3 +30,9 @@ class ListandoCarrinho(admin.ModelAdmin):
     list_editable = ("status",)
 
 admin.site.register(Carrinho, ListandoCarrinho)
+
+class ListandoHistorico(admin.ModelAdmin):
+    list_display = ("id", "item_id", "data_compra", "user_client", "user_vendodor")
+    list_display_links = ("id", "item_id", "data_compra")
+
+admin.site.register(Historico, ListandoHistorico)

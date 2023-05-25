@@ -3,7 +3,7 @@ from django.contrib.auth import authenticate, login
 from django.contrib import messages
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
-from home.models import Category, Item, Profile, Carrinho
+from home.models import Category, Item, Profile, Carrinho, Historico
 from .forms import SignupForm, ItemForm, ProfileForm
 
 
@@ -236,7 +236,28 @@ def add_to_compra(request, item_id):
     return redirect('feed')
 
 def painel_de_vendas_negociações(request):
-    return render(request, 'home/panel_de_vendas_negociações.html')
+    user = request.user
+    user_car = Carrinho.objects.filter(status=False)
+    items = Item.objects.filter(created_by=user, check_sold=False)
+
+    context={
+        'user_carrinho': user_car,
+        'pub': items,
+    }
+    return render(request, 'home/panel_de_vendas_negociações.html', context)
+
+def confimar_venda(request, car_id):
+    cart = get_object_or_404(Carrinho, id = car_id)
+
+    Historico.objects.create(
+        user_client = cart.user,
+        user_vendodor = request.user.profile,
+        item_id = cart.itens_carrinho,
+    )
+
+    cart.delete()
+
+    return redirect('painel_de_vendas_negociações')
 
 def painel_de_vendas_vendas(request):
     return render(request, 'home/panel_de_vendas_vendas.html')
