@@ -270,3 +270,6 @@ def config(request):
 
 def busca(request):
     return render(request, 'home/busca.html')
+
+def editar_publicacao(request):
+    return render(request, 'home/edit_publicacao.html')

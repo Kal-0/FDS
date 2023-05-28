@@ -1,5 +1,5 @@
 from django.urls import path
-from home.views import home, feed, perfil, login_user, signup, create_item, page_categoria, produto_detalhes, carrinho, edit_profile, add_to_cart, remove_cart, finalizar_cart, add_to_compra, painel_de_vendas_negociações, painel_de_vendas_vendas, painel_de_vendas_estoque, confimar_venda, config, busca
+from home.views import home, feed, perfil, login_user, signup, create_item, page_categoria, produto_detalhes, carrinho, edit_profile, add_to_cart, remove_cart, editar_publicacao, finalizar_cart, add_to_compra, painel_de_vendas_negociações, painel_de_vendas_vendas, painel_de_vendas_estoque, confimar_venda, config, busca
 from django.contrib.auth.views import LogoutView
 
 urlpatterns = [
@@ -24,4 +24,5 @@ urlpatterns = [
     path('confimar_venda/<int:car_id>/', confimar_venda, name="confimar_venda"),
     path('configurações/', config, name='config'),
     path('busca/', busca, name='busca'),
+    path('editar_publicacao/', editar_publicacao, name='edit_publicacao')
 ]
