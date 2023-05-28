@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from datetime import datetime
+from datetime import date
 
 # Create your models here.
 class Category(models.Model):
@@ -41,6 +42,15 @@ class Carrinho(models.Model):
     user = models.ForeignKey(Profile, related_name='list_car', on_delete=models.CASCADE)
     itens_carrinho = models.ForeignKey(Item, related_name='list_car', on_delete=models.CASCADE)
     status = models.BooleanField(default="True")
+
+    def __int__(self):
+        return self.id
+    
+class Historico(models.Model):
+    user_client = models.ForeignKey(Profile, related_name='hist_client', on_delete=models.CASCADE)
+    user_vendodor = models.ForeignKey(Profile, related_name='hist_vendedor', on_delete=models.CASCADE)
+    item_id =  models.ForeignKey(Item, related_name='his_item', on_delete=models.CASCADE)
+    data_compra = models.DateTimeField(default=datetime.now)
 
     def __int__(self):
         return self.id
