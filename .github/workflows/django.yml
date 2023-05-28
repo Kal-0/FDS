@@ -392,115 +392,181 @@
 
 ## New-Start
 
-name: Django CI Tests with Selenium
+# name: Django CI Tests with Selenium
+
+# on:
+#   push:
+#     branches:
+#       - main  # Replace with the appropriate branch name
+
+# jobs:
+#   test:
+#     runs-on: ubuntu-latest  # Use the linux environment
+
+
+#     strategy:
+#       matrix:
+#         python-version: [3.11]
+#         chrome-version: ["113.0.5672.127"]
+#         chromedriver-version: ["113.0.5672.127"]
+
+#     steps:
+
+
+
+#       - name: Checkout code
+#         uses: actions/checkout@v3
+
+#       - name: Set up Python ${{ matrix.python-version }}
+#         uses: actions/setup-python@v3
+#         with:
+#           python-version: ${{ matrix.python-version }} # Replace with the desired Python version
+
+
+#       - name: Install dependencies
+#         run: |
+#           python -m pip install --upgrade pip
+
+
+#           pip install -r requirements.txt
+
+#           pip install msedge-selenium-tools
+
+#           ls
+#           sleep 2
+
+
+#       - name: Set up Chrome and chromedriver
+#         run: |
+#           ## Download and install Chrome
+
+
+#           set -ex
+#           wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -O chrome.deb
+#           sudo apt install ./chrome.deb
+          
+
+
+
+
+#           #.
+#           ## Download and install chromedriver
+
+
+
+#           #CHROME_VERSION=$(google-chrome-stable --version | awk '{print $3}')
+
+#           CHROME_VERSION=$(google-chrome-stable --version | awk '{print $3}' | cut -d "." -f 1)
+#           echo ${CHROME_VERSION}
+
+
+#           CHROMEDRIVER_VERSION=$(curl -s "https://chromedriver.storage.googleapis.com/LATEST_RELEASE_${CHROME_VERSION}")
+#           echo ${CHROMEDRIVER_VERSION}
+
+#           wget "https://chromedriver.storage.googleapis.com/${CHROMEDRIVER_VERSION}/chromedriver_linux64.zip"
+
+#           unzip chromedriver_linux64.zip
+          
+#           ls
+
+#           sudo mv chromedriver TestDrivers/
+#           sudo chmod +x TestDrivers/chromedriver
+
+
+#           cd TestDrivers
+#           ls
+
+#           cd ..
+#           ls
+
+
+
+#       - name: Run tests with Selenium
+
+#         run: |
+
+
+#           python manage.py makemigrations
+#           python manage.py migrate
+
+
+#           python manage.py runserver &
+#           sleep 5
+
+
+#           cd TestDrivers/
+#           ls
+
+#           cd ..
+
+
+
+#           python manage.py test  # Replace with your test command
+
+#           kill $(jobs -p)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## another one...
+
+
+name: Django CI
 
 on:
   push:
-    branches:
-      - main  # Replace with the appropriate branch name
-
+    branches: [ "main" ]
+  
 jobs:
-  test:
-    runs-on: ubuntu-latest  # Use the Windows environment
+  build:
 
-
+    runs-on: ubuntu-latest
     strategy:
+      max-parallel: 4
       matrix:
         python-version: [3.11]
-        chrome-version: ["113.0.5672.127"]
-        chromedriver-version: ["113.0.5672.127"]
 
     steps:
+    - name: checkout code
+      uses: actions/checkout@v3
+
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v3
+      with:
+        python-version: ${{ matrix.python-version }}
 
 
+    - name: Install Dependencies
+      run: |
+        set -ex
+        wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+        sudo apt install ./google-chrome-stable_current_amd64.deb
 
-      - name: Checkout code
-        uses: actions/checkout@v3
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        pip install msedge-selenium-tools
 
-      - name: Set up Python ${{ matrix.python-version }}
-        uses: actions/setup-python@v3
-        with:
-          python-version: ${{ matrix.python-version }} # Replace with the desired Python version
+    
 
+    - uses: nanasess/setup-chromedriver@v2
 
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-
-
-          pip install -r requirements.txt
-
-          pip install msedge-selenium-tools
-
-          ls
-          sleep 2
+    - run: |
+        chromedriver --url-base=/wd/hub &
 
 
-      - name: Set up Chrome and chromedriver
-        run: |
-          ## Download and install Chrome
+    - name: Run local Server and tests
+      run: |
+        python manage.py runserver &
+        sleep 5
 
-
-          set -ex
-          wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -O chrome.deb
-          sudo apt install ./chrome.deb
-          
-
-
-
-
-          #.
-          ## Download and install chromedriver
-
-
-
-          #CHROME_VERSION=$(google-chrome-stable --version | awk '{print $3}')
-
-          CHROME_VERSION=$(google-chrome-stable --version | awk '{print $3}' | cut -d "." -f 1)
-          echo ${CHROME_VERSION}
-
-
-          CHROMEDRIVER_VERSION=$(curl -s "https://chromedriver.storage.googleapis.com/LATEST_RELEASE_${CHROME_VERSION}")
-          echo ${CHROMEDRIVER_VERSION}
-
-          wget "https://chromedriver.storage.googleapis.com/${CHROMEDRIVER_VERSION}/chromedriver_linux64.zip"
-
-          unzip chromedriver_linux64.zip
-          
-          ls
-
-          sudo mv chromedriver TestDrivers/
-          sudo chmod +x TestDrivers/chromedriver
-
-
-          cd TestDrivers
-          ls
-
-          cd ..
-          ls
-
-
-
-      - name: Run tests with Selenium
-
-        run: |
-
-
-          python manage.py makemigrations
-          python manage.py migrate
-
-
-          python manage.py runserver &
-          sleep 5
-
-
-          cd TestDrivers/
-          ls
-
-          cd ..
-
-
-
-          python manage.py test  # Replace with your test command
-
-          kill $(jobs -p)
+        python manage.py test
