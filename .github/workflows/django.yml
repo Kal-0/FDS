@@ -554,6 +554,7 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
         pip install msedge-selenium-tools
+        python -m pip install --upgrade pip
 
 
     - name: Install Chrome-browser
