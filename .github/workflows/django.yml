@@ -500,7 +500,6 @@ jobs:
           cd ..
 
 
-          
 
           python manage.py test  # Replace with your test command
 
