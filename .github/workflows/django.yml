@@ -537,8 +537,10 @@ jobs:
         python-version: [3.11]
 
     steps:
-    - name: checkout code
+
+    - name: Checkout code
       uses: actions/checkout@v3
+
 
     - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v3
@@ -548,23 +550,50 @@ jobs:
 
     - name: Install Dependencies
       run: |
-        set -ex
-        wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-        sudo apt install ./google-chrome-stable_current_amd64.deb
 
         python -m pip install --upgrade pip
         pip install -r requirements.txt
         pip install msedge-selenium-tools
 
+
+    - name: Install Chrome-browser
+      run: |
+        set -ex
+        wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+        sudo apt install ./google-chrome-stable_current_amd64.deb
     
 
-    - uses: nanasess/setup-chromedriver@v2
+    - name: Install Chromedriver
+      uses: nanasess/setup-chromedriver@v2
+      
+    - name: File check
+      run: |
+        sleep 1
+        ls
+        sleep 1
+        ..
+        ls
+        sleep 1
 
-    - run: |
+        ..
+        ls
+        sleep 1
+
+        ..
+        ls
+        sleep 1
+
+        ..
+        ls
+        sleep 1
+
+
+    - name: Activate Driver
+      run: |
         chromedriver --url-base=/wd/hub &
 
 
-    - name: Run local Server and tests
+    - name: Run local Server and Tests
       run: |
         python manage.py runserver &
         sleep 5
