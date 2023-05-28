@@ -25,7 +25,7 @@ driver_path = r"TestDrivers/chromedriver"
 
 timeout = 10
 
-service = Service()
+#service = Service()
 
 options = webdriver.ChromeOptions()
 options.add_argument("--no-sandbox")
