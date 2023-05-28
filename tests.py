@@ -1,4 +1,5 @@
 from django.test import LiveServerTestCase
+import unittest
 import time
 
 from selenium import webdriver
@@ -98,10 +99,15 @@ class T1registerFormTest(LiveServerTestCase):
         register_btn.send_keys(Keys.RETURN)
         time.sleep(2)
         
+        
+        print("case 0000")
+        
         #decoy already-exists-account doesnt exists case
         if "signup/" not in driver.current_url:
             register_btn = driver.find_element(By.ID, "register1")
-        
+            
+            print("case 1111")
+            
             register_btn.send_keys(Keys.RETURN)
             #pagina de cadastro
             assert "signup/" in driver.current_url
@@ -148,6 +154,8 @@ class T1registerFormTest(LiveServerTestCase):
         time.sleep(2)
         
         register_btn.send_keys(Keys.RETURN)
+        
+        print(driver.current_url)
         assert "signup/" not in driver.current_url
         time.sleep(3)
         
@@ -507,5 +515,6 @@ class T6editProfileTest(LiveServerTestCase):
         
         
 
-        
+if __name__ == "__main__":
+    unittest.main()
         
