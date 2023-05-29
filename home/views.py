@@ -259,6 +259,15 @@ def confimar_venda(request, car_id):
 
     return redirect('painel_de_vendas_negociações')
 
+def cancelar_venda(request, car_id):
+    cart = get_object_or_404(Carrinho, id = car_id)
+
+    cart.status = True
+    cart.save()
+
+    return redirect('painel_de_vendas_negociações')
+
+
 def painel_de_vendas_vendas(request):
     return render(request, 'home/panel_de_vendas_vendas.html')
 

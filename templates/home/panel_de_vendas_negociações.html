@@ -61,10 +61,11 @@
                                 <br>
                                 <form action="{% url 'confimar_venda' user_car.id %}" method="POST">
                                     {% csrf_token %}
-                                    <button name="goShopping_btn" class="botao_amarelo" style="background-color: #81ed29; width: 165px;" type="submit">Confirmar compra</button>
+                                    <button name="goShopping_btn" class="botao_amarelo" style="background-color: #81ed29; width: 165px;" type="submit" onclick="alert('Compra finalizada!\nIremos alertar ao cliente')">Confirmar compra</button>
                                 </form><br>
-                                <form action="{% url 'feed' %}">
-                                    <button name="goShopping_btn" class="botao_amarelo" style="background-color: #ed2929; width: 165px;" type="submit">Compra falsa</button>
+                                <form action="{% url 'cancelar_venda' user_car.id%}">
+                                    {% csrf_token %}
+                                    <button name="goShopping_btn" class="botao_amarelo" style="background-color: #ed2929; width: 165px;" type="submit" onclick="alert('Compra canceladada!\nIremos alertar ao cliente')">Cancelar compra</button>
                                 </form>
                             </div>
                           </div>
@@ -82,23 +83,6 @@
 
       {% else %}
       {% endif %}
-
-    <br><br><br><br><br><br><br><br>
-
-    <div style="display: flex; justify-content: center; align-items: center;">   
-        <img class="img" style="width: 100px; height: auto;" src="{% static '/assets/imagens/home/image.png' %}" alt="imagem">
-    </div><br>
- 
-    <p class="carrinho_texto_titulo" style="font-size: 70px;"> FUNÇÃO EM DESENVOLVIMENTO </p>
-    <p class="carrinho_texto_titulo"> Volte mais tarde </p>
-
-    <div style="display: flex; justify-content: center; align-items: center;">   
-        <a href="javascript:history.back()">
-            <button class="botao_amarelo">
-                <b>Voltar para ultima pagina</b>
-            </button>
-        </a>    
-    </div><br>
 
     <!-- Barra de Navegação (Logo, Pesquisa, Home, Carrinho e Perfil) -->
 
