@@ -68,11 +68,9 @@ Para usar Schoolyard Find, siga estas etapas:
 
 ```
 
-- Comandos para Instalação de Extensões:
+- Comandos para Instalação de Extensões no Requirements.txt:
 ```
-1. pip install django
-2. pip install pillow
-3. pip install pysqlite3 
+1. pip install -r requirements.txt
 ```
 
 - Comandos para Utilização da Aplicação na IDE:
