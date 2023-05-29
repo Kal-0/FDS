@@ -64,6 +64,8 @@ Para usar Schoolyard Find, siga estas etapas:
 3. Após isso, ele deverá inserir no terminal o comando "git clone https://github.com/Kal-0/FDS.git".
 4. O usuário então abrirá o seu Visual Studio Code na versão certa e com as extensões baixadas, e apertará no botão "File".
 5. Após isso, ele deverá navegar até "Open Folder", escolhendo a pasta que ele nomeou e aplicou o git clone.
+6. O usuário deverá clicar com o botão direito do mouse em "FDS" e escolher a opção "Open in Integrated Terminal".
+
 ```
 
 - Comandos para Instalação de Extensões:
