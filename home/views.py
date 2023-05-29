@@ -3,7 +3,7 @@ from django.contrib.auth import authenticate, login
 from django.contrib import messages
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
-from home.models import Category, Item, Profile, Carrinho, Historico
+from home.models import Category, Item, Profile, Carrinho, Historico, Noticacao
 from .forms import SignupForm, ItemForm, ProfileForm
 
 
@@ -167,7 +167,9 @@ def carrinho(request):
     user_profile = Profile.objects.get(user=request.user)
     user_car = Carrinho.objects.filter(user=user_profile.id, status=True)
     items = Item.objects.filter(check_sold=False)
+    profile = Profile.objects.all()
 
+    
     valor_total = 0
     itens_quant = 0
 
@@ -180,6 +182,7 @@ def carrinho(request):
     return render(request, "home/carrinho.html", {
         'user_carrinho': user_car,
         'pub': items,
+        'profiles': profile,
         'valor_total': valor_total,
         'itens_quant': itens_quant,
     })
@@ -255,6 +258,16 @@ def confimar_venda(request, car_id):
         item_id = cart.itens_carrinho,
     )
 
+    if not Noticacao.objects.filter(user=request.user):
+        Noticacao.objects.create(
+            user = request.user,
+            compra_finalizada = 1,
+        )
+    else:
+        notificacao = Noticacao.objects.get(user=request.user)
+        notificacao.compra_finalizada += 1
+        notificacao.save()
+
     cart.delete()
 
     return redirect('painel_de_vendas_negociações')
@@ -262,6 +275,16 @@ def confimar_venda(request, car_id):
 def cancelar_venda(request, car_id):
     cart = get_object_or_404(Carrinho, id = car_id)
 
+    if not Noticacao.objects.filter(user=request.user):
+        Noticacao.objects.create(
+            user = request.user,
+            compra_cancelada = 1,
+        )
+    else:
+        notificacao = Noticacao.objects.get(user=request.user)
+        notificacao.compra_cancelada += 1
+        notificacao.save()
+    
     cart.status = True
     cart.save()
 

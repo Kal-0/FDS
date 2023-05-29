@@ -33,9 +33,24 @@
                             </div>
                             <div class="col-md-8">
                               <div class="card-body">
-                                  <p class="card-text" style="height: 20px; overflow: hidden;">{{ items.category }} || R${{ items.price }}</p> 
-                                  <h5 class="card-title" style="height: 50px; overflow: hidden;">{{ items.name }}</h5>
-                                  <p class="card-text" style="height: 80px; overflow: hidden;">{{ items.description  }}</p>
+                                <div class="card-group">
+                                  <div class="col-sm-6">
+                                    <p class="card-text" style="height: 20px; overflow: hidden;">{{ items.category }} || R${{ items.price }}</p> 
+                                    <h5 class="card-title" style="height: 30px; overflow: hidden;">{{ items.name }}</h5>
+                                    <p class="card-text" style="height: 80px; overflow: hidden;">{{ items.description }}</p>
+                                  </div>
+                                  <div class="col-sm-6">
+                                    <h5 class="card-title" style="height: 30px; overflow: hidden;">CONTATO</h5>
+                                    {% for profile in profiles %}
+                                      {% if profile.user == items.created_by %}
+                                      <p class="card-text" style="height: 20px; overflow: hidden;">Vendedor: {{ profile.name }}</p>
+                                        <p class="card-text" style="height: 20px; overflow: hidden;">Número: {{ profile.phone }}</p> 
+                                      {% else %}
+                                      {% endif %}
+                                    {% endfor %}
+                                  </div>
+                                </div>
+                                
                                   <div class="text-center">
                                     <div class="row">
                                         <div class="col-sm-4">

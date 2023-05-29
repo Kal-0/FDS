@@ -54,3 +54,11 @@ class Historico(models.Model):
 
     def __int__(self):
         return self.id
+
+class Noticacao(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    compra_finalizada = models.IntegerField(default=0)
+    compra_cancelada = models.IntegerField(default=0)
+
+    def __int__(self):
+        return self.id
