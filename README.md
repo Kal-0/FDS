@@ -69,7 +69,7 @@ Para usar Schoolyard Find, siga estas etapas:
 - Comandos para Instalação de Extensões:
 ```
 1. pip install django
-2. pip install cloud
+2. pip install pillow
 3. pip install pysqlite3 
 ```
 
@@ -87,8 +87,6 @@ Para usar Schoolyard Find, siga estas etapas:
 ```
 1. Inserir no seu navegador o link "http://schoolyardfinds1.us-east-1.elasticbeanstalk.com/"
 ```
-
-Adicionar comandos de execução e exemplos que você acha que os usuários acharão úteis. Fornecer uma referência de opções para pontos de bônus!
 
 ## 🤝 Colaboradores
 
