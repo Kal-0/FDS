@@ -24,9 +24,10 @@
 ## 💻 Pré-requisitos
 
 - <b>Linguagem de Programação:</b> Python v2023.8.0, JavaScript, CSS, HTML.
-- <b>IDE:</b> Visual Studio Code 1.78.2.
+- <b>Git:</b> Baixe o Git.
+- <b>IDE:</b> Visual Studio Code 1.78.2 ou outras IDEs.
 - <b>Extensions:</b> SQLite Viewer v0.2.5, HTML CSS Support v1.13.1, Live Server v5.7.9.
-- <b>Sistema Operacional Compatível:</b> Windows e Mac.
+- <b>Sistema Operacional Compatível:</b> Windows, Mac e Linux.
 
 ## 🚀 Ferramentas Utilizadas na Criação do Schoolyard Finds
 
@@ -50,6 +51,8 @@ GOOGLE DRIVE:
 
 - [Pair Programming](https://drive.google.com/drive/folders/1441ZlJdDW0m1_KSqb98R9jETa0zYaEn8)
 
+- [Prints](https://drive.google.com/drive/folders/1oF3lKw1-_6un3ANsv_0aEa_aDPxnzQyW)
+
 - [Diagrama de atividades](https://drive.google.com/drive/folders/17ZE7ORyRPMqHQ2eKl1c-UdGEq4xrpw7K?usp=share_link)
 
 
@@ -68,19 +71,26 @@ Para usar Schoolyard Find, siga estas etapas:
 
 ```
 
-- Comandos para Instalação de Extensões no Requirements.txt:
+- Comandos para Instalação Libs necessarias no Requirements.txt:
 ```
 1. pip install -r requirements.txt
 ```
 
-- Comandos para Utilização da Aplicação na IDE:
+- Comandos para utilização da aplicação local:
+```
+1. python manage.py makemigrations
+1. python manage.py migrate
+3. python manage.py runserver
+```
+
+
+- Comandos para contribuição na IDE:
 ```
 1. git pull
 2. git add .
 3. git status
 4. git commit -m "Inserir Mensagem"
 5. git push
-6. python manage.py runserver
 ```
 
 - Abrir o Site do Schoolyard Finds:
