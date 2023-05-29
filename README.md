@@ -23,7 +23,7 @@
 
 ## 💻 Pré-requisitos
 
-- <b>Linguagem de Programação:</b> Python v2023.8.0. JavaScript, CSS, HTML
+- <b>Linguagem de Programação:</b> Python v2023.8.0, JavaScript, CSS, HTML.
 - <b>IDE:</b> Visual Studio Code 1.78.2.
 - <b>Extensions:</b> SQLite Viewer v0.2.5, HTML CSS Support v1.13.1, Live Server v5.7.9.
 - <b>Sistema Operacional Compatível:</b> Windows e Mac.
