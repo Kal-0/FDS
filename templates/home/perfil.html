@@ -32,28 +32,32 @@
             
             &nbsp;
         
-                <div class="container">
+            <div class="container">
+              <p class="carrinho_texto_titulo"> PUBLICAÇÕES </p>
 
-                    <p class="carrinho_texto_titulo"> PUBLICAÇÕES </p>
+              <div class="row">
+                {% for items in pub %}
+                  {% if items.created_by == user_profile.user %}
+                    <div class="col-md-4 d-flex justify-content-center text-center">
+                      <div class="card_feed" style="height: 320px; object-fit: cover">
+                        
+                        {% if items.image == "" or items.image == null %}
+                        <img class="card_image" style="height: 200px; width: 311px; object-fit: cover;" src="{% static '/assets/imagens/home/not_found.png' %}" alt="Produto">
+                        {% else %}
+                        <img class="card_image" style="height: 200px; width: 311px; object-fit: cover;" src="{{ items.image.url }}" alt="Produto">
+                        {% endif %}
+              
+                        <h5 class="card-title" style="height: 50px; overflow: hidden;"><b>{{ items.name }}</b></h5>
+                        <a href="{% url 'produto' items.id %}" name="{{items.name}}_btn" class="botao_amarelo" style="background-color: #2da8dd; color: #000000;">Visualizar</a>
+                      </div>
+                    </div>
+                  {% else %}
+                  {% endif %}
+                {% endfor %}
+              </div>              
 
-                  <div class="row">
-
-                    {% for items in pub %}
-                    {% if items.created_by == user_profile.user %}
-
-                        <div class="col-md-4 d-flex justify-content-center">
-                            <a href="{% url 'produto' items.id %}" class="btn btn-lg m-3" style="background-color: #ecd048; color: #000000; width: 400px; height: 150px; line-height: 90px" type="button">
-                                <h3><b>{{ items.name }}</b></h3>
-                                {{ items.description }} || R${{ items.price }}
-                            </a>
-                        </div>
-                    
-                    {% else %}
-                    {% endif %}
-                    {% endfor %}
-
-                  </div>
-                </div>
+            </div>
+            
             </div>
         </div>
         
