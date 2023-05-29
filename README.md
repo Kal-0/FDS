@@ -11,9 +11,7 @@
 
 <img src="https://media.discordapp.net/attachments/938158080733110393/1105822709268611162/image.png?width=1524&height=450" alt="Logo do Projeto">
 
-> Esse projeto foi feito para a comunidade da nossa universidade, CESAR School, com o objetivo de facilitar o comércio entre os membros das faculdades, por meio de uma plataforma marketplace, onde os seus usuários poderão publicar produtos que desejam vender e comprar itens de outros usuários, negociando com o vendedor o item que deseja.
-
-[Acessar Nosso Site](http://schoolyardfinds1.us-east-1.elasticbeanstalk.com/)
+> Esse projeto foi feito para a comunidade da nossa universidade, CESAR School, com o objetivo de facilitar o comércio entre os membros das faculdades, por meio de uma plataforma marketplace, onde os seus usuários poderão publicar produtos que desejam vender e comprar itens de outros usuários, negociando com o vendedor o item que deseja. Podendo acessar nosso site, através desse [link](http://schoolyardfinds1.us-east-1.elasticbeanstalk.com/).
 
 ## 📁 Backlog e Painel
 
