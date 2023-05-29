@@ -23,12 +23,12 @@
 
 ## 💻 Pré-requisitos
 
-- <b>Linguagem de Programação:</b> Python v2023.8.0.
+- <b>Linguagem de Programação:</b> Python v2023.8.0. JavaScript, CSS, HTML
 - <b>IDE:</b> Visual Studio Code 1.78.2.
 - <b>Extensions:</b> SQLite Viewer v0.2.5, HTML CSS Support v1.13.1, Live Server v5.7.9.
 - <b>Sistema Operacional Compatível:</b> Windows e Mac.
 
-## 🚀 Ferramentas Utilizadas no Schoolyard Find
+## 🚀 Ferramentas Utilizadas na Criação do Schoolyard Finds
 
 JIRA:
 
@@ -66,7 +66,12 @@ Para usar Schoolyard Find, siga estas etapas:
 5. Após isso, ele deverá navegar até "Open Folder", escolhendo a pasta que ele nomeou e aplicou o git clone.
 ```
 
-<br></br>
+- Comandos para Instalação de Extensões:
+```
+1. pip install django
+2. pip install cloud
+3. pip install pysqlite3 
+```
 
 - Comandos para Utilização da Aplicação na IDE:
 ```
@@ -77,8 +82,6 @@ Para usar Schoolyard Find, siga estas etapas:
 5. git push
 6. python manage.py runserver
 ```
-
-<br></br>
 
 - Abrir o Site do Schoolyard Finds:
 ```
