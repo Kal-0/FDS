@@ -10,11 +10,11 @@
         {% include 'home/partials/_barra.html'%}
 
         <div id="page" class="p-3 mb-2" style="background-color: #414141">
-            <div class="card" style=" border: 5px solid #000000; width: 18rem;">
+            <div class="card" style=" border: 5px solid #000000; width: 18rem; border-radius: 20px;">
               {% if user_profile.profile_image == "" or user_profile.profile_image == null %}
-              <img src="https://cdn.discordapp.com/attachments/1096519466914947204/1096930839935340605/0fffcf4a571bc35e42b713f406363b71.jpg" alt="Foto de Perfil" width="auto" height="210">
+              <img src="https://cdn.discordapp.com/attachments/1096519466914947204/1096930839935340605/0fffcf4a571bc35e42b713f406363b71.jpg" alt="Foto de Perfil" width="auto" height="210" style="border-radius: 14px;">
               {% else %}
-              <img src="{{ user_profile.profile_image.url }}" alt="Foto de Perfil" width="auto" height="210">
+              <img src="{{ user_profile.profile_image.url }}" alt="Foto de Perfil" width="auto" height="210" style="border-radius: 14px;">
               {% endif %}
               <div class="card-body">
                 <div class="d-flex justify-content-between">
@@ -47,7 +47,7 @@
                         <img class="card_image" style="height: 200px; width: 311px; object-fit: cover;" src="{{ items.image.url }}" alt="Produto">
                         {% endif %}
               
-                        <h5 class="card-title" style="height: 50px; overflow: hidden;"><b>{{ items.name }}</b></h5>
+                        <h5 class="card-title" style="height: 50px; overflow: hidden;"><b>Nome do Produto: </b>{{ items.name }}</h5>
                         <a href="{% url 'produto' items.id %}" name="{{items.name}}_btn" class="botao_amarelo" style="background-color: #2da8dd; color: #000000;">Visualizar</a>
                       </div>
                     </div>

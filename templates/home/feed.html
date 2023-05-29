@@ -25,6 +25,7 @@
                 {% for items in pub %}
 
                 {% if items.category_id == categories.id %}
+                
                 <li class="card_feed">
                     {% if items.image == "" or items.image == null %}
                     <img class="card_image" src="{% static '/assets/imagens/home/not_found.png' %}" alt="Produto">
