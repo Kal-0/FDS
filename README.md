@@ -13,7 +13,7 @@
 
 > Esse projeto foi feito para a comunidade da nossa universidade, com o objetivo de facilitar o comércio entre os membros das faculdades, por meio de uma plataforma de comunicação, onde seus usuários poderam publicar produtos que desejam vender, e mostrar interesse sobre os itens de outros usuários, para então, negociarem de forma mais rápida e concreta.
 
-[Link para site](http://schoolyardfinds1.us-east-1.elasticbeanstalk.com/)<br></br>
+[Link para acessar o site](http://schoolyardfinds1.us-east-1.elasticbeanstalk.com/)
 
 ## 📁 Backlog e Painel
 
@@ -23,14 +23,10 @@
 
 ## 💻 Pré-requisitos
 
-Antes de começar, verifique se você atendeu aos seguintes requisitos:
-* Você instalou a versão mais recente de `<linguagem / dependência / requeridos>`
-* Você tem uma máquina `<Windows / Linux / Mac>`. Indique qual sistema operacional é compatível / não compatível.
-* Você leu `<guia / link / documentação_relacionada_ao_projeto>`.
-
 - <b>Linguagem de Programação:</b> Python v2023.8.0.
 - <b>IDE:</b> Visual Studio Code 1.78.2.
 - <b>Extensions:</b> SQLite Viewer v0.2.5, HTML CSS Support v1.13.1, Live Server v5.7.9.
+- <b>Sistema Operacional Compatível:</b> Windows e Mac.
 
 ## 🚀 Ferramentas Utilizadas no Schoolyard Find
 
@@ -56,8 +52,6 @@ GOOGLE DRIVE:
 
 - [Diagrama de atividades](https://drive.google.com/drive/folders/17ZE7ORyRPMqHQ2eKl1c-UdGEq4xrpw7K?usp=share_link)
 
-<br></br>
-
 
 ## ☕ Usando Schoolyard Find
 
@@ -81,7 +75,10 @@ Para usar Schoolyard Find, siga estas etapas:
 3. git status
 4. git commit -m "Inserir Mensagem"
 5. git push
+6. python manage.py runserver
 ```
+
+<br></br>
 
 - Abrir o Site do Schoolyard Finds:
 ```
