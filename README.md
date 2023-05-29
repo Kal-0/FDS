@@ -11,9 +11,9 @@
 
 <img src="https://media.discordapp.net/attachments/938158080733110393/1105822709268611162/image.png?width=1524&height=450" alt="Logo do Projeto">
 
-> Esse projeto foi feito para a comunidade da nossa universidade, com o objetivo de facilitar o comércio entre os membros das faculdades, por meio de uma plataforma de comunicação, onde seus usuários poderam publicar produtos que desejam vender, e mostrar interesse sobre os itens de outros usuários, para então, negociarem de forma mais rápida e concreta.
+> Esse projeto foi feito para a comunidade da nossa universidade, CESAR School, com o objetivo de facilitar o comércio entre os membros das faculdades, por meio de uma plataforma marketplace, onde os seus usuários poderão publicar produtos que desejam vender e comprar itens de outros usuários, negociando com o vendedor o item que deseja.
 
-[Link para acessar o site](http://schoolyardfinds1.us-east-1.elasticbeanstalk.com/)
+[Acessar Nosso Site](http://schoolyardfinds1.us-east-1.elasticbeanstalk.com/)
 
 ## 📁 Backlog e Painel
 
@@ -51,7 +51,7 @@ GOOGLE DRIVE:
 
 - [Pair Programming](https://drive.google.com/drive/folders/1441ZlJdDW0m1_KSqb98R9jETa0zYaEn8)
 
-- [Prints](https://drive.google.com/drive/folders/1oF3lKw1-_6un3ANsv_0aEa_aDPxnzQyW)
+- [Painel e Backlog](https://drive.google.com/drive/folders/1oF3lKw1-_6un3ANsv_0aEa_aDPxnzQyW)
 
 - [Diagrama de atividades](https://drive.google.com/drive/folders/17ZE7ORyRPMqHQ2eKl1c-UdGEq4xrpw7K?usp=share_link)
 
@@ -71,12 +71,12 @@ Para usar Schoolyard Find, siga estas etapas:
 
 ```
 
-- Comandos para Instalação Libs necessarias no Requirements.txt:
+- Comandos para Instalação Libs Necessárias no Requirements.txt:
 ```
 1. pip install -r requirements.txt
 ```
 
-- Comandos para utilização da aplicação local:
+- Comandos para Utilização da Aplicação Local:
 ```
 1. python manage.py makemigrations
 1. python manage.py migrate
@@ -84,7 +84,7 @@ Para usar Schoolyard Find, siga estas etapas:
 ```
 
 
-- Comandos para contribuição na IDE:
+- Comandos para Contribuição:
 ```
 1. git pull
 2. git add .
@@ -150,20 +150,6 @@ Desenvolvedores:
         <img src="https://avatars.githubusercontent.com/u/113111708?v=4" width="100px;" alt="Foto Sofia Valadares"/><br>
         <sub>
           <b>Sofia Valadares</b>
-        </sub>
-      </a>
-    </td>
-  </tr>
-</table>
-
-Orientadores:
-<table>
-  <tr>
-    <td align="center">
-      <a href="#">
-        <img src="https://avatars.githubusercontent.com/u/106926790?s=400&u=d51d91a8d447afbb4a9d0be21d664b82d7091fc5&v=4" width="100px;" alt="Foto Kal"/><br>
-        <sub>
-          <b>Caio Cesar</b>
         </sub>
       </a>
     </td>
