@@ -1,5 +1,5 @@
 from django.urls import path
-from home.views import home, feed, perfil, login_user, signup, create_item, page_categoria, produto_detalhes, carrinho, edit_profile, add_to_cart, remove_cart, editar_publicacao, finalizar_cart, add_to_compra, painel_de_vendas_negociações, painel_de_vendas_vendas, painel_de_vendas_estoque, confimar_venda, cancelar_venda, config, busca
+from home.views import home, feed, perfil, login_user, signup, create_item, page_categoria, produto_detalhes, carrinho, excluir_notificacao, edit_profile, add_to_cart, remove_cart, editar_publicacao, finalizar_cart, painel_de_vendas_negociações, painel_de_vendas_vendas, painel_de_vendas_estoque, confimar_venda, cancelar_venda, config, busca
 from django.contrib.auth.views import LogoutView
 
 urlpatterns = [
@@ -14,10 +14,10 @@ urlpatterns = [
     path('produto/<int:foto_id>', produto_detalhes, name='produto'),
     path('logout/', LogoutView.as_view(), name='logout'),
     path('carrinho/', carrinho, name='carrinho'),
+    path('notificacao/', excluir_notificacao, name='notificacao'),
     path('add_to_cart/<int:item_id>/', add_to_cart, name='add_to_cart'),
     path('remove_cart/<int:car_id>/', remove_cart, name='remove_cart'),
     path('finalizar_cart/<int:car_id>/', finalizar_cart, name='finalizar_cart'),
-    path('add_to_compra/<int:item_id>/', add_to_compra, name='add_to_compra'),
     path('painel_do_vendedor/negociações/', painel_de_vendas_negociações, name='painel_de_vendas_negociações'),
     path('painel_do_vendedor/vendas/', painel_de_vendas_vendas, name='painel_de_vendas_vendas'),
     path('painel_do_vendedor/estoque/', painel_de_vendas_estoque, name='painel_de_vendas_estoque'),

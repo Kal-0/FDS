@@ -164,6 +164,7 @@ def create_item(request):
     return render(request, 'home/criando_publicacao.html', {})
 
 def carrinho(request):
+    noticacao = Noticacao.objects.filter(user=request.user)
     user_profile = Profile.objects.get(user=request.user)
     user_car = Carrinho.objects.filter(user=user_profile.id, status=True)
     items = Item.objects.filter(check_sold=False)
@@ -183,9 +184,16 @@ def carrinho(request):
         'user_carrinho': user_car,
         'pub': items,
         'profiles': profile,
+        'notif': noticacao,
         'valor_total': valor_total,
         'itens_quant': itens_quant,
     })
+
+def excluir_notificacao(request):
+    notificacao = Noticacao.objects.filter(user=request.user)
+    notificacao.delete()
+
+    return redirect('carrinho')
 
 def edit_profile(request):
     user_profile = Profile.objects.get(user=request.user)
@@ -227,16 +235,6 @@ def finalizar_cart(request, car_id):
 
     return redirect('carrinho')
 
-def add_to_compra(request, item_id):
-    item = get_object_or_404(Item, id=item_id)
-
-    Carrinho.objects.create(
-        user=request.user.profile,
-        itens_carrinho=item,
-        status = False
-    )
-
-    return redirect('feed')
 
 def painel_de_vendas_negociações(request):
     user = request.user

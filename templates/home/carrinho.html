@@ -7,7 +7,16 @@
 
     {% include 'home/partials/_barra.html'%}
     <div class="p-3 mb-2">
+      {% if notif %}
+      <div class="text-center">
+        <form action="{% url 'notificacao' %}">
+          {% csrf_token %}
+          <button class="botao_amarelo" type="submit" onclick="alert('{{ notif.compra_finalizada }} compras foram finalizadas e outras {{ notif.compra_cancelada }} foram canceladas pelo vendedor. \nCaso haja algum problema fale com o vendedor!')">Notificações!!!!</button>
+        </form>
+        <br><br>
+      </div>
       
+      {% endif %}
       {% if user_carrinho %}
         <p class="carrinho_texto_titulo"> CARRINHO </p>
         <p class="carrinho_texto_titulo">Total: R${{ valor_total }} - {{ itens_quant }} itens</p>
