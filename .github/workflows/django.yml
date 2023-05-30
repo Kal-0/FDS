@@ -525,10 +525,19 @@ name: Django CI
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "main", "release" ]
   
 jobs:
-  build:
+
+  info:
+    runs-on: ubuntu-latest
+    steps:
+
+    - name: infos
+      run: |
+        echo github.ref: ${{ github.ref }}
+
+  CI-build:
 
     runs-on: ubuntu-latest
     strategy:
@@ -588,3 +597,17 @@ jobs:
         sleep 5
 
         python manage.py test
+
+
+
+  
+  CD-build:
+    if: github.ref == 'refs/heads/release'
+    runs-on: ubuntu-latest
+    steps:
+    - name: aws-setup
+      run: |
+        echo setup
+      
+
+
