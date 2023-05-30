@@ -607,7 +607,7 @@ jobs:
     steps:
     - name: aws-setup
       run: |
-        echo setup
+        echo deploy_process started!
       
 
 
