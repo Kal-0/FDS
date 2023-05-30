@@ -602,7 +602,7 @@ jobs:
 
   
   CD-build:
-    if: github.ref == 'Kal-0/FDS/tree/release'
+    if: github.ref == 'refs/heads/release'
     runs-on: ubuntu-latest
     steps:
     - name: aws-setup
