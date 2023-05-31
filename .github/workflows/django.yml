@@ -521,7 +521,7 @@
 ## another one...
 
 
-name: Django CI
+name: Django Push
 
 on:
   push:
@@ -531,6 +531,7 @@ jobs:
 
   info:
     runs-on: ubuntu-latest
+    
     steps:
 
     - name: infos
@@ -540,6 +541,7 @@ jobs:
   CI-build:
 
     runs-on: ubuntu-latest
+
     strategy:
       max-parallel: 4
       matrix:
@@ -603,7 +605,10 @@ jobs:
   
   CD-build:
     if: github.ref == 'refs/heads/release'
+
     runs-on: ubuntu-latest
+    needs: CI-build
+
     steps:
 
     - name: aws-setup
