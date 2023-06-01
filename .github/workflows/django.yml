@@ -618,12 +618,15 @@ jobs:
     
     - name: Checkout the files
       uses: actions/checkout@v3
-    
+      
+    - name: File check
+      run: |
+        echo 0
+        ls
 
     - name: test
       run: |
-        echo test
-        ls 
+        ls
 
     # - name: Copy files with SSH
     #   uses: easingthemes/ssh-deploy@main
