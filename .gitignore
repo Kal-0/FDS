@@ -133,3 +133,6 @@ dmypy.json
 .pyre/
 .DS_Store
 
+#other
+.replit
+replit.nix
