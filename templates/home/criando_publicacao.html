@@ -59,7 +59,7 @@
 
                         <label for="productPrice"><b>Preço</b></label>
 
-                        <input type="text" class="form-control" id="productPrice" name="productPrice">
+                        <input type="number" class="form-control" id="productPrice" name="productPrice">
                         
                       </div>
                     </div>
@@ -83,7 +83,7 @@
                 <!-- Botão de Publicar e Cancelar -->
                 <div class="row justify-content-center mt-auto">
                   <div class="col-auto">
-                    <button type="submit" value="Submit" class="btn mb-3" name="publish_btn" style="background-color: #2da8dd; color: #000000; width: 180px; height: 35px">Publicar</button>
+                    <button href="{% url 'feed' %}"type="submit" value="Submit" class="btn mb-3" name="publish_btn" style="background-color: #2da8dd; color: #000000; width: 180px; height: 35px">Publicar</button>
                   </div>
                   <div class="col-auto">
                     <a href="{% url 'home' %}" class="btn mb-3" name="back_btn" style="background-color: #ed2929; color: #000000; width: 180px; height: 35px">Voltar</a>
