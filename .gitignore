@@ -136,3 +136,4 @@ dmypy.json
 #other
 .replit
 replit.nix
+chromedriver.exe
