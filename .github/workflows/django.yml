@@ -648,7 +648,7 @@ jobs:
         python manage.py runserver &
         sleep 5
 
-        kill 1
+        #kill 1
       
     - name: File check
       run: |
