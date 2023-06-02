@@ -529,7 +529,7 @@ on:
   
 jobs:
 
-  info:
+  Info:
     runs-on: ubuntu-latest
     
     steps:
@@ -605,7 +605,7 @@ jobs:
 
   
   CD-build:
-    if: github.ref == 'refs/heads/release' and True
+    if: (github.ref == 'refs/heads/release' && True)
 
     runs-on: ubuntu-latest
     needs: CI-build
