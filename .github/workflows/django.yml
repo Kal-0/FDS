@@ -608,7 +608,7 @@ jobs:
     if: (github.ref == 'refs/heads/release' && True)
 
     runs-on: ubuntu-latest
-    needs: CI-build
+    #needs: CI-build
 
     strategy:
       max-parallel: 4
