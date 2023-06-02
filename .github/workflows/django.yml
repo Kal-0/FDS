@@ -650,13 +650,20 @@ jobs:
         sleep 5
 
         #kill 1
-      
+    
+    
+    - name: Generate deployment zip package
+      run: zip -r deploy.zip . -x '*.git*'
+    
+    
     - name: File check
       run: |
         sleep 1
         echo 0
         ls
         sleep 1
+        
+    
 
     # - name: Copy files with SSH and Deploy
     #   uses: easingthemes/ssh-deploy@main
