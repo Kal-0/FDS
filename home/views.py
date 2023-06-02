@@ -120,20 +120,18 @@ def perfil(request):
         })
 
 def create_item(request):
-    #print(f"GET: {request.GET}")
-    #print(f"POST: {request.POST}")
-    
     if request.method == 'POST':
         user = request.user
+        inProductImage = request.FILES.get("productImage")  # Recebe a imagem do campo 'productImage'
         print(user)
         
-        if request.POST.get("productName") != "" and request.POST.get("productName") != None:
+        if request.POST.get("productName") != "" and request.POST.get("productName") is not None:
             inProductName = request.POST.get("productName")
             print(inProductName)
         else:
             return render(request, 'home/criando_publicacao.html', {})
            
-        if request.POST.get("productPrice") != None:
+        if request.POST.get("productPrice") is not None:
             inProductPrice = request.POST.get("productPrice")
             print(inProductPrice)
         else:
@@ -142,26 +140,27 @@ def create_item(request):
         inProductDescription = request.POST.get("productDescription")
         print(inProductDescription)
         
-        inProductCategory=None
+        inProductCategory = None
         if Category.objects.filter(name=request.POST.get("productCategory")):
-            inProductCategory = Category.objects.get(name = request.POST.get("productCategory"))
+            inProductCategory = Category.objects.get(name=request.POST.get("productCategory"))
             print(inProductCategory)
-        
-            #print(Category.objects.get(name= request.POST.get("productCategory")))
-            
         else:
-            Category.objects.create(name= request.POST.get("productCategory"))
-            inProductCategory = Category.objects.get(name = request.POST.get("productCategory"))
+            Category.objects.create(name=request.POST.get("productCategory"))
+            inProductCategory = Category.objects.get(name=request.POST.get("productCategory"))
         
-        
-        inProductImage = request.POST.get("productImage")
         print(inProductImage)
         
-        
-        Item.objects.create(name=inProductName, price=inProductPrice, description=inProductDescription, category=inProductCategory, image=inProductImage, created_by = user)
-        
+        Item.objects.create(
+            name=inProductName,
+            price=inProductPrice,
+            description=inProductDescription,
+            category=inProductCategory,
+            image=inProductImage,
+            created_by=user
+        )
         
     return render(request, 'home/criando_publicacao.html', {})
+
 
 def carrinho(request):
     noticacao = Noticacao.objects.filter(user=request.user)

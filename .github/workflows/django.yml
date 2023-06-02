@@ -609,8 +609,14 @@ jobs:
     runs-on: ubuntu-latest
     needs: CI-build
 
-    steps:
+    strategy:
+      max-parallel: 4
+      matrix:
+        python-version: [3.11]
 
+    steps:
+    
+    
     - name: aws-setup
       run: |
         echo deploy_process started!
@@ -618,22 +624,48 @@ jobs:
     
     - name: Checkout the files
       uses: actions/checkout@v3
+
     
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v3
+      with:
+        python-version: ${{ matrix.python-version }}
 
-    - name: test
+
+    - name: Install Dependencies
       run: |
-        echo test
-        ls 
 
-    # - name: Copy files with SSH
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        pip install msedge-selenium-tools
+
+
+    - name: Setup database
+      run: |
+        python manage.py makemigrations
+        python manage.py migrate
+
+        python manage.py runserver &
+        sleep 5
+
+        kill 1
+      
+    - name: File check
+      run: |
+        sleep 1
+        echo 0
+        ls
+        sleep 1
+
+    # - name: Copy files with SSH and Deploy
     #   uses: easingthemes/ssh-deploy@main
     #   env:
     #     SSH_PRIVATE_KEY: ${{secrets.EC2_SSH_KEY}}
     #     ARGS: "-rltgoDzvO --delete"
     #     SOURCE: "./"
-    #     REMOTE_HOST: ${{secrets.REMOTE_HOST}}
-    #     REMOTE_USER: ${{secrets.REMOTE_USER}}
-    #     TARGET: ${{secrets.TARGET_DIR}}
+    #     REMOTE_HOST: "ec2-107-21-144-145.compute-1.amazonaws.com"
+    #     REMOTE_USER: "ec2-user"
+    #     TARGET: "/home/ec2-user"
     #     EXCLUDE: "/dist/, /node_modules/, **.env, rebuild_app.sh, watcher.sh"
  
 
