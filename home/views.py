@@ -7,8 +7,6 @@ from home.models import Category, Item, Profile, Carrinho, Historico, Noticacao
 from .forms import SignupForm, ItemForm, ProfileForm
 
 
-
-
 def home(request):
     
     #print(request.session["username"])
@@ -122,7 +120,7 @@ def perfil(request):
 def create_item(request):
     if request.method == 'POST':
         user = request.user
-        inProductImage = request.FILES.get("productImage")  # Recebe a imagem do campo 'productImage'
+        inProductImage = request.FILES.get("productImage")
         print(user)
         
         if request.POST.get("productName") != "" and request.POST.get("productName") is not None:
@@ -130,13 +128,13 @@ def create_item(request):
             print(inProductName)
         else:
             return render(request, 'home/criando_publicacao.html', {})
-           
-        if request.POST.get("productPrice") is not None:
+        
+        if request.POST.get("productPrice") is not None and request.POST.get("productPrice") != "":
             inProductPrice = request.POST.get("productPrice")
             print(inProductPrice)
         else:
-            return render(request, 'home/criando_publicacao.html', {})    
-            
+            inProductPrice = 0
+        
         inProductDescription = request.POST.get("productDescription")
         print(inProductDescription)
         
@@ -158,8 +156,10 @@ def create_item(request):
             image=inProductImage,
             created_by=user
         )
+        return redirect('perfil')  
         
     return render(request, 'home/criando_publicacao.html', {})
+
 
 
 def carrinho(request):
@@ -300,5 +300,58 @@ def config(request):
 def busca(request):
     return render(request, 'home/busca.html')
 
-def editar_publicacao(request):
-    return render(request, 'home/edit_publicacao.html')
+from django.shortcuts import redirect
+
+def editar_publicacao(request, foto_id):
+    items = get_object_or_404(Item, pk=foto_id)
+    produto = Item.objects.filter(id=items.category.id, description=items.description, image=items.image, name=items.name)
+
+    if request.method == 'POST':
+        inProductImage = request.FILES.get("productImage")
+
+        if request.POST.get("productName") != "" and request.POST.get("productName") is not None:
+            inProductName = request.POST.get("productName")
+            print(inProductName)
+        else:
+            inProductName = items.name  # Mantém o valor anterior se o campo estiver em branco
+
+        inProductPrice = request.POST.get("productPrice")
+        if inProductPrice and inProductPrice.isdigit():
+            inProductPrice = int(inProductPrice)
+        else:
+            inProductPrice = items.price  # Mantém o valor anterior se o campo estiver em branco ou não for um número
+
+        inProductDescription = request.POST.get("productDescription")
+        print(inProductDescription)
+
+        print(inProductImage)
+
+        fields_changed = False
+
+        if inProductName != items.name or inProductPrice != items.price or inProductDescription != items.description:
+            items.name = inProductName
+            items.price = inProductPrice
+            items.description = inProductDescription
+            fields_changed = True
+
+        if inProductImage:
+            items.image = inProductImage
+            fields_changed = True
+
+        if fields_changed:
+            items.save()
+
+        return redirect('perfil')  # Redireciona para a tela de perfil após salvar os dados
+
+    context = {
+        'items': items,
+        'produto': produto,
+    }
+
+    return render(request, 'home/edit_publicacao.html', context)
+
+def deletar_publicacao(request, item_id):
+    event = Item.objects.get(pk=item_id)
+    event.delete()
+    return redirect('perfil')
+
