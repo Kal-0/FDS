@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-luaf8!s*&0o)6%^0(0f6!d^*ysr@)3*ba2xyh@t-upa(-(d1%%
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['schoolyardfinds1.sa-east-1.elasticbeanstalk.com', 'schoolyardfinds1.us-east-1.elasticbeanstalk.com', '127.0.0.1']
+ALLOWED_HOSTS = ['demo-00.us-east-1.elasticbeanstalk.com','schoolyardfinds1.sa-east-1.elasticbeanstalk.com', 'schoolyardfinds1.us-east-1.elasticbeanstalk.com', '127.0.0.1']
 
 
 # Application definition
