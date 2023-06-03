@@ -38,8 +38,8 @@ options.add_argument("--disable-gpu")
 global driver
 
 
-#driver = webdriver.Chrome()
-driver = webdriver.Chrome(options=options)
+driver = webdriver.Chrome()
+#driver = webdriver.Chrome(options=options)
 #driver = webdriver.Chrome(executable_path=driver_path, options=options)
 
 
@@ -259,11 +259,12 @@ class T3addPublicationTest(LiveServerTestCase):
         time.sleep(4)
         
         publish_btn.send_keys(Keys.RETURN)
+        assert "perfil/" in driver.current_url
         time.sleep(2)
         
-        return_btn = wait.until(EC.element_to_be_clickable((By.NAME, "back_btn")))
+        home_btn = driver.find_element(By.NAME, "home_btn")
         
-        return_btn.send_keys(Keys.RETURN)
+        home_btn.send_keys(Keys.RETURN)
         assert "home/" in driver.current_url
         time.sleep(2)
         
@@ -274,7 +275,6 @@ class T3addPublicationTest(LiveServerTestCase):
         # productPrice = wait.until(EC.element_to_be_clickable((By.NAME, "productPrice")))
         # productDescription = wait.until(EC.element_to_be_clickable((By.NAME, "productDescription")))
         # publish_btn = wait.until(EC.element_to_be_clickable((By.ID, "submit_register1")))
-        decoy_publication = True
 
         
         decoy_publication = True
