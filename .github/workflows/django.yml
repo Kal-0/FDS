@@ -529,7 +529,7 @@ on:
   
 jobs:
 
-  info:
+  Info:
     runs-on: ubuntu-latest
     
     steps:
@@ -539,7 +539,8 @@ jobs:
         echo github.ref: ${{ github.ref }}
 
   CI-build:
-
+    if: False
+    
     runs-on: ubuntu-latest
 
     strategy:
@@ -604,10 +605,10 @@ jobs:
 
   
   CD-build:
-    if: github.ref == 'refs/heads/release'
+    if: (github.ref == 'refs/heads/release')
 
     runs-on: ubuntu-latest
-    needs: CI-build
+    #needs: CI-build
 
     strategy:
       max-parallel: 4
@@ -648,14 +649,30 @@ jobs:
         python manage.py runserver &
         sleep 5
 
-        kill 1
-      
+        #kill 1
+    
+    
+    - name: Generate deployment zip package
+      run: zip -r deploy.zip . -x '*.git*'
+    
+    
     - name: File check
       run: |
         sleep 1
         echo 0
         ls
         sleep 1
+        
+    - name: Aws Deploy
+      uses: einaregilsson/beanstalk-deploy@v21
+      with:
+        aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        application_name: Demo-0 
+        environment_name: Demo-0-env-0
+        version_label: ${{ github.sha }}
+        region: us-east-1
+        deployment_package: deploy.zip
 
     # - name: Copy files with SSH and Deploy
     #   uses: easingthemes/ssh-deploy@main
