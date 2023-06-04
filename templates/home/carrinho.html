@@ -8,15 +8,34 @@
     {% include 'home/partials/_barra.html'%}
     <div class="p-3 mb-2">
       {% if notif %}
-      <div class="text-center">
-        <form action="{% url 'notificacao' %}">
-          {% csrf_token %}
-          <button class="botao_amarelo" type="submit" onclick="alert('{{ notif.compra_finalizada }} compras foram finalizadas e outras {{ notif.compra_cancelada }} foram canceladas pelo vendedor. \nCaso haja algum problema fale com o vendedor!')">Notificações!!!!</button>
-        </form>
-        <br><br>
-      </div>
-      
+        <div class="text-center">
+          <button class="botao_amarelo" data-toggle="modal" data-target="#myModal">Notificações!!!!</button>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel">Notificações</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                {% for notificacao in notif %}
+                <p>{{ notificacao.compra_finalizada }} compras foram finalizadas e outras {{ notificacao.compra_cancelada }} foram canceladas pelo vendedor.</p>
+                {% endfor %}
+                <p>Caso haja algum problema, fale com o vendedor!</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-primary" onclick="redirectToNotification()">Fechar</button>
+              </div>
+            </div>
+          </div>
+        </div>
       {% endif %}
+
       {% if user_carrinho %}
         <p class="carrinho_texto_titulo"> CARRINHO </p>
         <p class="carrinho_texto_titulo">Total: R${{ valor_total }} - {{ itens_quant }} itens</p>
@@ -129,6 +148,12 @@
     <!-- Barra de Navegação (Logo, Pesquisa, Home, Carrinho e Perfil) -->
 
     {% include 'home/partials/_footer.html'%}
+
+    <script>
+      function redirectToNotification() {
+        window.location.href = "{% url 'notificacao' %}";
+      }
+    </script>
 
 </body>
 

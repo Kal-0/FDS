@@ -9,11 +9,14 @@
 
     <br>
     <div style="display: flex; justify-content: center; align-items: center;">
-        
-        <div>
+        <div style="display: flex; justify-content: center; align-items: center;">
+          <div style="border-bottom: 5px solid #989beb; margin-bottom: -10px; border-radius: 5px 5px;">
             <form action="#">
-              <button class="botao_amarelo" type="submit" style="border-radius: 5px 0px 0px 5px; width: 150px; border: none; background-color: antiquewhite;">Negociações</button>
+              <div style="margin-bottom: 5px;">
+                  <button class="botao_amarelo" type="submit" style="border-radius: 5px 0px 0px 5px; width: 150px; border: none; background-color: antiquewhite;">Negociações</button>
+              </div>
             </form>
+          </div>
         </div>
         <div>
             <form action="{% url 'painel_de_vendas_vendas' %}">
@@ -41,8 +44,8 @@
 
                     {% if items == user_car.itens_carrinho %}
 
-                      <div class="card mb-3" style="width: 88vw; height: 189px; border-radius: 20px;">
-                          <div class="row g-0">
+                      <div class="card mb-3" style="width: 88vw; min-width: 88px; border-radius: 20px;">
+                          <div class="row g-0 justify-content-between">
                             <div class="col-md-2">
                               {% if items.image == "" or items.image == null %}
                               <img class="card_image_carrinho" src="{% static '/assets/imagens/home/not_found.png' %}" style="height: 180px; width: 250px;" alt="Produto">
@@ -50,14 +53,14 @@
                               <img class="card_image_carrinho" src="{{ items.image.url }}" style="height: 180px; width: 250px;" alt="Produto">
                               {% endif %}
                             </div>
-                            <div class="col-md-8">
+                            <div class="col-md-4">
                               <div class="card-body">
-                                  <h5 class="card-title" style="height: 30px; overflow: hidden;"> Item: {{ items.name }} || {{ user_car.user }}</h5>
+                                  <h5 class="card-title" style="height: 30px; overflow: hidden;"> Item: {{ items.name }}</h5>
                                   <h5 class="card-title" style="height: 30px; overflow: hidden;"> Usuario: {{ user_car.user }}</h5>
                                   <p class="card-text" style="height: 18px; overflow: hidden;"> ID da compra: {{ user_car.id }}</p>
                               </div>
                             </div>
-                            <div class="col-md-2">
+                            <div class="col-md-3">
                                 <br>
                                 <form action="{% url 'confimar_venda' user_car.id %}" method="POST">
                                     {% csrf_token %}
