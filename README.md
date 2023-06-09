@@ -15,14 +15,14 @@
 
 ## 📁 Backlog e Painel
 
-<img src="https://cdn.discordapp.com/attachments/1081640134371446956/1097659916069650542/Captura_de_tela_2023-04-17_200800.png" width="1000px;" alt="Backlog"/><br>
+<img src="https://cdn.discordapp.com/attachments/1097961194427514930/1116741007531331774/Captura_de_tela_2023-06-07_120852.png" width="1000px;" alt="Backlog"/><br>
 
-<img src="https://cdn.discordapp.com/attachments/1081640134371446956/1097659915838955601/Captura_de_tela_2023-04-17_200730.png" width="1000px;" alt="Painel"/><br>
+<img src="https://cdn.discordapp.com/attachments/1097961194427514930/1116741208346218576/Captura_de_tela_2023-06-07_120934.png" width="1000px;" alt="Painel"/><br>
 
 ## 💻 Pré-requisitos
 
 - <b>Linguagem de Programação:</b> Python v2023.8.0, JavaScript, CSS, HTML.
-- <b>Git:</b> Baixe o Git.
+- <b>Git:</b> Baixar o Git.
 - <b>IDE:</b> Visual Studio Code 1.78.2 ou outras IDEs.
 - <b>Extensions:</b> SQLite Viewer v0.2.5, HTML CSS Support v1.13.1, Live Server v5.7.9.
 - <b>Sistema Operacional Compatível:</b> Windows, Mac e Linux.
@@ -45,13 +45,13 @@ GOOGLE DRIVE:
 
 - [Storyboards](https://www.figma.com/file/2ip4H8uwjQ2fh1LfifG0ys/Prot%C3%B3tipo-Lo-Fi?type=design&node-id=200%3A19&t=aEKpXn9853zZryfc-1)
 
-- [Screencasts](https://drive.google.com/drive/folders/1tLMSk-QiT_0Hup6dKK3AOzqBuoBOML4j)
+- [Screencasts](https://drive.google.com/drive/folders/11NuwNQj38WPsKoISbP0Ki22pt3MdIBnv?usp=drive_link)
 
 - [Pair Programming](https://drive.google.com/drive/folders/1441ZlJdDW0m1_KSqb98R9jETa0zYaEn8)
 
-- [Painel e Backlog](https://drive.google.com/drive/folders/1oF3lKw1-_6un3ANsv_0aEa_aDPxnzQyW)
+- [Painel e Backlog](https://drive.google.com/drive/folders/1QGdTE9Tlg82WNDR6jwmWwqslcwNFJAvp?usp=sharing)
 
-- [Diagrama de atividades](https://drive.google.com/drive/folders/17ZE7ORyRPMqHQ2eKl1c-UdGEq4xrpw7K?usp=share_link)
+- [Diagrama de atividades](https://drive.google.com/drive/folders/1og0MFgwVGYnetjAFjTKkcNZ920Ulbf7N?usp=drive_link)
 
 
 ## ☕ Usando Schoolyard Find
