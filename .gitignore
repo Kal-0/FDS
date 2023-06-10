@@ -138,3 +138,5 @@ dmypy.json
 replit.nix
 chromedriver.exe
 deploy.zip
+
+TestDrivers/chromedriver
