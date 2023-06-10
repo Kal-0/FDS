@@ -479,14 +479,14 @@ class T6editProfileTest(LiveServerTestCase):
         description = driver.find_element(By.NAME, "description")  
         save_btn = driver.find_element(By.NAME, "save_btn")
         
-        #username.send_keys(Keys.CONTROL + "a")
-        #username.send_keys(Keys.DELETE)
+        username.send_keys(Keys.CONTROL + "a")
+        username.send_keys(Keys.DELETE)
         
-        #phone.send_keys(Keys.CONTROL + "a")
-        #phone.send_keys(Keys.DELETE)
+        phone.send_keys(Keys.CONTROL + "a")
+        phone.send_keys(Keys.DELETE)
         
-        #description.send_keys(Keys.CONTROL + "a")
-        #description.send_keys(Keys.DELETE)
+        description.send_keys(Keys.CONTROL + "a")
+        description.send_keys(Keys.DELETE)
         
         username.send_keys("novoNome")
         phone.send_keys("(96)9-9966-9966")
