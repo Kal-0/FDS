@@ -15,37 +15,16 @@ from selenium.webdriver.support import expected_conditions as EC
 
 
 
-import sys
-import platform
-from selenium import webdriver
+#windows:
+driver_path = r"chromedriver.exe"
 
-# Detecta o sistema operacional atual
-current_os = platform.system()
-
-if current_os == 'Darwin':  # Mac
-    driver_path = "/TestDrivers/chomedriver"
-    chrome_options = webdriver.ChromeOptions()
-    chrome_options.add_argument("--kiosk")
-else:  # Windows
-    driver_path = r"chromedriver.exe"
-    chrome_options = webdriver.ChromeOptions()
-    # Opções adicionais para o Chrome no Windows, se necessário
-#else:
-    #print("Sistema operacional não suportado.")
-    #sys.exit(1)
-
-
-# Inicializa o driver do Chrome
-driver = webdriver.Chrome(executable_path=driver_path, options=chrome_options)
-
-
+ #linux-tests
+driver_path = r"TestDrivers/chromedriver"
 
 
 
 timeout = 10
-
 #service = Service()
-
 options = webdriver.ChromeOptions()
 options.add_argument("--no-sandbox")
 options.add_argument("--headless")
@@ -53,21 +32,16 @@ options.add_argument("--disable-gpu")
 
 
 
+global driver
 
-# global driver
 
-
-driver = webdriver.Chrome()
-#driver = webdriver.Chrome(options=options)
-#driver = webdriver.Chrome(executable_path=driver_path, options=options)
+ #driver = webdriver.Chrome()
+driver = webdriver.Chrome(options=options)
+ #driver = webdriver.Chrome(executable_path=driver_path, options=options)
 
 
 driver.set_page_load_timeout(timeout)
-
 print("/////////////chromeDriver SET\n")
-
-
-
 global decoy_user, logged_in, decoy_publication
 decoy_user = False
 logged_in = False
