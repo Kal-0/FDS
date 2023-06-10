@@ -35,8 +35,8 @@ options.add_argument("--disable-gpu")
 global driver
 
 
- #driver = webdriver.Chrome()
-driver = webdriver.Chrome(options=options)
+driver = webdriver.Chrome()
+# driver = webdriver.Chrome(options=options)
  #driver = webdriver.Chrome(executable_path=driver_path, options=options)
 
 
