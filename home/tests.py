@@ -30,9 +30,9 @@ elif current_os == 'Windows':  # Windows
     driver_path = "chromedriver.exe"
     chrome_options = webdriver.ChromeOptions()
     # Opções adicionais para o Chrome no Windows, se necessário
-else:
-    print("Sistema operacional não suportado.")
-    sys.exit(1)
+#else:
+    #print("Sistema operacional não suportado.")
+    #sys.exit(1)
 
 
 # Inicializa o driver do Chrome
