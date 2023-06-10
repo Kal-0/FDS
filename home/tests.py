@@ -15,11 +15,30 @@ from selenium.webdriver.support import expected_conditions as EC
 
 
 
-#windows:
-driver_path = r"chromedriver.exe"
+import sys
+import platform
+from selenium import webdriver
 
-#linux-tests
-driver_path = r"TestDrivers/chromedriver"
+# Detecta o sistema operacional atual
+current_os = platform.system()
+
+if current_os == 'Darwin':  # Mac
+    driver_path = "/TestDrivers/chomedriver"
+    chrome_options = webdriver.ChromeOptions()
+    chrome_options.add_argument("--kiosk")
+elif current_os == 'Windows':  # Windows
+    driver_path = "chromedriver.exe"
+    chrome_options = webdriver.ChromeOptions()
+    # Opções adicionais para o Chrome no Windows, se necessário
+else:
+    print("Sistema operacional não suportado.")
+    sys.exit(1)
+
+
+# Inicializa o driver do Chrome
+driver = webdriver.Chrome(executable_path=driver_path, options=chrome_options)
+
+
 
 
 
@@ -35,11 +54,11 @@ options.add_argument("--disable-gpu")
 
 
 
-global driver
+# global driver
 
 
-#driver = webdriver.Chrome()
-driver = webdriver.Chrome(options=options)
+driver = webdriver.Chrome()
+#driver = webdriver.Chrome(options=options)
 #driver = webdriver.Chrome(executable_path=driver_path, options=options)
 
 
@@ -221,62 +240,41 @@ class T3addPublicationTest(LiveServerTestCase):
     def testForm(self):
         global logged_in, decoy_publication
         wait = WebDriverWait(driver, 10)
-        
-        
-        print(f"///////////////////logged: {logged_in}")
+
         if logged_in == False:
             T2loginFormTest.testForm(self)
-        
-        driver.get("http://127.0.0.1:8000/home/")
-            
-        
-        
-        #driver.get(self.live_server_url,"/accounts/login/")
-        
-        time.sleep(2)
-        
-        addPub_btn = driver.find_element(By.NAME, "add_publication")
-        
-        addPub_btn.send_keys(Keys.RETURN)
-        assert "publicacao/" in driver.current_url
-        
-        time.sleep(2)
-        
-        
-        productName = driver.find_element(By.NAME, "productName")
-        productCategory = driver.find_element(By.NAME, "productCategory")
-        productPrice = driver.find_element(By.NAME, "productPrice")
-        productDescription = driver.find_element(By.NAME, "productDescription")
-        
-        publish_btn = driver.find_element(By.NAME, "publish_btn")
-        return_btn = driver.find_element(By.NAME, "back_btn")
-        
-        
-        productName.send_keys("newProduct")
-        productCategory.send_keys("-newProductCategory")
-        productPrice.send_keys("9.90")
-        productDescription.send_keys("newProductDescription")
-        time.sleep(4)
-        
-        publish_btn.send_keys(Keys.RETURN)
-        assert "perfil/" in driver.current_url
-        time.sleep(2)
-        
-        home_btn = driver.find_element(By.NAME, "home_btn")
-        
-        home_btn.send_keys(Keys.RETURN)
-        assert "home/" in driver.current_url
-        time.sleep(2)
-        
-        
-        
-        # productName = wait.until(EC.element_to_be_clickable((By.NAME, "productName")))
-        # productCategory = wait.until(EC.element_to_be_clickable((By.NAME, "productCategory")))
-        # productPrice = wait.until(EC.element_to_be_clickable((By.NAME, "productPrice")))
-        # productDescription = wait.until(EC.element_to_be_clickable((By.NAME, "productDescription")))
-        # publish_btn = wait.until(EC.element_to_be_clickable((By.ID, "submit_register1")))
 
-        
+        driver.get("http://127.0.0.1:8000/home/")
+
+        time.sleep(2)
+
+        for i in range(3):  # Adiciona 3 publicações
+            addPub_btn = driver.find_element(By.NAME, "add_publication")
+            addPub_btn.send_keys(Keys.RETURN)
+            assert "publicacao/" in driver.current_url
+            time.sleep(2)
+
+            productName = driver.find_element(By.NAME, "productName")
+            productCategory = driver.find_element(By.NAME, "productCategory")
+            productPrice = driver.find_element(By.NAME, "productPrice")
+            productDescription = driver.find_element(By.NAME, "productDescription")
+
+            productName.send_keys(f"newProduct{i+1}")  # Nome diferente para cada publicação
+            productCategory.send_keys("-newProductCategory")
+            productPrice.send_keys("9.90")
+            productDescription.send_keys("newProductDescription")
+            time.sleep(4)
+
+            publish_btn = driver.find_element(By.NAME, "publish_btn")
+            publish_btn.send_keys(Keys.RETURN)
+            assert "perfil/" in driver.current_url
+            time.sleep(2)
+
+            home_btn = driver.find_element(By.NAME, "home_btn")
+            home_btn.send_keys(Keys.RETURN)
+            assert "home/" in driver.current_url
+            time.sleep(2)
+
         decoy_publication = True
         
         
@@ -345,7 +343,7 @@ class T4viewPublicationTest(LiveServerTestCase):
         time.sleep(3)
         
         
-        viewPub_btn = driver.find_element(By.NAME, "newProduct_btn")
+        viewPub_btn = driver.find_element(By.NAME, "newProduct1_btn")
         
         viewPub_btn.send_keys(Keys.RETURN)
         assert "produto/" in driver.current_url
@@ -379,82 +377,73 @@ class T5addItensToCartTest(LiveServerTestCase):
     def testForm(self):
         global logged_in, decoy_publication
         wait = WebDriverWait(driver, 10)
-        
-        
+
         print(f"///////////////////logged: {logged_in}")
         print(f"///////////////////decoy_publication: {decoy_publication}")
-        
+
         if logged_in == False:
-            #login
+            # Login
             T2loginFormTest.testForm(self)
-        
-        if    decoy_publication == False:
+
+        if decoy_publication == False:
             T3addPublicationTest.testForm(self)
-        
+
         driver.get("http://127.0.0.1:8000/home/")
         time.sleep(1)
-        
-        
+
         profile_btn = driver.find_element(By.NAME, "profile_btn")
-        
         profile_btn.send_keys(Keys.RETURN)
         assert "perfil/" in driver.current_url
         time.sleep(2)
-        
-        
+
         shoppingCart_btn = driver.find_element(By.NAME, "shoppingCart_btn")
-        
         shoppingCart_btn.send_keys(Keys.RETURN)
         assert "carrinho/" in driver.current_url
         time.sleep(3)
-        
-        
+
         goShopping_btn = driver.find_element(By.NAME, "goShopping_btn")
-        
         goShopping_btn.send_keys(Keys.RETURN)
         assert "feed/" in driver.current_url
         time.sleep(1)
-        
-        
+
         driver.execute_script("window.scrollTo(0, 1400)")
         time.sleep(1)
-        
-        
-        product_btn = driver.find_element(By.NAME, "newProduct_btn")
-        
-        product_btn.send_keys(Keys.RETURN)
-        assert "produto/" in driver.current_url
-        time.sleep(3)
-        
-        
-        addToCart_btn = driver.find_element(By.NAME, "addToCart_btn")
-        
-        addToCart_btn.send_keys(Keys.RETURN)
-        time.sleep(1)
-        
-        
-        alert = Alert(driver)
-        alert.accept()
-        time.sleep(1)
-        
-        
-        shoppingCart_btn = driver.find_element(By.NAME, "shoppingCart_btn")
-        
-        shoppingCart_btn.send_keys(Keys.RETURN)
-        assert "carrinho/" in driver.current_url
-        time.sleep(3)
-        
-        
-        removeItem_btn = driver.find_element(By.NAME, "removeItem_btn")
-        
-        removeItem_btn.send_keys(Keys.RETURN)
-        time.sleep(1)
-        
-        
-        home_btn = driver.find_element(By.NAME, "home_btn")
-        
-        home_btn.send_keys(Keys.RETURN)
-        time.sleep(1)
+
+        for i in range(3):
+            product_btn = driver.find_element(By.NAME, f"newProduct{i+1}_btn")
+            product_btn.send_keys(Keys.RETURN)
+            assert "produto/" in driver.current_url
+            time.sleep(3)
+
+            addToCart_btn = driver.find_element(By.NAME, "addToCart_btn")
+            addToCart_btn.send_keys(Keys.RETURN)
+            time.sleep(1)
+
+            alert = Alert(driver)
+            alert.accept()
+            time.sleep(1)
+
+            shoppingCart_btn = driver.find_element(By.NAME, "shoppingCart_btn")
+            shoppingCart_btn.send_keys(Keys.RETURN)
+            assert "carrinho/" in driver.current_url
+            time.sleep(3)
+
+            removeItem_btn = driver.find_element(By.NAME, "removeItem_btn")
+            removeItem_btn.send_keys(Keys.RETURN)
+            time.sleep(1)
+
+            home_btn = driver.find_element(By.NAME, "home_btn")
+            home_btn.send_keys(Keys.RETURN)
+            time.sleep(1)
+
+            goShopping_btn = driver.find_element(By.NAME, "goShopping_btn")
+            goShopping_btn.send_keys(Keys.RETURN)
+            assert "feed/" in driver.current_url
+            time.sleep(1)
+
+            driver.execute_script("window.scrollTo(0, 1400)")
+            time.sleep(1)
+
         
         
         
@@ -516,9 +505,64 @@ class T6editProfileTest(LiveServerTestCase):
         home_btn.send_keys(Keys.RETURN)
         assert "home/" in driver.current_url
         time.sleep(1)
+
+class T7editPubTest(LiveServerTestCase):
+    def testForm(self):
+        global logged_in, decoy_publication
+        wait = WebDriverWait(driver, 10)
         
+        
+        print(f"///////////////////logged: {logged_in}")
+        if logged_in == False:
+            #login
+            T2loginFormTest.testForm(self)
+        
+        driver.get("http://127.0.0.1:8000/home/")
+        time.sleep(1)
+        
+        
+        profile_btn = driver.find_element(By.NAME, "profile_btn")
+        
+        profile_btn.send_keys(Keys.RETURN)
+        assert "perfil/" in driver.current_url
+        time.sleep(2)
+        
+        #
+        editPub_btn = driver.find_element(By.ID, "edit_btn")
+       
+        print("ANTESSS")
+        print(driver.current_url)
+        editPub_btn.send_keys(Keys.RETURN)
+        assert "/editar_publicacao/" in driver.current_url
+        print("DEPOISS")
+        print(driver.current_url)
+        time.sleep(2)
+        name = driver.find_element(By.NAME, "productName")
+        price = driver.find_element(By.NAME, "productPrice")
+        description = driver.find_element(By.NAME, "productDescription")  
+        save_btn = driver.find_element(By.NAME, "edit_btn")
+        
+        name.send_keys("PRODUTO EDITADO")
+        price.send_keys("36")
+        description.send_keys("DESCRICAO EDITADA")
+        time.sleep(3)
+        
+        
+        save_btn.send_keys(Keys.RETURN)
+        assert "perfil/" in driver.current_url
+        time.sleep(5)
         
 
+        removePub_btn = driver.find_element(By.ID, "remove_btn")
+        removePub_btn.send_keys(Keys.RETURN)
+        time.sleep(3)
+
+        home_btn = driver.find_element(By.NAME, "home_btn")
+        
+        home_btn.send_keys(Keys.RETURN)
+        assert "home/" in driver.current_url
+        time.sleep(1)
+                   
+        
 if __name__ == "__main__":
     unittest.main()
-        
