@@ -27,7 +27,7 @@ if current_os == 'Darwin':  # Mac
     chrome_options = webdriver.ChromeOptions()
     chrome_options.add_argument("--kiosk")
 else:  # Windows
-    driver_path = "chromedriver.exe"
+    driver_path = r"chromedriver.exe"
     chrome_options = webdriver.ChromeOptions()
     # Opções adicionais para o Chrome no Windows, se necessário
 #else:
