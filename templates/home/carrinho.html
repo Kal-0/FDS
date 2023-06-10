@@ -9,7 +9,7 @@
     <div class="p-3 mb-2">
       {% if notif %}
         <div class="text-center">
-          <button class="botao_amarelo" data-toggle="modal" data-target="#myModal">Notificações!!!!</button>
+          <button name="notificacao_btn" class="botao_amarelo" data-toggle="modal" data-target="#myModal">Notificações!!!!</button>
         </div>
 
         <!-- Modal -->
@@ -29,7 +29,7 @@
                 <p>Caso haja algum problema, fale com o vendedor!</p>
               </div>
               <div class="modal-footer">
-                <button type="button" class="btn btn-primary" onclick="redirectToNotification()">Fechar</button>
+                <button name="fecharNotificacao_btn" type="button" class="btn btn-primary" onclick="redirectToNotification()">Fechar</button>
               </div>
             </div>
           </div>

@@ -428,21 +428,45 @@ class T5addItensToCartTest(LiveServerTestCase):
             assert "carrinho/" in driver.current_url
             time.sleep(3)
 
-            removeItem_btn = driver.find_element(By.NAME, "removeItem_btn")
-            removeItem_btn.send_keys(Keys.RETURN)
-            time.sleep(1)
-
-            home_btn = driver.find_element(By.NAME, "home_btn")
-            home_btn.send_keys(Keys.RETURN)
-            time.sleep(1)
-
-            goShopping_btn = driver.find_element(By.NAME, "goShopping_btn")
-            goShopping_btn.send_keys(Keys.RETURN)
+            viewFeed_btn = driver.find_element(By.NAME, "goShopping_btn")
+            viewFeed_btn.send_keys(Keys.RETURN)
             assert "feed/" in driver.current_url
-            time.sleep(1)
+            time.sleep(2)
 
-            driver.execute_script("window.scrollTo(0, 1400)")
-            time.sleep(1)
+        shoppingCart_btn = driver.find_element(By.NAME, "shoppingCart_btn")
+        shoppingCart_btn.send_keys(Keys.RETURN)
+        assert "carrinho/" in driver.current_url
+        time.sleep(2)
+
+        removeItem_btn = driver.find_element(By.NAME, "removeItem_btn")
+        removeItem_btn.send_keys(Keys.RETURN)
+        time.sleep(1)
+
+        for i in range(2):
+            finalizarCompraItem_btn = driver.find_element(By.NAME, "concluirCompra_btn")
+            finalizarCompraItem_btn.send_keys(Keys.RETURN)
+            time.sleep(1)    
+
+            alert = Alert(driver)
+            alert.accept()
+            time.sleep(1)       
+
+        goShopping_btn = driver.find_element(By.NAME, "goShopping_btn")
+        goShopping_btn.send_keys(Keys.RETURN)
+        assert "feed/" in driver.current_url
+        time.sleep(1)
+
+        driver.execute_script("window.scrollTo(0, 1400)")
+        time.sleep(1)
+
+        home_btn = driver.find_element(By.NAME, "home_btn")
+        home_btn.send_keys(Keys.RETURN)
+        time.sleep(1)
+
+        viewFeed_btn = driver.find_element(By.NAME, "view_feed")
+        viewFeed_btn.send_keys(Keys.RETURN)
+        assert "feed/" in driver.current_url
+        time.sleep(2)
 
         
         
@@ -506,7 +530,62 @@ class T6editProfileTest(LiveServerTestCase):
         assert "home/" in driver.current_url
         time.sleep(1)
 
-class T7editPubTest(LiveServerTestCase):
+
+class T7finalizarNegociacao(LiveServerTestCase):
+    def testForm(self):
+        global logged_in, decoy_publication
+        wait = WebDriverWait(driver, 10)
+        
+        
+        print(f"///////////////////logged: {logged_in}")
+        if logged_in == False:
+            #login
+            T2loginFormTest.testForm(self)
+        
+        driver.get("http://127.0.0.1:8000/home/")
+        time.sleep(1)
+
+        viewFeed_btn = driver.find_element(By.NAME, "view_feed")
+        viewFeed_btn.send_keys(Keys.RETURN)
+        assert "feed/" in driver.current_url
+        time.sleep(2)
+
+        panelVendedor_btn = driver.find_element(By.NAME, "panelVendedor_btn")
+        panelVendedor_btn.send_keys(Keys.RETURN)
+        assert "painel_do_vendedor/negociacoes/" in driver.current_url
+        time.sleep(3)
+
+        confirnCompra_btn = driver.find_element(By.NAME, "confirmVenda_btn")
+        confirnCompra_btn.send_keys(Keys.RETURN)
+        time.sleep(2)    
+
+        alert = Alert(driver)
+        alert.accept()
+        time.sleep(2)
+
+        cancelCompra_btn = driver.find_element(By.NAME, "cancelVenda_btn")
+        cancelCompra_btn.send_keys(Keys.RETURN)
+        time.sleep(2)    
+
+        alert = Alert(driver)
+        alert.accept()
+        time.sleep(2)
+
+        shoppingCart_btn = driver.find_element(By.NAME, "shoppingCart_btn")
+        shoppingCart_btn.send_keys(Keys.RETURN)
+        assert "carrinho/" in driver.current_url
+        time.sleep(2)
+
+        notificacaoCompra_btn = driver.find_element(By.NAME, "notificacao_btn")
+        notificacaoCompra_btn.send_keys(Keys.RETURN)
+        time.sleep(2)  
+
+        notificacaoCompra_btn = driver.find_element(By.NAME, "fecharNotificacao_btn")
+        notificacaoCompra_btn.send_keys(Keys.RETURN)
+        time.sleep(2)  
+
+
+class T8editPubTest(LiveServerTestCase):
     def testForm(self):
         global logged_in, decoy_publication
         wait = WebDriverWait(driver, 10)
@@ -562,7 +641,7 @@ class T7editPubTest(LiveServerTestCase):
         home_btn.send_keys(Keys.RETURN)
         assert "home/" in driver.current_url
         time.sleep(1)
-                   
+
         
 if __name__ == "__main__":
     unittest.main()
