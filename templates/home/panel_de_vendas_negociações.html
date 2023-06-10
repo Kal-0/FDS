@@ -13,19 +13,19 @@
           <div style="border-bottom: 5px solid #989beb; margin-bottom: -10px; border-radius: 5px 5px;">
             <form action="#">
               <div style="margin-bottom: 5px;">
-                  <button class="botao_amarelo" type="submit" style="border-radius: 5px 0px 0px 5px; width: 150px; border: none; background-color: antiquewhite;">Negociações</button>
+                  <button name="btn_Negociacoes" class="botao_amarelo" type="submit" style="border-radius: 5px 0px 0px 5px; width: 150px; border: none; background-color: antiquewhite;">Negociações</button>
               </div>
             </form>
           </div>
         </div>
         <div>
             <form action="{% url 'painel_de_vendas_vendas' %}">
-              <button class="botao_amarelo" type="submit" style="border-radius: 0px 0px 0px 0px; width: 150px; border: none;">Vendas</button>
+              <button name="btn_Vendas" class="botao_amarelo" type="submit" style="border-radius: 0px 0px 0px 0px; width: 150px; border: none;">Vendas</button>
             </form>
         </div>
         <div>
             <form action="{% url 'painel_de_vendas_estoque' %}">
-                <button class="botao_amarelo" type="submit" style="border-radius: 0px 5px 5px 0px; width: 150px; border: none;">Estoque</button>
+                <button name="btn_Estoque" class="botao_amarelo" type="submit" style="border-radius: 0px 5px 5px 0px; width: 150px; border: none;">Estoque</button>
             </form>
         </div>
     </div>
@@ -64,11 +64,11 @@
                                 <br>
                                 <form action="{% url 'confimar_venda' user_car.id %}" method="POST">
                                     {% csrf_token %}
-                                    <button name="goShopping_btn" class="botao_amarelo" style="background-color: #81ed29; width: 165px;" type="submit" onclick="alert('Compra finalizada!\nIremos alertar ao cliente')">Confirmar compra</button>
+                                    <button name="ConfirmVenda_btn" class="botao_amarelo" style="background-color: #81ed29; width: 165px;" type="submit" onclick="alert('Compra finalizada!\nIremos alertar ao cliente')">Confirmar compra</button>
                                 </form><br>
                                 <form action="{% url 'cancelar_venda' user_car.id%}">
                                     {% csrf_token %}
-                                    <button name="goShopping_btn" class="botao_amarelo" style="background-color: #ed2929; width: 165px;" type="submit" onclick="alert('Compra canceladada!\nIremos alertar ao cliente')">Cancelar compra</button>
+                                    <button name="CancelVenda_btn" class="botao_amarelo" style="background-color: #ed2929; width: 165px;" type="submit" onclick="alert('Compra canceladada!\nIremos alertar ao cliente')">Cancelar compra</button>
                                 </form>
                             </div>
                           </div>
