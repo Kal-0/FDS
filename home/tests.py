@@ -480,12 +480,15 @@ class T6editProfileTest(LiveServerTestCase):
         save_btn = driver.find_element(By.NAME, "save_btn")
         
         username.send_keys(Keys.CONTROL + "a")
+        #username.send_keys(Keys.COMMAND + "a")
         username.send_keys(Keys.DELETE)
         
         phone.send_keys(Keys.CONTROL + "a")
+        #phone.send_keys(Keys.COMMAND + "a")
         phone.send_keys(Keys.DELETE)
         
         description.send_keys(Keys.CONTROL + "a")
+        #description.send_keys(Keys.COMMAND + "a")
         description.send_keys(Keys.DELETE)
         
         username.send_keys("novoNome")
