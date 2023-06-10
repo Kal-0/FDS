@@ -26,8 +26,8 @@ driver_path = r"TestDrivers/chromedriver"
 timeout = 10
 #service = Service()
 options = webdriver.ChromeOptions()
-options.add_argument("--no-sandbox")
-options.add_argument("--headless")
+#options.add_argument("--no-sandbox")
+#options.add_argument("--headless")
 options.add_argument("--disable-gpu")
 
 
@@ -35,7 +35,7 @@ options.add_argument("--disable-gpu")
 global driver
 
 
- #driver = webdriver.Chrome()
+#driver = webdriver.Chrome()
 driver = webdriver.Chrome(options=options)
  #driver = webdriver.Chrome(executable_path=driver_path, options=options)
 
@@ -479,14 +479,14 @@ class T6editProfileTest(LiveServerTestCase):
         description = driver.find_element(By.NAME, "description")  
         save_btn = driver.find_element(By.NAME, "save_btn")
         
-        username.send_keys(Keys.CONTROL + "a")
-        username.send_keys(Keys.DELETE)
+        #username.send_keys(Keys.CONTROL + "a")
+        #username.send_keys(Keys.DELETE)
         
-        phone.send_keys(Keys.CONTROL + "a")
-        phone.send_keys(Keys.DELETE)
+        #phone.send_keys(Keys.CONTROL + "a")
+        #phone.send_keys(Keys.DELETE)
         
-        description.send_keys(Keys.CONTROL + "a")
-        description.send_keys(Keys.DELETE)
+        #description.send_keys(Keys.CONTROL + "a")
+        #description.send_keys(Keys.DELETE)
         
         username.send_keys("novoNome")
         phone.send_keys("(96)9-9966-9966")
