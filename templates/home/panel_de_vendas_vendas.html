@@ -12,22 +12,25 @@
         
         <div>
             <form action="{% url 'painel_de_vendas_negociações' %}">
-              <button class="botao_amarelo" type="submit" style="border-radius: 5px 0px 0px 5px; width: 150px; border: none;">Negociações</button>
+              <button name="btn_Negociacoes" class="botao_amarelo" type="submit" style="border-radius: 5px 0px 0px 5px; width: 150px; border: none;">Negociações</button>
             </form>
         </div>
-        <div>
+        <div style="border-bottom: 5px solid #989beb; margin-bottom: -10px; border-radius: 5px 5px;">
             <form action="#">
-              <button class="botao_amarelo" type="submit" style="border-radius: 0px 0px 0px 0px; width: 150px; border: none; background-color: antiquewhite;">Vendas</button>
+                <div style="margin-bottom: 5px;">
+                    <button name="btn_Vendas" class="botao_amarelo" type="submit" style="border-radius: 0px 0px 0px 0px; width: 150px; border: none; background-color: antiquewhite;">Vendas</button>
+                </div>
             </form>
         </div>
         <div>
             <form action="{% url 'painel_de_vendas_estoque' %}">
-                <button class="botao_amarelo" type="submit" style="border-radius: 0px 5px 5px 0px; width: 150px; border: none;">Estoque</button>
+                <button name="btn_Estoque" class="botao_amarelo" type="submit" style="border-radius: 0px 5px 5px 0px; width: 150px; border: none;">Estoque</button>
             </form>
         </div>
     </div>
     
     <br><br><br><br><br><br><br><br>
+   
 
     <div style="display: flex; justify-content: center; align-items: center;">   
         <img class="img" style="width: 100px; height: auto;" src="{% static '/assets/imagens/home/image.png' %}" alt="imagem">

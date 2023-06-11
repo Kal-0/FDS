@@ -48,7 +48,9 @@
                         {% endif %}
               
                         <h5 class="card-title" style="height: 50px; overflow: hidden;"><b>Nome do Produto: </b>{{ items.name }}</h5>
-                        <a href="{% url 'produto' items.id %}" name="{{items.name}}_btn" class="botao_amarelo" style="background-color: #2da8dd; color: #000000;">Visualizar</a>
+                        <a href="{% url 'produto' items.id %}"  name="{{items.name}}_btn" class="botao_amarelo" style="background-color: #2da8dd; color: #000000;">Visualizar</a>
+                        <a href="{% url 'edit_publicacao' items.id %}" name="{{items.name}}_btn" class="botao_amarelo" style="background-color: #e69b00; color: #000000;" id="edit_btn">Editar</a>
+                        <a href="{% url 'deletar_publicacao' items.id %}" name="{{items.name}}_btn" class="botao_amarelo" style="background-color: #FF0000; color: #FFFFFF;" id="remove_btn">Remover</a>
                       </div>
                     </div>
                   {% else %}
