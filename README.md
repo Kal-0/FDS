@@ -24,7 +24,7 @@
 - Integração com AWS: Deploy automatizado para AWS Elastic Beanstalk, garantindo alta disponibilidade e escalabilidade do sistema.
 
 
-## 🚀 Técnologias Utilizadas 
+## 🚀 Tecnologias Utilizadas 
 Backend: 
 - Python
 - Django
